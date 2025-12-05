@@ -1,25 +1,30 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { dailySuggestions } from "@/lib/data";
-import { ChefHat, Check, ChevronDown, ChevronUp } from "lucide-react";
+import { ChefHat, Check, ChevronDown, ChevronUp, RefreshCw } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { useToast } from '@/hooks/use-toast';
+import type { DailySuggestion } from '@/lib/types';
+
+const getRandomSuggestion = (): DailySuggestion => {
+  return dailySuggestions[Math.floor(Math.random() * dailySuggestions.length)];
+};
 
 export default function TodayPage() {
   const { toast } = useToast();
   const [isPreparationOpen, setIsPreparationOpen] = useState(false);
+  const [suggestion, setSuggestion] = useState<DailySuggestion>(getRandomSuggestion);
 
-  const dailySuggestion = useMemo(() => {
-    const dayOfMonth = new Date().getDate();
-    return dailySuggestions[dayOfMonth % dailySuggestions.length];
-  }, []);
+  const handleNewSuggestion = () => {
+    setSuggestion(getRandomSuggestion());
+  };
 
   const handleRegister = () => {
     toast({
       title: "Registrado!",
-      description: `${dailySuggestion.foodName} foi marcado como experimentado.`,
+      description: `${suggestion.foodName} foi marcado como experimentado.`,
     });
   };
   
@@ -32,8 +37,8 @@ export default function TodayPage() {
 
       <Card className="overflow-hidden shadow-lg">
         <CardHeader className="bg-primary/20">
-          <CardTitle className="font-headline text-4xl text-primary-foreground/90">{dailySuggestion.foodName}</CardTitle>
-          <CardDescription className="text-primary-foreground/70">Textura recomendada: <span className="font-bold">{dailySuggestion.texture}</span></CardDescription>
+          <CardTitle className="font-headline text-4xl text-primary-foreground/90">{suggestion.foodName}</CardTitle>
+          <CardDescription className="text-primary-foreground/70">Textura recomendada: <span className="font-bold">{suggestion.texture}</span></CardDescription>
         </CardHeader>
         <CardContent className="p-0">
           <Collapsible open={isPreparationOpen} onOpenChange={setIsPreparationOpen}>
@@ -51,15 +56,19 @@ export default function TodayPage() {
             </CollapsibleTrigger>
             <CollapsibleContent>
               <div className="px-6 pb-6 text-base text-muted-foreground">
-                {dailySuggestion.preparation}
+                {suggestion.preparation}
               </div>
             </CollapsibleContent>
           </Collapsible>
         </CardContent>
-        <CardFooter className="bg-muted/50 p-6">
+        <CardFooter className="flex-col gap-4 bg-muted/50 p-6">
           <Button size="lg" className="w-full" onClick={handleRegister}>
             <Check className="mr-2 h-5 w-5"/>
             Registrar que experimentou
+          </Button>
+          <Button size="lg" variant="outline" className="w-full bg-background" onClick={handleNewSuggestion}>
+            <RefreshCw className="mr-2 h-5 w-5"/>
+            Gerar outra sugestão
           </Button>
         </CardFooter>
       </Card>
