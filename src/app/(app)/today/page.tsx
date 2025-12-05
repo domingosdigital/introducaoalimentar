@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { dailySuggestions } from "@/lib/data";
@@ -12,22 +12,46 @@ const getRandomSuggestion = (): DailySuggestion => {
   return dailySuggestions[Math.floor(Math.random() * dailySuggestions.length)];
 };
 
+const getTodaysSuggestion = (): DailySuggestion => {
+  // Simple logic to get a suggestion based on the day of the year
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff = now.getTime() - start.getTime();
+  const oneDay = 1000 * 60 * 60 * 24;
+  const dayOfYear = Math.floor(diff / oneDay);
+  return dailySuggestions[dayOfYear % dailySuggestions.length];
+};
+
+
 export default function TodayPage() {
   const { toast } = useToast();
   const [isPreparationOpen, setIsPreparationOpen] = useState(false);
-  const [suggestion, setSuggestion] = useState<DailySuggestion>(getRandomSuggestion);
+  const [suggestion, setSuggestion] = useState<DailySuggestion | null>(null);
+
+  useEffect(() => {
+    setSuggestion(getTodaysSuggestion());
+  }, []);
 
   const handleNewSuggestion = () => {
     setSuggestion(getRandomSuggestion());
   };
 
   const handleRegister = () => {
+    if (!suggestion) return;
     toast({
       title: "Registrado!",
       description: `${suggestion.foodName} foi marcado como experimentado.`,
     });
   };
   
+  if (!suggestion) {
+    return (
+      <div className="flex animate-in fade-in flex-col gap-8 p-4 sm:p-6">
+        <p>Carregando sugestão...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex animate-in fade-in flex-col gap-8 p-4 sm:p-6">
       <header>
