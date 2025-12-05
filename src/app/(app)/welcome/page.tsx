@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { dailySuggestions } from '@/lib/data';
 import type { DailySuggestion, Reaction } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
+import Image from 'next/image';
 
 const menuItems = [
   { href: '/today', label: 'Sugestão do Dia', icon: Baby, color: 'bg-sky-100 text-sky-700' },
@@ -87,42 +88,13 @@ export default function WelcomePage() {
         ))}
       </div>
       
-      {suggestion && (
-        <Card className="shadow-lg">
-            <CardHeader>
-                <CardTitle className="font-headline text-xl">Registro de hoje</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center space-y-4">
-                 <p className="text-muted-foreground">Como foi a experiência com <span className="font-bold text-foreground">{suggestion.foodName}</span>?</p>
-                <div className="flex justify-around items-center pt-2">
-                    {reactionTypes.map((reaction) => (
-                        <div key={reaction.id} className="flex flex-col items-center gap-2">
-                            <button 
-                                onClick={() => setSelectedReaction(reaction.id)}
-                                className={cn(
-                                    "flex items-center justify-center h-14 w-14 rounded-full border-2 transition-all",
-                                    selectedReaction === reaction.id 
-                                        ? 'bg-primary/20 border-primary' 
-                                        : 'bg-card border-border'
-                                )}
-                                >
-                                <reaction.icon className={cn(
-                                    "h-8 w-8",
-                                     selectedReaction === reaction.id 
-                                        ? 'text-primary' 
-                                        : 'text-muted-foreground'
-                                )} />
-                            </button>
-                             <span className="text-xs text-muted-foreground">{reaction.label}</span>
-                        </div>
-                    ))}
-                </div>
-            </CardContent>
-            <CardFooter>
-                <Button className="w-full" onClick={handleSaveReaction}>Salvar Reação</Button>
-            </CardFooter>
-        </Card>
-      )}
+      <Image
+        src="https://i.imgur.com/gaSH1c4.png"
+        alt="Registro de hoje"
+        width={335}
+        height={268}
+        className="rounded-lg shadow-lg"
+      />
     </div>
   );
 }
