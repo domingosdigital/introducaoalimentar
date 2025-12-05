@@ -1,8 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { dailySuggestion } from "@/lib/data";
+import { dailySuggestions } from "@/lib/data";
 import { ChefHat, Check, ChevronDown, ChevronUp } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { useToast } from '@/hooks/use-toast';
@@ -10,6 +10,11 @@ import { useToast } from '@/hooks/use-toast';
 export default function TodayPage() {
   const { toast } = useToast();
   const [isPreparationOpen, setIsPreparationOpen] = useState(false);
+
+  const dailySuggestion = useMemo(() => {
+    const dayOfMonth = new Date().getDate();
+    return dailySuggestions[dayOfMonth % dailySuggestions.length];
+  }, []);
 
   const handleRegister = () => {
     toast({

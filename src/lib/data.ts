@@ -1,10 +1,37 @@
 import type { DailySuggestion, FoodHistory, GuideTopic, Recipe } from './types';
 
-export const dailySuggestion: DailySuggestion = {
-  foodName: 'Abacate',
-  texture: 'amassada',
-  preparation: 'Amasse um quarto de abacate maduro com um garfo até obter uma consistência de purê. Ofereça ao bebê com uma colher pequena. Não adicione açúcar ou sal.',
-};
+export const dailySuggestions: DailySuggestion[] = [
+  {
+    foodName: 'Abacate',
+    texture: 'amassada',
+    preparation: 'Amasse um quarto de abacate maduro com um garfo até obter uma consistência de purê. Ofereça ao bebê com uma colher pequena. Não adicione açúcar ou sal.',
+  },
+  {
+    foodName: 'Banana',
+    texture: 'amassada',
+    preparation: 'Amasse meia banana madura com um garfo. A consistência é perfeita para iniciantes. Pode também oferecer em pedaços grandes e seguros para o bebê segurar (método BLW).',
+  },
+  {
+    foodName: 'Batata Doce',
+    texture: 'purê',
+    preparation: 'Cozinhe a batata doce no vapor até ficar bem macia. Amasse com um garfo, adicionando um pouco de água do cozimento ou leite materno/fórmula para atingir a consistência desejada.',
+  },
+  {
+    foodName: 'Cenoura',
+    texture: 'purê',
+    preparation: 'Cozinhe a cenoura no vapor até ficar macia. Bata no liquidificador ou amasse bem com um garfo. É naturalmente adocicada e costuma ser bem aceita.',
+  },
+    {
+    foodName: 'Mamão',
+    texture: 'amassada',
+    preparation: 'Raspe a polpa de um mamão papaia maduro com uma colher ou amasse um pedaço. É uma ótima fonte de vitaminas e ajuda na digestão.',
+  },
+  {
+    foodName: 'Brócolis',
+    texture: 'pedaços',
+    preparation: 'Cozinhe os floretes de brócolis no vapor até ficarem macios, mas ainda firmes o suficiente para o bebê segurar. O "tronquinho" serve como um pegador natural.',
+  }
+];
 
 export const recipes: Recipe[] = [
   {
@@ -46,7 +73,7 @@ export const recipes: Recipe[] = [
       'Pode adicionar um pouco da água do cozimento para umedecer.',
     ],
   },
-  {
+    {
     id: '4',
     name: 'Papinha de Pera com Gengibre',
     description: 'Um toque picante para o paladar do bebê.',
@@ -159,6 +186,16 @@ export const guideTopics: GuideTopic[] = [
   },
   {
     id: '3',
+    title: 'Dicas de líquidos para a introdução',
+    content: 'Até os 6 meses, o leite materno ou a fórmula são suficientes. Após o início da introdução alimentar, ofereça água filtrada e fervida (depois resfriada) nos intervalos das refeições. Use um copinho de treinamento. Sucos não são recomendados antes de 1 ano.',
+  },
+  {
+    id: '4',
+    title: 'Engasgo vs. Reflexo de GAG',
+    content: 'O reflexo de GAG é um movimento natural que o bebê faz para evitar o engasgo, empurrando a comida para fora com a língua. Parece que ele está tossindo, mas não há obstrução. Já o engasgo real é silencioso, o bebê não consegue respirar e a pele pode mudar de cor. Mantenha a calma, aprenda manobras de desengasgo e nunca deixe o bebê sozinho enquanto come.',
+  },
+  {
+    id: '5',
     title: 'Cuidados Básicos',
     content: 'Ofereça um alimento novo de cada vez e espere 2-3 dias para observar possíveis reações. Nunca adicione sal, açúcar ou mel. Esteja sempre presente e supervisionando a alimentação para evitar engasgos.',
   },

@@ -24,6 +24,6 @@ export interface GuideTopic {
 
 export interface DailySuggestion {
   foodName: string;
-  texture: 'lisa' | 'amassada' | 'pedaços';
+  texture: 'lisa' | 'amassada' | 'pedaços' | 'purê';
   preparation: string;
 }

@@ -15,7 +15,7 @@ export default function GuidePage() {
       </header>
 
       <Accordion type="single" collapsible className="w-full space-y-4">
-        {guideTopics.map((topic) => (
+        {guideTopics.sort((a,b) => parseInt(a.id) - parseInt(b.id)).map((topic) => (
           <AccordionItem key={topic.id} value={topic.id} className="rounded-lg border bg-card shadow-sm">
             <AccordionTrigger className="p-6 text-left font-semibold hover:no-underline">
               {topic.title}
