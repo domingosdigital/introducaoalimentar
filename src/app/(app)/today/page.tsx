@@ -36,9 +36,9 @@ export default function TodayPage() {
       </header>
 
       <Card className="overflow-hidden shadow-lg">
-        <CardHeader className="bg-primary/20">
-          <CardTitle className="font-headline text-4xl text-primary-foreground/90">{suggestion.foodName}</CardTitle>
-          <CardDescription className="text-primary-foreground/70">Textura recomendada: <span className="font-bold">{suggestion.texture}</span></CardDescription>
+        <CardHeader className="bg-primary">
+          <CardTitle className="font-headline text-4xl text-primary-foreground">{suggestion.foodName}</CardTitle>
+          <CardDescription className="text-primary-foreground/80">Textura recomendada: <span className="font-bold">{suggestion.texture}</span></CardDescription>
         </CardHeader>
         <CardContent className="p-0">
           <Collapsible open={isPreparationOpen} onOpenChange={setIsPreparationOpen}>
