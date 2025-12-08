@@ -5,10 +5,11 @@ import OpenAI from "openai";
 admin.initializeApp();
 
 // Set up OpenAI API client
-// It's recommended to set the API key via environment variables for security
-// firebase functions:config:set openai.key="YOUR_API_KEY"
+// For local development, it will use process.env.OPENAI_API_KEY.
+// For production, set the secret in Google Cloud Secret Manager:
+// firebase functions:secrets:set OPENAI_API_KEY
 const openai = new OpenAI({
-    apiKey: functions.config().openai.key,
+    apiKey: process.env.OPENAI_API_KEY || functions.config().openai.key,
 });
 
 export const chatBia = functions.https.onCall(async (data, context) => {
