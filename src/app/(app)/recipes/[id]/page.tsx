@@ -58,9 +58,9 @@ export default function RecipeDetailPage({ params }: { params: { id: string } })
                 <span className='text-xs text-muted-foreground'>Preparo</span>
               </div>
               <div className='flex flex-col items-center gap-1'>
-                <UtensilsCrossed className="h-6 w-6 text-primary" />
-                <span className='text-sm font-semibold text-foreground'>{recipe.cookingInfo.split(',')[1] || recipe.cookingInfo}</span>
-                <span className='text-xs text-muted-foreground'>Utensílio</span>
+                <Flame className="h-6 w-6 text-primary" />
+                <span className='text-sm font-semibold text-foreground'>Fogo baixo</span>
+                <span className='text-xs text-muted-foreground'>Temperatura</span>
               </div>
             </div>
           </CardHeader>
@@ -71,11 +71,27 @@ export default function RecipeDetailPage({ params }: { params: { id: string } })
             <Drumstick className="h-6 w-6 text-primary" />
             <h2 className="font-headline text-2xl font-semibold">Ingredientes</h2>
           </div>
-          <ul className="list-disc list-inside space-y-2 text-muted-foreground text-base pl-2">
-            {recipe.ingredients.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          <Card>
+            <CardContent className="p-0">
+              <ul className="divide-y">
+                {recipe.ingredients.map((item, index) => (
+                  <li key={index} className="p-4 flex items-center">{item}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div>
+            <div className="flex items-center gap-3 mb-4">
+                <UtensilsCrossed className="h-6 w-6 text-primary" />
+                <h2 className="font-headline text-2xl font-semibold">Utensílios</h2>
+            </div>
+             <Card>
+                <CardContent className="p-4">
+                    <p className="text-muted-foreground">{recipe.cookingInfo}</p>
+                </CardContent>
+            </Card>
         </div>
         
         <div>
