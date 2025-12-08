@@ -2,7 +2,6 @@
 
 import { Baby, History, Info, NotebookText, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import { BiaAssistant } from '@/components/bia-assistant';
 
 const menuItems = [
   {
@@ -67,9 +66,6 @@ export default function WelcomePage() {
             </Link>
           ))}
         </div>
-        
-        <BiaAssistant />
-
       </div>
     </div>
   );
