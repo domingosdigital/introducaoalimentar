@@ -40,7 +40,7 @@ export function BiaAssistant() {
     }
   };
   
-  const displayError = error ? 'Ocorreu um erro ao se comunicar com a Bia. Verifique a configuração.' : 'Pergunte sobre receitas e preparos!';
+  const displayError = error ? 'Ocorreu um erro ao se comunicar com a Bia. Verifique a configuração e sua conexão.' : 'Pergunte sobre receitas e preparos!';
 
 
   return (

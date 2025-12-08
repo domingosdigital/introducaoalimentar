@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { getFunctions, httpsCallable } from 'firebase/functions';
-import { app } from '@/firebase/client'; // Assumes you have a firebase client setup
+import { app } from '@/firebase/client';
 
 type BiaRequest = {
   message: string;
@@ -17,14 +17,15 @@ export function useBiaAssistant() {
     setIsLoading(true);
     setError(null);
     try {
-      const functions = getFunctions(app, 'us-central1'); // Specify the region if not default
+      // Especificar a região é crucial para a conexão funcionar corretamente.
+      const functions = getFunctions(app, 'us-central1');
       const biaAssistant = httpsCallable<BiaRequest, BiaResponse>(functions, 'biaAssistant');
       const result = await biaAssistant(data);
       return result.data;
     } catch (err: any) {
-      console.error("Error calling 'biaAssistant' function:", err);
+      console.error("Erro detalhado ao chamar a função 'biaAssistant':", err);
       setError(err);
-      throw err; // Re-throw so the component can also handle it
+      throw err;
     } finally {
       setIsLoading(false);
     }
