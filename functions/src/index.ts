@@ -11,7 +11,7 @@ const openai = new OpenAI({
     apiKey: functions.config().openai.key,
 });
 
-export const biaAssistant = functions.https.onCall(async (data, context) => {
+export const chatBia = functions.https.onCall(async (data, context) => {
     const message = data.message;
 
     if (!message || typeof message !== "string") {

@@ -19,11 +19,11 @@ export function useBiaAssistant() {
     try {
       // Especificar a região é crucial para a conexão funcionar corretamente.
       const functions = getFunctions(app, 'us-central1');
-      const biaAssistant = httpsCallable<BiaRequest, BiaResponse>(functions, 'biaAssistant');
-      const result = await biaAssistant(data);
+      const chatBia = httpsCallable<BiaRequest, BiaResponse>(functions, 'chatBia');
+      const result = await chatBia(data);
       return result.data;
     } catch (err: any) {
-      console.error("Erro detalhado ao chamar a função 'biaAssistant':", err);
+      console.error("Erro detalhado ao chamar a função 'chatBia':", err);
       setError(err);
       throw err;
     } finally {
