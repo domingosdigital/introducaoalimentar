@@ -57,7 +57,6 @@ const askBiaFlow = ai.defineFlow(
   },
   async ({ question }) => {
     const llmResponse = await ai.generate({
-      model: 'googleai/gemini-1.5-flash-latest',
       tools: [searchRecipes],
       prompt: `Você é a "Bia", uma especialista em introdução alimentar para bebês, amigável e experiente.
                Seu objetivo é ajudar mães e pais com dúvidas sobre as receitas e o preparo dos alimentos.
