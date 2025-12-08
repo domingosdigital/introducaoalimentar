@@ -1,19 +1,10 @@
 'use client';
 
-import { Baby, Bookmark, Heart, Info, Lightbulb, NotebookText, Sparkles, Star } from 'lucide-react';
+import { Baby, Heart, Info, Lightbulb, NotebookText, Sparkles, Star } from 'lucide-react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const mainCards = [
-  {
-    href: '/today',
-    label: 'Sugestão do Dia',
-    description: 'Um plano completo para as refeições de hoje.',
-    icon: Sparkles,
-    color: 'text-sky-600',
-    bgColor: 'bg-sky-100/80',
-    highlight: true,
-  },
   {
     href: '/recipes',
     label: 'Receitas',
@@ -21,12 +12,21 @@ const mainCards = [
     icon: NotebookText,
     color: 'text-amber-600',
     bgColor: 'bg-amber-100/80',
+    highlight: true,
+  },
+  {
+    href: '/today',
+    label: 'Sugestão do Dia',
+    description: 'Um plano de refeições para hoje.',
+    icon: Sparkles,
+    color: 'text-sky-600',
+    bgColor: 'bg-sky-100/80',
     highlight: false,
   },
   {
     href: '/guide',
     label: 'Guia da Mamãe',
-    description: 'Respostas para suas principais dúvidas.',
+    description: 'Respostas para suas dúvidas.',
     icon: Info,
     color: 'text-violet-600',
     bgColor: 'bg-violet-100/80',
