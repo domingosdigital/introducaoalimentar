@@ -87,7 +87,7 @@ export default function WelcomePage() {
             </Link>
           ))}
         </div>
-
+        
         {/* Fases e Comportamentos */}
         <Link href="/phases" className="group block">
             <Card className="shadow-sm hover:shadow-md transition-shadow">
