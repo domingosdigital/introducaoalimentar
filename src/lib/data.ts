@@ -1,4 +1,4 @@
-import type { DailyMealPlan, FoodHistory, GuideTopic, Recipe } from './types';
+import type { DailyMealPlan, GuideTopic, Recipe } from './types';
 
 export const dailyMealPlans: DailyMealPlan[] = [
   {

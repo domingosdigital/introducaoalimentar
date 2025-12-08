@@ -1,12 +1,5 @@
 export type Reaction = 'liked' | 'disliked' | 'strange' | 'none';
 
-export interface FoodHistory {
-  id: string;
-  foodName: string;
-  date: string;
-  reaction: Reaction;
-}
-
 export type MealType = 'Café da Manhã' | 'Almoço' | 'Jantar' | 'Sobremesa';
 export type AgeGroup = '6-8 meses' | '9-11 meses' | '12+ meses';
 export type Texture = 'Purê' | 'Amassado' | 'Pedaços macios' | 'Sopa' | 'Creme';

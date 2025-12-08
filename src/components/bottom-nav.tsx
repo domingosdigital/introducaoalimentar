@@ -2,14 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, NotebookText, History, Info, Sparkles } from 'lucide-react';
+import { Home, NotebookText, Info, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/welcome', label: 'Início', icon: Home },
   { href: '/today', label: 'Hoje', icon: Sparkles },
   { href: '/recipes', label: 'Receitas', icon: NotebookText },
-  { href: '/history', label: 'Histórico', icon: History },
   { href: '/guide', label: 'Guia', icon: Info },
 ];
 

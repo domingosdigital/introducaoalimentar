@@ -1,6 +1,6 @@
 'use client';
 
-import { Baby, History, Info, NotebookText, Sparkles } from 'lucide-react';
+import { Baby, Info, NotebookText, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const menuItems = [
@@ -17,13 +17,6 @@ const menuItems = [
     icon: NotebookText,
     color: 'text-amber-600',
     bgColor: 'bg-amber-100/80',
-  },
-  {
-    href: '/history',
-    label: 'Histórico',
-    icon: History,
-    color: 'text-teal-600',
-    bgColor: 'bg-teal-100/80',
   },
   {
     href: '/guide',
