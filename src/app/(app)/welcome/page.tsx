@@ -1,13 +1,7 @@
 'use client';
 
-import { Baby, History, Info, NotebookText, Send, Sparkles } from 'lucide-react';
+import { Baby, History, Info, NotebookText, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
-import { askBia } from '@/ai/flows/ask-bia-flow';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Card } from '@/components/ui/card';
 
 const menuItems = [
   {
@@ -40,42 +34,8 @@ const menuItems = [
   },
 ];
 
-type Message = {
-  role: 'user' | 'assistant';
-  content: string;
-};
-
 export default function WelcomePage() {
   const userName = 'Mamãe';
-  const [inputValue, setInputValue] = useState('');
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!inputValue.trim() || isLoading) return;
-
-    const userMessage: Message = { role: 'user', content: inputValue };
-    setMessages((prev) => [...prev, userMessage]);
-    setInputValue('');
-    setIsLoading(true);
-
-    try {
-      const response = await askBia({ question: inputValue });
-      const assistantMessage: Message = { role: 'assistant', content: response };
-      setMessages((prev) => [...prev, assistantMessage]);
-    } catch (error) {
-      console.error('Error asking Bia:', error);
-      const errorMessage: Message = {
-        role: 'assistant',
-        content:
-          'Desculpe, não consegui processar sua pergunta. Tente novamente.',
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <div className="animate-in fade-in flex h-full flex-col bg-background p-6 sm:p-8 space-y-8">
@@ -105,82 +65,6 @@ export default function WelcomePage() {
           </Link>
         ))}
       </div>
-      
-      <Card className="p-4 shadow-sm">
-        <div className="flex items-start gap-3 mb-4">
-            <Avatar className="border-2 border-primary/50 h-11 w-11">
-                <AvatarImage src="https://i.imgur.com/5A22F4R.png" alt="Bia, a assistente virtual" />
-                <AvatarFallback>BIA</AvatarFallback>
-            </Avatar>
-            <div>
-                <h2 className="font-headline text-lg font-bold">Converse com a Bia</h2>
-                <p className="text-sm text-muted-foreground">Sua assistente de IA para tirar dúvidas!</p>
-            </div>
-        </div>
-
-        <div className="space-y-4 mb-4 h-48 overflow-y-auto p-2 rounded-md bg-muted/50">
-            {messages.length === 0 && (
-                 <div className="flex h-full items-center justify-center">
-                    <p className="text-center text-sm text-muted-foreground">
-                        Pergunte sobre receitas, ingredientes ou dicas de preparo!
-                        <br/>
-                        Ex: "Como faço o purê de abóbora?"
-                    </p>
-                </div>
-            )}
-            {messages.map((msg, index) => (
-                <div key={index} className={`flex items-end gap-2 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                    {msg.role === 'assistant' && (
-                        <Avatar className="h-6 w-6">
-                            <AvatarImage src="https://i.imgur.com/5A22F4R.png" alt="Bia" />
-                            <AvatarFallback>BIA</AvatarFallback>
-                        </Avatar>
-                    )}
-                    <div className={`rounded-lg px-3 py-2 text-sm max-w-[85%] ${
-                        msg.role === 'user' 
-                        ? 'bg-primary text-primary-foreground rounded-br-none' 
-                        : 'bg-muted text-foreground rounded-bl-none'
-                    }`}>
-                        <p className="leading-relaxed">{msg.content}</p>
-                    </div>
-                 </div>
-            ))}
-            {isLoading && (
-                 <div className="flex items-end gap-2">
-                    <Avatar className="h-6 w-6">
-                        <AvatarImage src="https://i.imgur.com/5A22F4R.png" alt="Bia" />
-                        <AvatarFallback>BIA</AvatarFallback>
-                    </Avatar>
-                    <div className="rounded-lg px-3 py-2 text-sm bg-muted text-foreground rounded-bl-none">
-                        <div className="flex items-center gap-1.5">
-                            <span className="h-2 w-2 bg-primary/50 rounded-full animate-pulse delay-0" />
-                            <span className="h-2 w-2 bg-primary/50 rounded-full animate-pulse delay-150" />
-                            <span className="h-2 w-2 bg-primary/50 rounded-full animate-pulse delay-300" />
-                        </div>
-                    </div>
-                </div>
-            )}
-        </div>
-        <form onSubmit={handleSendMessage} className="flex items-center gap-2">
-            <Textarea 
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Digite sua dúvida aqui..."
-                className="min-h-0 h-11 resize-none"
-                rows={1}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
-                        e.preventDefault();
-                        handleSendMessage(e);
-                    }
-                }}
-                disabled={isLoading}
-            />
-            <Button type="submit" size="icon" className="h-11 w-11 shrink-0" disabled={isLoading}>
-                <Send className="h-5 w-5"/>
-            </Button>
-        </form>
-      </Card>
     </div>
   );
 }
