@@ -34,13 +34,6 @@ const mainCards = [
   },
 ];
 
-const babyInfo = {
-    age: "6 meses e 15 dias",
-    whatToExpect: "Seu bebê pode começar a sentar sem apoio e a explorar tudo com a boca. A gengiva pode coçar!",
-    skillOfMonth: "Pegar objetos com as duas mãos e passá-los de uma mão para outra.",
-    recommendedFood: "Continue com purês e papinhas amassadas. Introduza legumes, frutas e proteínas em texturas seguras."
-}
-
 const quickTip = "Dica rápida: uma massagem de 2 minutos na barriguinha ajuda a aliviar os gases antes das refeições.";
 
 const userName = 'Mamãe';
@@ -95,30 +88,18 @@ export default function WelcomePage() {
           ))}
         </div>
 
-        {/* Bloco Hoje com seu bebê */}
-        <Card className="shadow-sm">
-            <CardHeader>
-                <div className="flex items-center gap-3">
-                    <Baby className="h-6 w-6 text-primary" />
-                    <CardTitle className="font-headline text-xl">Hoje com seu bebê</CardTitle>
-                </div>
-                <CardDescription className="text-primary font-semibold pt-1">{babyInfo.age}</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm">
-                <div>
-                    <h4 className="font-semibold text-foreground">O que esperar dessa fase:</h4>
-                    <p className="text-muted-foreground">{babyInfo.whatToExpect}</p>
-                </div>
-                <div>
-                    <h4 className="font-semibold text-foreground">Habilidade do mês:</h4>
-                    <p className="text-muted-foreground">{babyInfo.skillOfMonth}</p>
-                </div>
-                 <div>
-                    <h4 className="font-semibold text-foreground">Alimentação recomendada:</h4>
-                    <p className="text-muted-foreground">{babyInfo.recommendedFood}</p>
-                </div>
-            </CardContent>
-        </Card>
+        {/* Fases e Comportamentos */}
+        <Link href="#" className="group block">
+            <Card className="shadow-sm hover:shadow-md transition-shadow">
+                <CardHeader className="flex flex-row items-center gap-4">
+                     <Baby className="h-6 w-6 text-foreground/70" />
+                     <div>
+                        <CardTitle className="text-lg font-semibold">Fases e comportamentos do bebê</CardTitle>
+                        <CardDescription className="text-sm">Entenda cada etapa do desenvolvimento.</CardDescription>
+                     </div>
+                </CardHeader>
+            </Card>
+        </Link>
 
         {/* Dica Rápida */}
          <Card className="bg-accent border-accent-foreground/20 shadow-sm">
