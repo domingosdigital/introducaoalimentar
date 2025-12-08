@@ -2,6 +2,7 @@
 
 import { Baby, History, Info, NotebookText, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { AskBia } from '@/components/ask-bia';
 
 const menuItems = [
   {
@@ -51,19 +52,24 @@ export default function WelcomePage() {
         <p className="text-lg text-muted-foreground mt-1">O que vamos explorar hoje?</p>
       </header>
 
-      <div className="grid grid-cols-2 gap-4">
-        {menuItems.map((item) => (
-          <Link href={item.href} key={item.href} className="group">
-            <div className="flex aspect-[4/3] flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:bg-card">
-              <div
-                className={`mb-3 flex h-14 w-14 items-center justify-center rounded-full ${item.bgColor} transition-colors group-hover:bg-primary/20`}
-              >
-                <item.icon className={`h-7 w-7 ${item.color} transition-colors group-hover:text-primary`} />
+      <div className="space-y-8">
+        <div className="grid grid-cols-2 gap-4">
+          {menuItems.map((item) => (
+            <Link href={item.href} key={item.href} className="group">
+              <div className="flex aspect-[4/3] flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:bg-card">
+                <div
+                  className={`mb-3 flex h-14 w-14 items-center justify-center rounded-full ${item.bgColor} transition-colors group-hover:bg-primary/20`}
+                >
+                  <item.icon className={`h-7 w-7 ${item.color} transition-colors group-hover:text-primary`} />
+                </div>
+                <span className="font-semibold text-foreground text-sm">{item.label}</span>
               </div>
-              <span className="font-semibold text-foreground text-sm">{item.label}</span>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
+        
+        <AskBia />
+
       </div>
     </div>
   );
