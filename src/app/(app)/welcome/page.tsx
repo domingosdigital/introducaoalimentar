@@ -34,37 +34,31 @@ const featureCards = [
   {
     href: '/phases',
     label: 'Fases e comportamentos',
-    description: 'Entenda cada etapa do desenvolvimento.',
     icon: Baby,
   },
   {
     href: '/checklist',
     label: 'Checklist de Alimentos',
-    description: 'Acompanhe os alimentos já provados.',
     icon: CheckSquare,
   },
   {
     href: '/plan',
     label: 'Plano de 14 Dias',
-    description: 'Um guia para as primeiras semanas.',
     icon: CalendarDays,
   },
   {
     href: '/routine',
     label: 'Rotina por Idade',
-    description: 'Exemplos de rotinas alimentares.',
     icon: Clock,
   },
   {
     href: '/safety',
     label: 'Guia de Segurança',
-    description: 'Cortes e dicas para evitar engasgos.',
     icon: ShieldCheck,
   },
    {
     href: '/favorites',
-    label: 'Minhas Receitas Favoritas',
-    description: 'Acesse suas receitas salvas.',
+    label: 'Favoritos',
     icon: Star,
   },
 ];
@@ -127,22 +121,20 @@ export default function WelcomePage() {
               </div>
             </Link>
           ))}
+          {featureCards.map((item) => (
+            <Link href={item.href} key={item.href} className="group">
+              <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                <div
+                  className={`mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20`}
+                >
+                  <item.icon className={`h-7 w-7 text-primary transition-colors group-hover:text-primary`} />
+                </div>
+                <span className="font-semibold text-foreground text-sm leading-tight">{item.label}</span>
+              </div>
+            </Link>
+          ))}
         </div>
         
-        {featureCards.map(card => (
-          <Link href={card.href} key={card.href} className="group block">
-              <Card className="shadow-sm hover:shadow-md transition-shadow">
-                  <CardHeader className="flex flex-row items-center gap-4">
-                       <card.icon className="h-6 w-6 text-foreground/70" />
-                       <div>
-                          <CardTitle className="text-lg font-semibold">{card.label}</CardTitle>
-                          <CardDescription className="text-sm">{card.description}</CardDescription>
-                       </div>
-                  </CardHeader>
-              </Card>
-          </Link>
-        ))}
-
          <Card className="bg-accent border-accent-foreground/20 shadow-sm">
             <CardHeader className="flex flex-row items-center gap-4">
                 <Lightbulb className="h-6 w-6 text-accent-foreground" />
