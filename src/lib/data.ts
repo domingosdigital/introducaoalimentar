@@ -2323,7 +2323,7 @@ export const recipes: Recipe[] = [
     id: '103',
     name: 'Picolé de Manga com Iogurte',
     description: 'Um picolé cremoso e nutritivo. A mistura do iogurte com a manga cria uma sobremesa deliciosa para dias quentes.',
-    image: '32',
+    image: '103',
     ingredients: ['1/2 manga picada', '3 colheres de sopa de iogurte natural'],
     instructions: [
         'Bata a manga e o iogurte no liquidificador até obter um creme liso.',
@@ -2369,26 +2369,51 @@ export const guideTopics: GuideTopic[] = [
   {
     id: '1',
     title: 'Quando começar a introdução alimentar?',
-    content: 'A recomendação geral é iniciar por volta dos 6 meses. O bebê deve mostrar sinais de prontidão, como sentar com o mínimo de apoio, ter bom controle da cabeça e mostrar interesse pela comida dos adultos.',
+    content: 'A recomendação da Organização Mundial da Saúde (OMS) e do Ministério da Saúde é iniciar a introdução alimentar aos 6 meses de vida do bebê. O leite materno (ou fórmula) deve ser o alimento exclusivo até essa idade. Além da idade, o bebê precisa mostrar sinais de prontidão, como: sentar com o mínimo de apoio, ter bom controle da cabeça e do pescoço, levar objetos à boca e demonstrar interesse pela comida dos adultos.',
   },
   {
     id: '2',
-    title: 'Texturas recomendadas por fase',
-    content: 'Comece com purês lisos e evolua gradualmente. Aos 6-7 meses, purês e papas. Aos 8-9 meses, alimentos amassados com garfo. A partir de 10-12 meses, alimentos em pedaços pequenos e macios para o bebê pegar com as mãos.',
+    title: 'Engasgo vs. Reflexo de GAG',
+    content: 'O Reflexo de GAG (ou de protusão da língua) é um mecanismo de defesa natural do bebê. Ele empurra o alimento para fora da boca para evitar um engasgo. O bebê pode tossir, fazer ânsia e ficar com o rosto vermelho, mas ele está no controle. Já o engasgo real é silencioso. A criança não consegue tossir, chorar ou respirar, e a pele pode ficar azulada. É crucial que os pais e cuidadores saibam a Manobra de Heimlich para bebês.',
   },
   {
-    id: '3',
-    title: 'Dicas de líquidos para a introdução',
-    content: 'Até os 6 meses, o leite materno ou a fórmula são suficientes. Após o início da introdução alimentar, ofereça água filtrada e fervida (depois resfriada) nos intervalos das refeições. Use um copinho de treinamento. Sucos não são recomendados antes de 1 ano.',
+    id: '3.5',
+    title: 'Quais temperos posso usar?',
+    content: 'Você pode e deve usar temperos naturais desde o início para formar o paladar do bebê! Sal é proibido até 1 ano. Açúcar é proibido até 2 anos. Use e abuse de: cebola, alho, salsinha, cebolinha, coentro, orégano, manjericão, alecrim, tomilho, louro e um fio de azeite de oliva extra virgem. Eles tornam a comida muito mais saborosa.',
   },
   {
     id: '4',
-    title: 'Engasgo vs. Reflexo de GAG',
-    content: 'O reflexo de GAG é um movimento natural que o bebê faz para evitar o engasgo, empurrando a comida para fora com a língua. Parece que ele está tossindo, mas não há obstrução. Já o engasgo real é silencioso, o bebê não consegue respirar e a pele pode mudar de cor. Mantenha a calma, aprenda manobras de desengasgo e nunca deixe o bebê sozinho enquanto come.',
+    title: 'Como introduzir alimentos alergênicos?',
+    content: 'Os principais alimentos alergênicos são: ovo, trigo, peixes, frutos do mar, amendoim, castanhas e leite. A recomendação atual é introduzir esses alimentos a partir dos 6 meses, junto com os outros. Ofereça um de cada vez, em pequena quantidade, pela manhã ou no almoço, e observe por 2 dias. Por exemplo, ofereça um pouco de ovo cozido e amassado e observe. Se não houver reação, pode continuar oferecendo. Consulte o pediatra.',
   },
   {
     id: '5',
-    title: 'Cuidados Básicos',
-    content: 'Ofereça um alimento novo de cada vez e espere 2-3 dias para observar possíveis reações. Nunca adicione sal, açúcar ou mel. Esteja sempre presente e supervisionando a alimentação para evitar engasgos.',
+    title: 'O que é o método BLW (Baby-Led Weaning)?',
+    content: 'BLW significa "desmame guiado pelo bebê". Nesse método, em vez de papinhas, você oferece os alimentos em pedaços seguros, em formatos e texturas que o bebê consiga pegar com as mãos e levar à boca. Isso promove a autonomia, a coordenação e a exploração sensorial. É importante estudar os cortes e texturas seguras para cada alimento para evitar engasgos.',
+  },
+  {
+    id: '6',
+    title: 'Sinais de fome e saciedade',
+    content: 'Respeitar os sinais do bebê é fundamental. Sinais de fome: abrir a boca ao ver a colher, inclinar-se para a frente, ficar animado. Sinais de saciedade: virar o rosto, fechar a boca, cuspir a comida, empurrar a colher, ficar irritado ou distraído. Nunca force o bebê a comer. Confie na capacidade dele de regular o próprio apetite.',
+  },
+  {
+    id: '7',
+    title: 'Meu bebê não quer comer. O que fazer?',
+    content: 'Calma, é super normal! A introdução alimentar é uma fase de aprendizado. Lembre-se que o principal alimento ainda é o leite. Continue oferecendo os alimentos de forma positiva e sem pressão. Varie o cardápio, a forma de apresentação (amassado, em pedaços), coma junto com o bebê (eles aprendem pelo exemplo) e evite distrações como telas. Se a recusa persistir por muitos dias, converse com o pediatra.',
+  },
+  {
+    id: '8',
+    title: 'A importância da oferta de água',
+    content: 'A partir do início da introdução alimentar (6 meses), a água deve ser oferecida ao bebê. Ofereça pequenas quantidades em um copo de treinamento várias vezes ao dia, nos intervalos entre as mamadas e as refeições. A água ajuda na hidratação, no funcionamento do intestino e na adaptação do corpo aos novos alimentos. Não substitua a água por sucos.',
+  },
+  {
+    id: '9',
+    title: 'Como armazenar as papinhas?',
+    content: 'Você pode cozinhar para alguns dias. Guarde em potes de vidro ou plástico livre de BPA com tampa. Na geladeira, a papinha dura até 3 dias. No congelador, pode durar até 3 meses. Use etiquetas com o nome do alimento e a data de fabricação. Para descongelar, deixe na geladeira de um dia para o outro ou aqueça em banho-maria. Nunca recongele uma papinha já descongelada.',
+  },
+  {
+    id: '10',
+    title: 'Evolução das texturas',
+    content: 'É crucial evoluir a textura dos alimentos para desenvolver a musculatura da mastigação. Comece com papas bem amassadas, mas não totalmente lisas (6 meses). Progrida para alimentos amassados com o garfo, deixando pequenos pedacinhos (7-8 meses). Depois, alimentos picados em pedaços pequenos e macios (9-11 meses). Próximo de 1 ano, o bebê já pode comer a mesma comida da família, com pequenos ajustes e sem sal.',
   },
 ];

@@ -27,7 +27,7 @@ const menuItems = [
   },
   {
     href: '/guide',
-    label: 'Guia Rápido',
+    label: 'Guia da Mamãe',
     icon: Info,
     color: 'text-violet-600',
     bgColor: 'bg-violet-100/80',
