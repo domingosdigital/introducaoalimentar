@@ -2,6 +2,7 @@
 
 import { Baby, History, Info, NotebookText, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import AskBia from '@/components/ask-bia';
 
 const menuItems = [
   {
@@ -65,6 +66,7 @@ export default function WelcomePage() {
           </Link>
         ))}
       </div>
+      <AskBia />
     </div>
   );
 }
