@@ -2,7 +2,7 @@
 
 import { genkit, type GenkitErrorCode } from 'genkit';
 import { googleAI } from '@genkit-ai/google-genai';
-import { firebase } from '@genkit-ai/firebase';
+import { firebase } from '@genkit-ai/firebase/plugin';
 import { next } from '@genkit-ai/next';
 import { FirebaseError } from 'firebase-admin';
 
