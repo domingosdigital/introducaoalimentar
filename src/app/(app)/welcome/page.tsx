@@ -1,6 +1,6 @@
 'use client';
 
-import { Baby, Bookmark, Heart, Info, Lightbulb, NotebookText, Sparkles } from 'lucide-react';
+import { Baby, Bookmark, Heart, Info, Lightbulb, NotebookText, Sparkles, Star } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
@@ -110,13 +110,13 @@ export default function WelcomePage() {
         </Card>
 
         {/* Favoritos */}
-        <Link href="#" className="group block">
+        <Link href="/favorites" className="group block">
             <Card className="shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader className="flex flex-row items-center gap-4">
-                     <Bookmark className="h-6 w-6 text-foreground/70" />
+                     <Star className="h-6 w-6 text-foreground/70" />
                      <div>
-                        <CardTitle className="text-lg font-semibold">Meus Favoritos</CardTitle>
-                        <CardDescription className="text-sm">Acesse suas receitas e guias salvos.</CardDescription>
+                        <CardTitle className="text-lg font-semibold">Minhas Receitas Favoritas</CardTitle>
+                        <CardDescription className="text-sm">Acesse suas receitas salvas.</CardDescription>
                      </div>
                 </CardHeader>
             </Card>

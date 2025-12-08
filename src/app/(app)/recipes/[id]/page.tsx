@@ -1,21 +1,27 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { recipes } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ChevronLeft, Soup, Drumstick, Clock, Flame, UtensilsCrossed } from 'lucide-react';
+import { ChevronLeft, Soup, Drumstick, Clock, Flame, UtensilsCrossed, Star } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { useFavorites } from '@/hooks/use-favorites';
+import { cn } from '@/lib/utils';
 
 export default function RecipeDetailPage({ params }: { params: { id: string } }) {
   const recipe = recipes.find((r) => r.id === params.id);
+  const { isFavorite, toggleFavorite } = useFavorites();
   
   if (!recipe) {
     notFound();
   }
 
   const placeholder = PlaceHolderImages.find(p => p.id === recipe.image);
+  const favorite = isFavorite(recipe.id);
 
   return (
     <div className="animate-in fade-in">
@@ -30,11 +36,21 @@ export default function RecipeDetailPage({ params }: { params: { id: string } })
           />
          )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-        <Link href="/recipes" className="absolute left-4 top-6 z-10">
-            <Button variant="outline" size="icon" className="h-10 w-10 rounded-full bg-background/80 hover:bg-background">
-                <ChevronLeft className="h-5 w-5" />
+        <div className="absolute left-4 top-6 z-10 flex gap-2">
+            <Link href="/recipes">
+                <Button variant="outline" size="icon" className="h-10 w-10 rounded-full bg-background/80 hover:bg-background">
+                    <ChevronLeft className="h-5 w-5" />
+                </Button>
+            </Link>
+             <Button 
+                variant="outline" 
+                size="icon" 
+                className="h-10 w-10 rounded-full bg-background/80 hover:bg-background"
+                onClick={() => toggleFavorite(recipe.id)}
+            >
+                <Star className={cn("h-5 w-5", favorite ? "fill-yellow-400 text-yellow-400" : "text-foreground")} />
             </Button>
-        </Link>
+        </div>
         <div className="absolute bottom-6 left-6 right-6">
             <h1 className="font-headline text-4xl font-bold text-white leading-tight">
               {recipe.name}
