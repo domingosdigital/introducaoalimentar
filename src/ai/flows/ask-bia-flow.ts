@@ -25,13 +25,25 @@ export async function askBia(input: AskBiaInput): Promise<AskBiaOutput> {
   return result;
 }
 
+const RecipeSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string(),
+  ingredients: z.array(z.string()),
+  instructions: z.array(z.string()),
+  image: z.string(),
+  mealType: z.string(),
+  ageGroup: z.string(),
+  texture: z.string(),
+});
+
 const searchRecipes = ai.defineTool(
   {
     name: 'searchRecipes',
     description:
       'Pesquisa por receitas quando o usuário perguntar sobre uma receita específica, ingredientes ou modo de preparo.',
     inputSchema: z.object({ query: z.string() }),
-    outputSchema: z.array(z.custom<Recipe>()),
+    outputSchema: z.array(RecipeSchema),
   },
   async ({ query }) => {
     console.log(`Searching for recipe with query: ${query}`);
