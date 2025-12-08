@@ -21,7 +21,7 @@ export const dailySuggestions: DailySuggestion[] = [
     texture: 'purê',
     preparation: 'Cozinhe a cenoura no vapor até ficar macia. Bata no liquidificador ou amasse bem com um garfo. É naturalmente adocicada e costuma ser bem aceita.',
   },
-    {
+  {
     foodName: 'Mamão',
     texture: 'amassada',
     preparation: 'Raspe a polpa de um mamão papaia maduro com uma colher ou amasse um pedaço. É uma ótima fonte de vitaminas e ajuda na digestão.',
@@ -30,6 +30,76 @@ export const dailySuggestions: DailySuggestion[] = [
     foodName: 'Brócolis',
     texture: 'pedaços',
     preparation: 'Cozinhe os floretes de brócolis no vapor até ficarem macios, mas ainda firmes o suficiente para o bebê segurar. O "tronquinho" serve como um pegador natural.',
+  },
+  {
+    foodName: 'Maçã',
+    texture: 'purê',
+    preparation: 'Cozinhe uma maçã sem casca no vapor até ficar bem macia. Amasse com um garfo. A maçã cozida é mais fácil de digerir do que a crua para os bebês.',
+  },
+  {
+    foodName: 'Pera',
+    texture: 'amassada',
+    preparation: 'Use uma pera bem madura e macia. Amasse com um garfo até virar um purê. É suculenta e ótima para bebês que estão começando.',
+  },
+  {
+    foodName: 'Manga',
+    texture: 'pedaços',
+    preparation: 'Ofereça um pedaço grande e firme de manga (sem fiapos) para o bebê segurar e chupar. Uma ótima experiência sensorial e de sabor.',
+  },
+  {
+    foodName: 'Inhame',
+    texture: 'purê',
+    preparation: 'Cozinhe o inhame no vapor ou na água até ficar bem macio. Amasse com um garfo. É um tubérculo muito nutritivo e de sabor suave.',
+  },
+  {
+    foodName: 'Abóbora',
+    texture: 'purê',
+    preparation: 'Asse ou cozinhe no vapor um pedaço de abóbora cabotiá. Amasse bem. É docinha, cremosa e rica em vitamina A.',
+  },
+  {
+    foodName: 'Couve-flor',
+    texture: 'pedaços',
+    preparation: 'Cozinhe os floretes de couve-flor no vapor até ficarem macios. Ofereça em "arvorezinhas" que o bebê possa segurar.',
+  },
+  {
+    foodName: 'Feijão',
+    texture: 'amassada',
+    preparation: 'Cozinhe o feijão sem sal e sem temperos. Amasse bem os grãos com um garfo para formar uma pasta. É uma excelente fonte de ferro.',
+  },
+  {
+    foodName: 'Frango',
+    texture: 'amassada',
+    preparation: 'Cozinhe um pedaço de peito de frango na água. Depois de cozido, desfie bem e amasse com um garfo. Misture com purê de batata para umedecer.',
+  },
+  {
+    foodName: 'Peixe',
+    texture: 'amassada',
+    preparation: 'Cozinhe no vapor um filé de peixe branco sem espinhas (como tilápia). Desfaça com um garfo e verifique cuidadosamente se não há espinhas antes de oferecer.',
+  },
+  {
+    foodName: 'Gema de Ovo',
+    texture: 'amassada',
+    preparation: 'Cozinhe um ovo por 10 minutos. Separe a gema e amasse com um garfo. A clara pode ser introduzida um pouco mais tarde.',
+  },
+  {
+    foodName: 'Melancia',
+    texture: 'pedaços',
+    preparation: 'Ofereça um pedaço grande, em formato de meia-lua, com um pouco da casca para o bebê segurar. Retire todas as sementes. É super refrescante!',
+  },
+  {
+    foodName: 'Lentilha',
+    texture: 'purê',
+    preparation: 'Cozinhe a lentilha vermelha (que cozinha mais rápido) até desmanchar. Tempere com um fio de azeite. É rica em proteínas e ferro.',
+  },
+  {
+    foodName: 'Chuchu',
+    texture: 'pedaços',
+    preparation: 'Cozinhe o chuchu no vapor até ficar macio, mas firme. Corte em palitos para o bebê segurar. É um alimento leve e com bastante água.',
+  },
+  {
+    foodName: 'Quiabo',
+    texture: 'pedaços',
+    preparation: 'Grelhe ou asse o quiabo inteiro em forno médio até ficar macio. Isso reduz a baba. Ofereça ao bebê para ele explorar a textura.',
   }
 ];
 
