@@ -2,10 +2,11 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { recipes } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ChevronLeft, Soup, Drumstick } from 'lucide-react';
+import { ChevronLeft, Soup, Drumstick, Clock, Flame, UtensilsCrossed } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 export default function RecipeDetailPage({ params }: { params: { id: string } }) {
   const recipe = recipes.find((r) => r.id === params.id);
@@ -47,6 +48,24 @@ export default function RecipeDetailPage({ params }: { params: { id: string } })
       </div>
       
       <div className="p-6 sm:p-8 space-y-10">
+        
+        <Card>
+          <CardHeader className='pb-4'>
+            <div className="grid grid-cols-2 gap-4 text-center">
+              <div className='flex flex-col items-center gap-1'>
+                <Clock className="h-6 w-6 text-primary" />
+                <span className='text-sm font-semibold text-foreground'>{recipe.cookingTime}</span>
+                <span className='text-xs text-muted-foreground'>Preparo</span>
+              </div>
+              <div className='flex flex-col items-center gap-1'>
+                <UtensilsCrossed className="h-6 w-6 text-primary" />
+                <span className='text-sm font-semibold text-foreground'>{recipe.cookingInfo.split(',')[1] || recipe.cookingInfo}</span>
+                <span className='text-xs text-muted-foreground'>Utensílio</span>
+              </div>
+            </div>
+          </CardHeader>
+        </Card>
+
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Drumstick className="h-6 w-6 text-primary" />

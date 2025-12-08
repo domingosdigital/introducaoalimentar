@@ -21,6 +21,8 @@ export interface Recipe {
   mealType: MealType;
   ageGroup: AgeGroup;
   texture: Texture;
+  cookingTime: string;
+  cookingInfo: string;
 }
 
 export interface GuideTopic {

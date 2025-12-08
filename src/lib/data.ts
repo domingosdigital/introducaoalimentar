@@ -139,6 +139,8 @@ export const recipes: Recipe[] = [
     mealType: 'Café da Manhã',
     ageGroup: '6-8 meses',
     texture: 'Creme',
+    cookingTime: '5 min',
+    cookingInfo: 'Fogo baixo, panela pequena.',
   },
   {
     id: '11',
@@ -154,6 +156,8 @@ export const recipes: Recipe[] = [
     mealType: 'Café da Manhã',
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo baixo, frigideira antiaderente.',
   },
   {
     id: '12',
@@ -169,6 +173,8 @@ export const recipes: Recipe[] = [
     mealType: 'Café da Manhã',
     ageGroup: '9-11 meses',
     texture: 'Amassado',
+    cookingTime: '5 min',
+    cookingInfo: 'Fogo baixo, frigideira antiaderente.',
   },
   {
     id: '13',
@@ -183,6 +189,8 @@ export const recipes: Recipe[] = [
     mealType: 'Café da Manhã',
     ageGroup: '12+ meses',
     texture: 'Creme',
+    cookingTime: '3 min',
+    cookingInfo: 'Liquidificador.',
   },
   {
     id: '14',
@@ -198,6 +206,8 @@ export const recipes: Recipe[] = [
     mealType: 'Café da Manhã',
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
+    cookingTime: '3 min',
+    cookingInfo: 'Torradeira ou frigideira.',
   },
 
   // Almoço
@@ -216,6 +226,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '6-8 meses',
     texture: 'Purê',
+    cookingTime: '15 min',
+    cookingInfo: 'Fogo médio, panela com água ou vaporizador.',
   },
   {
     id: '3',
@@ -232,6 +244,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '9-11 meses',
     texture: 'Amassado',
+    cookingTime: '20 min',
+    cookingInfo: 'Fogo médio, panela com água.',
   },
   {
     id: '7',
@@ -247,6 +261,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '6-8 meses',
     texture: 'Sopa',
+    cookingTime: '2 min (com feijão já cozido)',
+    cookingInfo: 'Liquidificador.',
   },
   {
     id: '8',
@@ -263,6 +279,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '6-8 meses',
     texture: 'Amassado',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo alto, panela pequena com água.',
   },
   {
     id: '9',
@@ -279,6 +297,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '6-8 meses',
     texture: 'Purê',
+    cookingTime: '20 min',
+    cookingInfo: 'Fogo médio, panela a vapor.',
   },
   {
     id: '15',
@@ -294,6 +314,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
+    cookingTime: '25 min',
+    cookingInfo: 'Fogo baixo, panela média.',
   },
   {
     id: '16',
@@ -309,6 +331,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '9-11 meses',
     texture: 'Amassado',
+    cookingTime: '15 min',
+    cookingInfo: 'Fogo médio, panela a vapor.',
   },
   {
     id: '17',
@@ -324,6 +348,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
+    cookingTime: '40 min',
+    cookingInfo: 'Fogo médio, panela de pressão.',
   },
   {
     id: '18',
@@ -339,6 +365,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '6-8 meses',
     texture: 'Sopa',
+    cookingTime: '30 min',
+    cookingInfo: 'Fogo médio, panela de pressão ou comum.',
   },
   {
     id: '19',
@@ -354,6 +382,8 @@ export const recipes: Recipe[] = [
     mealType: 'Almoço',
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
+    cookingTime: '15 min',
+    cookingInfo: 'Fogo médio, panela com água.',
   },
 
   // Jantar
@@ -372,6 +402,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '6-8 meses',
     texture: 'Purê',
+    cookingTime: '25 min',
+    cookingInfo: 'Forno ou panela a vapor.',
   },
   {
     id: '20',
@@ -387,6 +419,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '9-11 meses',
     texture: 'Sopa',
+    cookingTime: '30 min',
+    cookingInfo: 'Fogo médio, panela média.',
   },
   {
     id: '21',
@@ -402,6 +436,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '6-8 meses',
     texture: 'Creme',
+    cookingTime: '15 min',
+    cookingInfo: 'Fogo baixo, panela pequena.',
   },
   {
     id: '22',
@@ -417,6 +453,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '12+ meses',
     texture: 'Creme',
+    cookingTime: '20 min',
+    cookingInfo: 'Fogo baixo/médio, duas panelas pequenas.',
   },
   {
     id: '23',
@@ -432,6 +470,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
+    cookingTime: '20 min',
+    cookingInfo: 'Forno a 180°C, forminhas de muffin.',
   },
   {
     id: '24',
@@ -447,6 +487,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '6-8 meses',
     texture: 'Sopa',
+    cookingTime: '20 min',
+    cookingInfo: 'Fogo médio, panela a vapor.',
   },
   {
     id: '25',
@@ -462,6 +504,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
+    cookingTime: '25 min',
+    cookingInfo: 'Forno a 180°C ou panela a vapor.',
   },
   {
     id: '26',
@@ -477,6 +521,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '9-11 meses',
     texture: 'Amassado',
+    cookingTime: '20 min',
+    cookingInfo: 'Fogo médio, duas panelas pequenas.',
   },
   {
     id: '27',
@@ -492,6 +538,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '9-11 meses',
     texture: 'Creme',
+    cookingTime: '25 min',
+    cookingInfo: 'Fogo baixo, panela média.',
   },
   {
     id: '28',
@@ -507,6 +555,8 @@ export const recipes: Recipe[] = [
     mealType: 'Jantar',
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
+    cookingTime: '20 min',
+    cookingInfo: 'Forno a 180°C, assadeira.',
   },
 
   // Sobremesas
@@ -525,6 +575,8 @@ export const recipes: Recipe[] = [
     mealType: 'Sobremesa',
     ageGroup: '6-8 meses',
     texture: 'Amassado',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo baixo, panela pequena.',
   },
   {
     id: '10',
@@ -541,6 +593,8 @@ export const recipes: Recipe[] = [
     mealType: 'Sobremesa',
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
+    cookingTime: '2 min',
+    cookingInfo: 'Sem cozimento.',
   },
   {
     id: '29',
@@ -557,6 +611,8 @@ export const recipes: Recipe[] = [
     mealType: 'Sobremesa',
     ageGroup: '6-8 meses',
     texture: 'Purê',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo médio, panela a vapor ou panela pequena.',
   },
   {
     id: '30',
@@ -572,6 +628,8 @@ export const recipes: Recipe[] = [
     mealType: 'Sobremesa',
     ageGroup: '9-11 meses',
     texture: 'Amassado',
+    cookingTime: '15 min',
+    cookingInfo: 'Forno a 180°C.',
   },
   {
     id: '31',
@@ -587,6 +645,8 @@ export const recipes: Recipe[] = [
     mealType: 'Sobremesa',
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
+    cookingTime: '4 horas (congelamento)',
+    cookingInfo: 'Liquidificador e congelador.',
   },
   {
     id: '32',
@@ -601,6 +661,8 @@ export const recipes: Recipe[] = [
     mealType: 'Sobremesa',
     ageGroup: '12+ meses',
     texture: 'Creme',
+    cookingTime: '3 min',
+    cookingInfo: 'Liquidificador.',
   },
   {
     id: '33',
@@ -616,6 +678,8 @@ export const recipes: Recipe[] = [
     mealType: 'Sobremesa',
     ageGroup: '6-8 meses',
     texture: 'Amassado',
+    cookingTime: '15 min',
+    cookingInfo: 'Fogo baixo, panela pequena.',
   },
   {
     id: '34',
@@ -630,7 +694,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Sobremesa',
     ageGroup: '9-11 meses',
-    texture: 'Pedaços macios'
+    texture: 'Pedaços macios',
+    cookingTime: '25 min',
+    cookingInfo: 'Forno a 160°C, assadeira.'
   },
   {
       id: '35',
@@ -645,7 +711,9 @@ export const recipes: Recipe[] = [
       ],
       mealType: 'Sobremesa',
       ageGroup: '12+ meses',
-      texture: 'Pedaços macios'
+      texture: 'Pedaços macios',
+      cookingTime: '5 min',
+      cookingInfo: 'Sem cozimento.'
   },
   {
       id: '36',
@@ -660,7 +728,9 @@ export const recipes: Recipe[] = [
       ],
       mealType: 'Sobremesa',
       ageGroup: '12+ meses',
-      texture: 'Creme'
+      texture: 'Creme',
+      cookingTime: '5 min (+10 min de molho)',
+      cookingInfo: 'Processador ou liquidificador.'
   },
   {
     id: '37',
@@ -675,7 +745,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Almoço',
     ageGroup: '6-8 meses',
-    texture: 'Purê'
+    texture: 'Purê',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo médio, panela a vapor.',
   },
   {
     id: '38',
@@ -690,7 +762,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Almoço',
     ageGroup: '9-11 meses',
-    texture: 'Pedaços macios'
+    texture: 'Pedaços macios',
+    cookingTime: '2 min',
+    cookingInfo: 'Sem cozimento.',
   },
   {
     id: '39',
@@ -705,7 +779,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Jantar',
     ageGroup: '12+ meses',
-    texture: 'Pedaços macios'
+    texture: 'Pedaços macios',
+    cookingTime: '15 min',
+    cookingInfo: 'Forno a 180°C e frigideira.',
   },
   {
     id: '40',
@@ -720,7 +796,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Sobremesa',
     ageGroup: '12+ meses',
-    texture: 'Creme'
+    texture: 'Creme',
+    cookingTime: '5 min',
+    cookingInfo: 'Processador de alimentos.',
   },
   {
     id: '41',
@@ -735,7 +813,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Café da Manhã',
     ageGroup: '9-11 meses',
-    texture: 'Creme'
+    texture: 'Creme',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo baixo, panela pequena.',
   },
   {
     id: '42',
@@ -750,7 +830,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Jantar',
     ageGroup: '6-8 meses',
-    texture: 'Sopa'
+    texture: 'Sopa',
+    cookingTime: '5 min (com legumes já cozidos)',
+    cookingInfo: 'Liquidificador.',
   },
   {
     id: '43',
@@ -765,7 +847,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Almoço',
     ageGroup: '12+ meses',
-    texture: 'Pedaços macios'
+    texture: 'Pedaços macios',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo médio, frigideira antiaderente.',
   },
   {
     id: '44',
@@ -780,7 +864,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Café da Manhã',
     ageGroup: '9-11 meses',
-    texture: 'Creme'
+    texture: 'Creme',
+    cookingTime: '2 min',
+    cookingInfo: 'Sem cozimento.',
   },
   {
     id: '45',
@@ -795,7 +881,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Almoço',
     ageGroup: '12+ meses',
-    texture: 'Amassado'
+    texture: 'Amassado',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo baixo, panela pequena.',
   },
   {
     id: '46',
@@ -810,7 +898,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Jantar',
     ageGroup: '9-11 meses',
-    texture: 'Creme'
+    texture: 'Creme',
+    cookingTime: '15 min',
+    cookingInfo: 'Fogo baixo, panela média.',
   },
   {
     id: '47',
@@ -825,7 +915,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Almoço',
     ageGroup: '9-11 meses',
-    texture: 'Pedaços macios'
+    texture: 'Pedaços macios',
+    cookingTime: '25 min',
+    cookingInfo: 'Forno a 180°C, assadeira.',
   },
   {
     id: '48',
@@ -840,7 +932,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Café da Manhã',
     ageGroup: '12+ meses',
-    texture: 'Creme'
+    texture: 'Creme',
+    cookingTime: '15 min',
+    cookingInfo: 'Fogo baixo, panela pequena.',
   },
   {
     id: '49',
@@ -855,7 +949,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Café da Manhã',
     ageGroup: '12+ meses',
-    texture: 'Amassado'
+    texture: 'Amassado',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo médio, cuscuzeira ou panela a vapor.',
   },
   {
     id: '50',
@@ -870,7 +966,9 @@ export const recipes: Recipe[] = [
     ],
     mealType: 'Sobremesa',
     ageGroup: '9-11 meses',
-    texture: 'Amassado'
+    texture: 'Amassado',
+    cookingTime: '10 min',
+    cookingInfo: 'Fogo baixo, panela pequena.',
   }
 ];
 
