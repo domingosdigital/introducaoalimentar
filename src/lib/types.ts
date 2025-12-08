@@ -51,3 +51,30 @@ export interface DailyMealPlan {
     'Jantar': MealSuggestion;
   };
 }
+
+export interface FoodChecklistItem {
+  id: string;
+  name: string;
+  category: 'Fruta' | 'Legume' | 'Proteína' | 'Grão' | 'Outro';
+}
+
+export interface PlanDay {
+  day: number;
+  fruit: string;
+  vegetable: string;
+  preparation: string;
+}
+
+export interface Routine {
+  age: string;
+  meals: string;
+  schedule: string;
+  texture: string;
+  example: string;
+}
+
+export interface SafetyTopic {
+  id: string;
+  title: string;
+  content: string | { title: string; items: string[] }[];
+}

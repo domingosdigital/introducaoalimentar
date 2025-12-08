@@ -1,4 +1,4 @@
-import type { DailyMealPlan, GuideTopic, Recipe, PhaseTopic } from './types';
+import type { DailyMealPlan, GuideTopic, Recipe, PhaseTopic, FoodChecklistItem, PlanDay, Routine, SafetyTopic } from './types';
 import {CheckCircle2} from "lucide-react";
 import React from 'react';
 
@@ -488,7 +488,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Creme',
     cookingTime: '5-7 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '11',
@@ -509,7 +509,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '10 min',
-    cookingInfo: 'Frigideira antiaderente',
+    cookingInfo: 'Frigideira',
   },
   {
     id: '12',
@@ -528,7 +528,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '5 min',
-    cookingInfo: 'Frigideira antiaderente',
+    cookingInfo: 'Frigideira',
   },
   {
     id: '13',
@@ -565,7 +565,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '3 min',
-    cookingInfo: 'Torradeira ou frigideira',
+    cookingInfo: 'Torradeira',
   },
   {
     id: '41',
@@ -584,7 +584,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Creme',
     cookingTime: '15 min',
-    cookingInfo: 'Liquidificador e panela',
+    cookingInfo: 'Liquidificador',
   },
   {
     id: '44',
@@ -602,7 +602,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Creme',
     cookingTime: '3 min',
-    cookingInfo: 'Sem cozimento',
+    cookingInfo: 'Tigela',
   },
   {
     id: '48',
@@ -621,7 +621,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Creme',
     cookingTime: '15 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '49',
@@ -640,7 +640,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Amassado',
     cookingTime: '15 min',
-    cookingInfo: 'Cuscuzeira ou micro-ondas',
+    cookingInfo: 'Cuscuzeira',
   },
   {
     id: '51',
@@ -658,7 +658,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Creme',
     cookingTime: '10 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '52',
@@ -678,7 +678,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '7 min',
-    cookingInfo: 'Frigideira antiaderente',
+    cookingInfo: 'Frigideira',
   },
   {
     id: '53',
@@ -698,7 +698,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '25 min',
-    cookingInfo: 'Forminhas de muffin',
+    cookingInfo: 'Forminhas de Muffin',
   },
   {
     id: '54',
@@ -716,7 +716,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Amassado',
     cookingTime: '5 min',
-    cookingInfo: 'Sem cozimento',
+    cookingInfo: 'Tigela',
   },
   {
     id: '55',
@@ -735,7 +735,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '10 min',
-    cookingInfo: 'Frigideira pequena',
+    cookingInfo: 'Frigideira',
   },
     {
     id: '56',
@@ -752,7 +752,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Creme',
     cookingTime: '8 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '57',
@@ -770,7 +770,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '10 min',
-    cookingInfo: 'Panela com água',
+    cookingInfo: 'Panela',
   },
   {
     id: '58',
@@ -805,7 +805,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '20 min',
-    cookingInfo: 'Panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '60',
@@ -823,7 +823,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '20 min',
-    cookingInfo: 'Forminhas de muffin',
+    cookingInfo: 'Forminhas de Muffin',
   },
   {
     id: '61',
@@ -860,7 +860,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Creme',
     cookingTime: '7 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '63',
@@ -879,7 +879,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '15 min',
-    cookingInfo: 'Máquina de waffle',
+    cookingInfo: 'Máquina de Waffle',
   },
   {
     id: '64',
@@ -914,7 +914,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '3 min',
-    cookingInfo: 'Sem cozimento',
+    cookingInfo: 'Tigela',
   },
   {
     id: '66',
@@ -933,7 +933,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Creme',
     cookingTime: '25 min',
-    cookingInfo: 'Panela a vapor e liquidificador',
+    cookingInfo: 'Vaporizador',
   },
 
   // Almoço (28 receitas)
@@ -954,7 +954,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '15 min',
-    cookingInfo: 'Panela com água ou vaporizador',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '3',
@@ -974,7 +974,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '20 min',
-    cookingInfo: 'Duas panelas pequenas',
+    cookingInfo: 'Panela',
   },
   {
     id: '7',
@@ -993,7 +993,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Sopa',
     cookingTime: '5 min (com feijão já cozido)',
-    cookingInfo: 'Liquidificador e peneira',
+    cookingInfo: 'Liquidificador',
   },
   {
     id: '8',
@@ -1013,7 +1013,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Amassado',
     cookingTime: '12 min',
-    cookingInfo: 'Panela pequena com água',
+    cookingInfo: 'Panela',
   },
   {
     id: '9',
@@ -1032,7 +1032,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '20 min',
-    cookingInfo: 'Panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '15',
@@ -1051,7 +1051,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '25 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '16',
@@ -1071,7 +1071,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '15 min',
-    cookingInfo: 'Panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '17',
@@ -1089,7 +1089,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '40 min',
-    cookingInfo: 'Panela de pressão',
+    cookingInfo: 'Panela de Pressão',
   },
   {
     id: '18',
@@ -1108,7 +1108,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Sopa',
     cookingTime: '30 min',
-    cookingInfo: 'Panela de pressão ou comum',
+    cookingInfo: 'Panela',
   },
   {
     id: '37',
@@ -1126,7 +1126,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '10 min',
-    cookingInfo: 'Panela a vapor ou comum',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '38',
@@ -1144,7 +1144,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '3 min',
-    cookingInfo: 'Sem cozimento',
+    cookingInfo: 'Faca',
   },
   {
     id: '43',
@@ -1163,7 +1163,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '10 min',
-    cookingInfo: 'Frigideira ou grill',
+    cookingInfo: 'Frigideira',
   },
   {
     id: '45',
@@ -1181,7 +1181,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Amassado',
     cookingTime: '10 min (com ingredientes pré-preparados)',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '47',
@@ -1219,7 +1219,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '30 min',
-    cookingInfo: 'Panela grande com água',
+    cookingInfo: 'Panela',
   },
   {
     id: '68',
@@ -1237,7 +1237,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '20 min',
-    cookingInfo: 'Panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '69',
@@ -1255,7 +1255,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '30 min',
-    cookingInfo: 'Refratário pequeno',
+    cookingInfo: 'Refratário',
   },
   {
     id: '70',
@@ -1274,7 +1274,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '30 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '71',
@@ -1292,7 +1292,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '35 min',
-    cookingInfo: 'Panela de pressão',
+    cookingInfo: 'Panela de Pressão',
   },
   {
     id: '72',
@@ -1401,7 +1401,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Purê',
     cookingTime: '20 min',
-    cookingInfo: 'Panela a vapor e forno',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '78',
@@ -1419,7 +1419,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '20 min',
-    cookingInfo: 'Panela média',
+    cookingInfo: 'Panela',
   },
   {
     id: '79',
@@ -1438,7 +1438,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Creme',
     cookingTime: '30 min',
-    cookingInfo: 'Potinho refratário',
+    cookingInfo: 'Refratário',
   },
   {
     id: '80',
@@ -1477,7 +1477,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '25 min',
-    cookingInfo: 'Forno ou panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '19',
@@ -1495,7 +1495,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '15 min',
-    cookingInfo: 'Panela com água e frigideira',
+    cookingInfo: 'Panela',
   },
   {
     id: '20',
@@ -1513,7 +1513,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Sopa',
     cookingTime: '30 min',
-    cookingInfo: 'Panela média',
+    cookingInfo: 'Panela',
   },
   {
     id: '21',
@@ -1532,7 +1532,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Creme',
     cookingTime: '15 min',
-    cookingInfo: 'Panela pequena e liquidificador',
+    cookingInfo: 'Liquidificador',
   },
   {
     id: '22',
@@ -1549,7 +1549,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Creme',
     cookingTime: '20 min',
-    cookingInfo: 'Duas panelas pequenas',
+    cookingInfo: 'Panela',
   },
   {
     id: '23',
@@ -1569,7 +1569,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '20 min',
-    cookingInfo: 'Forminhas de muffin',
+    cookingInfo: 'Forminhas de Muffin',
   },
   {
     id: '24',
@@ -1587,7 +1587,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Sopa',
     cookingTime: '20 min',
-    cookingInfo: 'Panela a vapor ou comum',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '25',
@@ -1606,7 +1606,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '25 min',
-    cookingInfo: 'Panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '26',
@@ -1624,7 +1624,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '20 min',
-    cookingInfo: 'Panela a vapor e frigideira',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '27',
@@ -1643,7 +1643,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Creme',
     cookingTime: '25 min',
-    cookingInfo: 'Panela média',
+    cookingInfo: 'Panela',
   },
   {
     id: '28',
@@ -1701,7 +1701,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Sopa',
     cookingTime: '5 min (com legumes já cozidos)',
-    cookingInfo: 'Liquidificador e panela',
+    cookingInfo: 'Liquidificador',
   },
   {
     id: '46',
@@ -1719,7 +1719,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Creme',
     cookingTime: '15 min',
-    cookingInfo: 'Panela média',
+    cookingInfo: 'Panela',
   },
   {
     id: '81',
@@ -1737,7 +1737,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Sopa',
     cookingTime: '25 min',
-    cookingInfo: 'Panela e liquidificador',
+    cookingInfo: 'Liquidificador',
   },
   {
     id: '82',
@@ -1754,7 +1754,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Sopa',
     cookingTime: '20 min',
-    cookingInfo: 'Panela média',
+    cookingInfo: 'Panela',
   },
   {
     id: '83',
@@ -1772,7 +1772,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '20 min',
-    cookingInfo: 'Panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '84',
@@ -1807,7 +1807,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '15 min',
-    cookingInfo: 'Panela com água quente',
+    cookingInfo: 'Panela',
   },
   {
     id: '86',
@@ -1825,7 +1825,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Sopa',
     cookingTime: '25 min',
-    cookingInfo: 'Panela e liquidificador',
+    cookingInfo: 'Liquidificador',
   },
   {
     id: '87',
@@ -1843,7 +1843,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '25 min',
-    cookingInfo: 'Frigideira ou refratário',
+    cookingInfo: 'Refratário',
   },
   {
     id: '88',
@@ -1861,7 +1861,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '20 min',
-    cookingInfo: 'Panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '89',
@@ -1879,7 +1879,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Sopa',
     cookingTime: '40 min',
-    cookingInfo: 'Panela de pressão e liquidificador',
+    cookingInfo: 'Panela de Pressão',
   },
   {
     id: '90',
@@ -1897,7 +1897,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '35 min',
-    cookingInfo: 'Liquidificador e refratário',
+    cookingInfo: 'Liquidificador',
   },
   {
     id: '91',
@@ -1915,7 +1915,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Sopa',
     cookingTime: '15 min',
-    cookingInfo: 'Panela média',
+    cookingInfo: 'Panela',
   },
   
   // Sobremesas (25 receitas)
@@ -1937,7 +1937,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Amassado',
     cookingTime: '10 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '10',
@@ -1955,7 +1955,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '2 min',
-    cookingInfo: 'Sem cozimento',
+    cookingInfo: 'Faca',
   },
   {
     id: '29',
@@ -1973,7 +1973,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '10 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '30',
@@ -2011,7 +2011,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '4 horas (congelamento)',
-    cookingInfo: 'Liquidificador e congelador',
+    cookingInfo: 'Congelador',
   },
   {
     id: '32',
@@ -2029,7 +2029,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Creme',
     cookingTime: '5 min',
-    cookingInfo: 'Liquidificador ou mixer',
+    cookingInfo: 'Liquidificador',
   },
   {
     id: '33',
@@ -2048,7 +2048,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Amassado',
     cookingTime: '15 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '34',
@@ -2085,7 +2085,7 @@ export const recipes: Recipe[] = [
       ageGroup: '12+ meses',
       texture: 'Pedaços macios',
       cookingTime: '5 min',
-      cookingInfo: 'Sem cozimento',
+      cookingInfo: 'Tigela',
   },
   {
       id: '36',
@@ -2103,7 +2103,7 @@ export const recipes: Recipe[] = [
       ageGroup: '12+ meses',
       texture: 'Creme',
       cookingTime: '5 min (+ tempo de geladeira)',
-      cookingInfo: 'Processador ou liquidificador',
+      cookingInfo: 'Processador de alimentos',
   },
   {
     id: '40',
@@ -2141,7 +2141,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '15 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '92',
@@ -2158,7 +2158,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Amassado',
     cookingTime: '15 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '93',
@@ -2175,7 +2175,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '3 min',
-    cookingInfo: 'Sem cozimento',
+    cookingInfo: 'Faca',
   },
   {
     id: '94',
@@ -2210,7 +2210,7 @@ export const recipes: Recipe[] = [
     ageGroup: '12+ meses',
     texture: 'Pedaços macios',
     cookingTime: '10 min (+ tempo de geladeira)',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   },
   {
     id: '96',
@@ -2245,7 +2245,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Creme',
     cookingTime: '5 min',
-    cookingInfo: 'Processador ou mixer',
+    cookingInfo: 'Processador',
   },
   {
     id: '98',
@@ -2263,7 +2263,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Purê',
     cookingTime: '5 min',
-    cookingInfo: 'Sem cozimento ou panela a vapor',
+    cookingInfo: 'Vaporizador',
   },
   {
     id: '99',
@@ -2315,7 +2315,7 @@ export const recipes: Recipe[] = [
     ageGroup: '6-8 meses',
     texture: 'Amassado',
     cookingTime: '2 min',
-    cookingInfo: 'Sem cozimento',
+    cookingInfo: 'Garfo',
   },
   {
     id: '102',
@@ -2332,7 +2332,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Pedaços macios',
     cookingTime: '3 min',
-    cookingInfo: 'Sem cozimento',
+    cookingInfo: 'Faca',
   },
   {
     id: '103',
@@ -2349,7 +2349,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Creme',
     cookingTime: '4 horas (congelamento)',
-    cookingInfo: 'Liquidificador e congelador',
+    cookingInfo: 'Congelador',
   },
   {
     id: '104',
@@ -2367,7 +2367,7 @@ export const recipes: Recipe[] = [
     ageGroup: '9-11 meses',
     texture: 'Amassado',
     cookingTime: '12 min',
-    cookingInfo: 'Panela pequena',
+    cookingInfo: 'Panela',
   }
 ];
 
@@ -2538,4 +2538,135 @@ export const phaseTopics: PhaseTopic[] = [
       ]
     }
   },
+];
+
+
+export const foodChecklist: FoodChecklistItem[] = [
+  // Frutas
+  { id: 'f1', name: 'Maçã', category: 'Fruta' },
+  { id: 'f2', name: 'Banana', category: 'Fruta' },
+  { id: 'f3', name: 'Pera', category: 'Fruta' },
+  { id: 'f4', name: 'Mamão', category: 'Fruta' },
+  { id: 'f5', name: 'Abacate', category: 'Fruta' },
+  { id: 'f6', name: 'Manga', category: 'Fruta' },
+  { id: 'f7', name: 'Laranja', category: 'Fruta' },
+  { id: 'f8', name: 'Uva (cortada)', category: 'Fruta' },
+  { id: 'f9', name: 'Morango', category: 'Fruta' },
+  { id: 'f10', name: 'Melancia', category: 'Fruta' },
+  // Legumes
+  { id: 'l1', name: 'Batata Doce', category: 'Legume' },
+  { id: 'l2', name: 'Abóbora', category: 'Legume' },
+  { id: 'l3', name: 'Cenoura', category: 'Legume' },
+  { id: 'l4', name: 'Brócolis', category: 'Legume' },
+  { id: 'l5', name: 'Couve-flor', category: 'Legume' },
+  { id: 'l6', name: 'Abobrinha', category: 'Legume' },
+  { id: 'l7', name: 'Mandioquinha', category: 'Legume' },
+  { id: 'l8', name: 'Inhame', category: 'Legume' },
+  { id: 'l9', name: 'Beterraba', category: 'Legume' },
+  { id: 'l10', name: 'Tomate (sem pele/semente)', category: 'Legume' },
+  // Proteínas
+  { id: 'p1', name: 'Frango', category: 'Proteína' },
+  { id: 'p2', name: 'Carne Bovina', category: 'Proteína' },
+  { id: 'p3', name: 'Peixe Branco', category: 'Proteína' },
+  { id: 'p4', name: 'Ovo', category: 'Proteína' },
+  { id: 'p5', name: 'Feijão', category: 'Proteína' },
+  { id: 'p6', name: 'Lentilha', category: 'Proteína' },
+  { id: 'p7', name: 'Grão de Bico', category: 'Proteína' },
+  // Grãos e Cereais
+  { id: 'g1', name: 'Arroz', category: 'Grão' },
+  { id: 'g2', name: 'Aveia', category: 'Grão' },
+  { id: 'g3', name: 'Milho', category: 'Grão' },
+  { id: 'g4', name: 'Quinoa', category: 'Grão' },
+  { id: 'g5', name: 'Trigo (pão/macarrão)', category: 'Grão' },
+  // Outros (Alergênicos)
+  { id: 'o1', name: 'Leite e Derivados', category: 'Outro' },
+  { id: 'o2', name: 'Amendoim/Castanhas', category: 'Outro' },
+];
+
+export const firstWeeksPlan: PlanDay[] = [
+  { day: 1, fruit: "Mamão", vegetable: "Cenoura", preparation: "Ambos cozidos e amassados separadamente." },
+  { day: 2, fruit: "Banana", vegetable: "Batata Doce", preparation: "Banana amassada, batata cozida e amassada." },
+  { day: 3, fruit: "Maçã", vegetable: "Abóbora", preparation: "Maçã raspada ou cozida, abóbora cozida e amassada." },
+  { day: 4, fruit: "Pera", vegetable: "Mandioquinha", preparation: "Pera raspada ou cozida, mandioquinha cozida e amassada." },
+  { day: 5, fruit: "Abacate", vegetable: "Brócolis", preparation: "Abacate amassado, brócolis (só as flores) cozido e amassado." },
+  { day: 6, fruit: "Mamão", vegetable: "Cenoura", preparation: "Repetir para reforçar o sabor." },
+  { day: 7, fruit: "Banana", vegetable: "Batata Doce", preparation: "Repetir para reforçar o sabor." },
+  { day: 8, fruit: "Manga", vegetable: "Abobrinha", preparation: "Manga raspada, abobrinha cozida (sem sementes) e amassada." },
+  { day: 9, fruit: "Pera", vegetable: "Inhame", preparation: "Pera cozida, inhame cozido e amassado." },
+  { day: 10, fruit: "Maçã", vegetable: "Couve-flor", preparation: "Maçã cozida, couve-flor cozida e amassada." },
+  { day: 11, fruit: "Abacate", vegetable: "Beterraba", preparation: "Abacate amassado, beterraba cozida e amassada." },
+  { day: 12, fruit: "Banana", vegetable: "Brócolis", preparation: "Banana amassada, brócolis cozido e amassado." },
+  { day: 13, fruit: "Mamão", vegetable: "Mandioquinha", preparation: "Mamão amassado, mandioquinha cozida e amassada." },
+  { day: 14, fruit: "Manga", vegetable: "Abóbora", preparation: "Manga raspada, abóbora cozida e amassada." }
+];
+
+export const ageRoutines: Routine[] = [
+  {
+    age: "6 Meses",
+    meals: "1 a 2 refeições (almoço e/ou jantar) + 1 fruta",
+    schedule: "Almoço por volta das 11h-12h. Jantar por volta das 17h-18h.",
+    texture: "Purês e papas bem amassadas, mas não totalmente lisas.",
+    example: "Almoço: Purê de batata doce + caldo de feijão + frango desfiado. Fruta: Banana amassada."
+  },
+  {
+    age: "7-8 Meses",
+    meals: "2 refeições principais (almoço e jantar) + 2 lanches (frutas)",
+    schedule: "Manhã: fruta. Meio-dia: almoço. Tarde: fruta. Início da noite: jantar.",
+    texture: "Alimentos amassados com garfo, com alguns pedacinhos macios para estimular a mastigação.",
+    example: "Almoço: Arroz bem cozido e amassado + lentilha amassada + carne moída. Tarde: Pera em pedaços macios."
+  },
+  {
+    age: "9-11 Meses",
+    meals: "2 refeições principais + 2 a 3 lanches",
+    schedule: "Rotina similar aos 8 meses, mas o bebê pode começar a comer mais próximo dos horários da família.",
+    texture: "Comida em pedaços pequenos e macios. O bebê já pratica o movimento de pinça.",
+    example: "Jantar: Pedaços de peixe grelhado e desfiado + palitos de cenoura cozida + arroz."
+  },
+  {
+    age: "12+ Meses",
+    meals: "3 refeições principais (café da manhã, almoço, jantar) + 2 lanches",
+    schedule: "A criança já pode seguir a rotina de refeições da família.",
+    texture: "A mesma comida da família, com os alimentos picados em pedaços seguros. Evitar sal e açúcar.",
+    example: "Almoço: Arroz, feijão, frango em cubos, salada de tomate picado e brócolis."
+  }
+];
+
+export const safetyTopics: SafetyTopic[] = [
+  {
+    id: "1",
+    title: "Gag vs. Engasgo: Qual a diferença?",
+    content: "O GAG é um reflexo natural e protetor. O bebê tosse, faz ânsia e pode ficar vermelho, mas o ar está passando. Ele está aprendendo a lidar com o alimento. O ENGASGO é silencioso. O bebê não consegue tossir, chorar ou respirar. É uma emergência e requer ação imediata (Manobra de Heimlich)."
+  },
+  {
+    id: "2",
+    title: "Cortes Seguros (Método BLW)",
+    content: [
+      {
+        title: "Alimentos Redondos e Pequenos:",
+        items: ["Uvas, tomate cereja, ovo de codorna: SEMPRE corte em 4 partes no sentido do comprimento.", "Nunca ofereça inteiros."]
+      },
+      {
+        title: "Alimentos Cilíndricos:",
+        items: ["Salsicha, cenoura crua: EVITE. Se oferecer cenoura, cozinhe bem e corte em palitos.", "Salsicha não é recomendada."]
+      },
+      {
+        title: "Alimentos Duros:",
+        items: ["Maçã crua, castanhas, amendoim: EVITE oferecer inteiros. Ofereça a maçã cozida, em purê ou ralada. Castanhas e amendoim, em forma de pasta ou farinha."]
+      },
+      {
+        title: "Formato Seguro (6-8 meses):",
+        items: ["Ofereça alimentos em formato de palito, da grossura de um dedo de adulto, para o bebê conseguir segurar com a mão."]
+      }
+    ]
+  },
+  {
+    id: "3",
+    title: "Texturas por Idade",
+    content: "Comece com purês e amassados (6 meses). Evolua para pedaços muito macios que se desmancham na boca (7-8 meses). Prossiga para pedaços um pouco maiores e mais firmes (9-11 meses) para treinar a mastigação. Com 1 ano, o bebê já pode comer a comida da família, bem picada."
+  },
+  {
+    id: "4",
+    title: "Preparando Alimentos de Forma Segura",
+    content: "Cozinhe bem legumes duros como cenoura e batata, até que você consiga amassá-los facilmente com um garfo. Retire peles, sementes grandes e caroços. Desfie bem as carnes e verifique CUIDADOSAMENTE se não há espinhas em peixes. Evite mel até 1 ano de idade pelo risco de botulismo."
+  }
 ];

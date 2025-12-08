@@ -1,6 +1,6 @@
 'use client';
 
-import { Baby, Heart, Info, Lightbulb, NotebookText, Sparkles, Star } from 'lucide-react';
+import { Baby, Heart, Info, Lightbulb, NotebookText, Sparkles, Star, CheckSquare, CalendarDays, Clock, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { quickTips } from '@/lib/data';
@@ -33,6 +33,33 @@ const mainCards = [
     color: 'text-violet-600',
     bgColor: 'bg-violet-100/80',
     highlight: false,
+  },
+];
+
+const newFeatureCards = [
+  {
+    href: '/checklist',
+    label: 'Checklist de Alimentos',
+    description: 'Acompanhe os alimentos já provados.',
+    icon: CheckSquare,
+  },
+  {
+    href: '/plan',
+    label: 'Plano de 14 Dias',
+    description: 'Um guia para as primeiras semanas.',
+    icon: CalendarDays,
+  },
+  {
+    href: '/routine',
+    label: 'Rotina por Idade',
+    description: 'Exemplos de rotinas alimentares.',
+    icon: Clock,
+  },
+  {
+    href: '/safety',
+    label: 'Guia de Segurança',
+    description: 'Cortes e dicas para evitar engasgos.',
+    icon: ShieldCheck,
   },
 ];
 
@@ -112,6 +139,21 @@ export default function WelcomePage() {
             </Card>
         </Link>
         
+        {/* Novas Funcionalidades */}
+        {newFeatureCards.map(card => (
+          <Link href={card.href} key={card.href} className="group block">
+              <Card className="shadow-sm hover:shadow-md transition-shadow">
+                  <CardHeader className="flex flex-row items-center gap-4">
+                       <card.icon className="h-6 w-6 text-foreground/70" />
+                       <div>
+                          <CardTitle className="text-lg font-semibold">{card.label}</CardTitle>
+                          <CardDescription className="text-sm">{card.description}</CardDescription>
+                       </div>
+                  </CardHeader>
+              </Card>
+          </Link>
+        ))}
+
         {/* Favoritos */}
         <Link href="/favorites" className="group block">
             <Card className="shadow-sm hover:shadow-md transition-shadow">
