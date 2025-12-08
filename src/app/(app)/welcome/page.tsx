@@ -1,6 +1,6 @@
 'use client';
 
-import { Baby, Heart, Info, Lightbulb, NotebookText, Sparkles, Star, CheckSquare, CalendarDays, Clock, ShieldCheck } from 'lucide-react';
+import { Baby, Heart, NotebookText, Star, CheckSquare, CalendarDays, Clock, ShieldCheck, CalendarHeart, BookHeart, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { quickTips } from '@/lib/data';
@@ -12,31 +12,31 @@ const mainCards = [
     label: 'Receitas',
     description: 'Explore pratos por idade e refeição.',
     icon: NotebookText,
-    color: 'text-amber-600',
-    bgColor: 'bg-amber-100/80',
     highlight: true,
   },
   {
     href: '/today',
     label: 'Sugestão do Dia',
     description: 'Um plano de refeições para hoje.',
-    icon: Sparkles,
-    color: 'text-sky-600',
-    bgColor: 'bg-sky-100/80',
+    icon: CalendarHeart,
     highlight: false,
   },
   {
     href: '/guide',
     label: 'Guia da Mamãe',
     description: 'Respostas para suas dúvidas.',
-    icon: Info,
-    color: 'text-violet-600',
-    bgColor: 'bg-violet-100/80',
+    icon: BookHeart,
     highlight: false,
   },
 ];
 
-const newFeatureCards = [
+const featureCards = [
+  {
+    href: '/phases',
+    label: 'Fases e comportamentos',
+    description: 'Entenda cada etapa do desenvolvimento.',
+    icon: Baby,
+  },
   {
     href: '/checklist',
     label: 'Checklist de Alimentos',
@@ -60,6 +60,12 @@ const newFeatureCards = [
     label: 'Guia de Segurança',
     description: 'Cortes e dicas para evitar engasgos.',
     icon: ShieldCheck,
+  },
+   {
+    href: '/favorites',
+    label: 'Minhas Receitas Favoritas',
+    description: 'Acesse suas receitas salvas.',
+    icon: Star,
   },
 ];
 
@@ -92,13 +98,12 @@ export default function WelcomePage() {
 
       <div className="space-y-6">
         
-        {/* Card de Destaque */}
         {highlightedCard && (
             <Link href={highlightedCard.href} className="group block">
                 <Card className="shadow-sm hover:shadow-lg transition-shadow">
                     <CardHeader className="flex flex-row items-center gap-4">
-                        <div className={`flex h-12 w-12 items-center justify-center rounded-lg ${highlightedCard.bgColor} transition-colors group-hover:bg-primary/20`}>
-                            <highlightedCard.icon className={`h-6 w-6 ${highlightedCard.color} transition-colors group-hover:text-primary`} />
+                        <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20`}>
+                            <highlightedCard.icon className={`h-6 w-6 text-primary transition-colors group-hover:text-primary`} />
                         </div>
                         <div>
                             <CardTitle className="font-headline text-xl">{highlightedCard.label}</CardTitle>
@@ -109,38 +114,22 @@ export default function WelcomePage() {
             </Link>
         )}
         
-        {/* Outros Cards Principais */}
         <div className="grid grid-cols-2 gap-4">
           {otherCards.map((item) => (
             <Link href={item.href} key={item.href} className="group">
-              <div className="flex aspect-video flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+              <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
                 <div
-                  className={`mb-3 flex h-14 w-14 items-center justify-center rounded-full ${item.bgColor} transition-colors group-hover:bg-primary/20`}
+                  className={`mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20`}
                 >
-                  <item.icon className={`h-7 w-7 ${item.color} transition-colors group-hover:text-primary`} />
+                  <item.icon className={`h-7 w-7 text-primary transition-colors group-hover:text-primary`} />
                 </div>
                 <span className="font-semibold text-foreground text-sm leading-tight">{item.label}</span>
-                 <p className="text-xs text-muted-foreground mt-1 px-2">{item.description}</p>
               </div>
             </Link>
           ))}
         </div>
         
-        {/* Fases e Comportamentos */}
-        <Link href="/phases" className="group block">
-            <Card className="shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader className="flex flex-row items-center gap-4">
-                     <Baby className="h-6 w-6 text-foreground/70" />
-                     <div>
-                        <CardTitle className="text-lg font-semibold">Fases e comportamentos do bebê</CardTitle>
-                        <CardDescription className="text-sm">Entenda cada etapa do desenvolvimento.</CardDescription>
-                     </div>
-                </CardHeader>
-            </Card>
-        </Link>
-        
-        {/* Novas Funcionalidades */}
-        {newFeatureCards.map(card => (
+        {featureCards.map(card => (
           <Link href={card.href} key={card.href} className="group block">
               <Card className="shadow-sm hover:shadow-md transition-shadow">
                   <CardHeader className="flex flex-row items-center gap-4">
@@ -154,20 +143,6 @@ export default function WelcomePage() {
           </Link>
         ))}
 
-        {/* Favoritos */}
-        <Link href="/favorites" className="group block">
-            <Card className="shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader className="flex flex-row items-center gap-4">
-                     <Star className="h-6 w-6 text-foreground/70" />
-                     <div>
-                        <CardTitle className="text-lg font-semibold">Minhas Receitas Favoritas</CardTitle>
-                        <CardDescription className="text-sm">Acesse suas receitas salvas.</CardDescription>
-                     </div>
-                </CardHeader>
-            </Card>
-        </Link>
-        
-        {/* Dica Rápida */}
          <Card className="bg-accent border-accent-foreground/20 shadow-sm">
             <CardHeader className="flex flex-row items-center gap-4">
                 <Lightbulb className="h-6 w-6 text-accent-foreground" />
@@ -175,7 +150,6 @@ export default function WelcomePage() {
             </CardHeader>
         </Card>
         
-        {/* Mensagem Emocional */}
         <div className="text-center py-4">
             <p className="text-muted-foreground flex items-center justify-center gap-2">Respira, você está indo muito bem <Heart className="h-4 w-4 text-primary fill-primary" /></p>
         </div>
