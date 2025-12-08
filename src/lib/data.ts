@@ -1,106 +1,126 @@
-import type { DailySuggestion, FoodHistory, GuideTopic, Recipe } from './types';
+import type { DailyMealPlan, FoodHistory, GuideTopic, Recipe } from './types';
 
-export const dailySuggestions: DailySuggestion[] = [
+export const dailyMealPlans: DailyMealPlan[] = [
   {
-    foodName: 'Abacate',
-    texture: 'amassada',
-    preparation: 'Amasse um quarto de abacate maduro com um garfo até obter uma consistência de purê. Ofereça ao bebê com uma colher pequena. Não adicione açúcar ou sal.',
+    id: '1',
+    meals: {
+      'Café da Manhã': {
+        foodName: 'Mingau de Aveia com Banana',
+        texture: 'creme',
+        preparation: 'Cozinhe 2 colheres de sopa de aveia em flocos finos com água até formar um mingau. Misture 1/2 banana amassada.',
+      },
+      'Lanche da Manhã': {
+        foodName: 'Mamão Papaia',
+        texture: 'amassada',
+        preparation: 'Amasse 1/4 de um mamão papaia maduro com um garfo.',
+      },
+      'Almoço': {
+        foodName: 'Creme de Mandioquinha com Frango Desfiado',
+        texture: 'purê',
+        preparation: 'Cozinhe 1 mandioquinha e 30g de peito de frango. Amasse a mandioquinha e desfie o frango, misturando-os.',
+      },
+      'Lanche da Tarde': {
+        foodName: 'Pera cozida',
+        texture: 'amassada',
+        preparation: 'Cozinhe 1/2 pera no vapor até ficar macia e amasse com um garfo.',
+      },
+      'Jantar': {
+        foodName: 'Sopa de Abóbora com Cenoura',
+        texture: 'lisa',
+        preparation: 'Cozinhe 1 fatia de abóbora com 1/2 cenoura. Bata no liquidificador até obter um creme liso.',
+      },
+    },
   },
   {
-    foodName: 'Banana',
-    texture: 'amassada',
-    preparation: 'Amasse meia banana madura com um garfo. A consistência é perfeita para iniciantes. Pode também oferecer em pedaços grandes e seguros para o bebê segurar (método BLW).',
+    id: '2',
+    meals: {
+      'Café da Manhã': {
+        foodName: 'Purê de Maçã com Canela',
+        texture: 'purê',
+        preparation: 'Cozinhe 1 maçã sem casca no vapor e amasse. Polvilhe uma pitada de canela (opcional).',
+      },
+      'Lanche da Manhã': {
+        foodName: 'Abacate',
+        texture: 'amassada',
+        preparation: 'Amasse 1/4 de abacate maduro com um garfo.',
+      },
+      'Almoço': {
+        foodName: 'Caldo de Feijão com Arroz',
+        texture: 'lisa',
+        preparation: 'Cozinhe feijão sem sal e amasse os grãos. Misture com um pouco de arroz bem cozido.',
+      },
+      'Lanche da Tarde': {
+        foodName: 'Tiras de Manga',
+        texture: 'pedaços',
+        preparation: 'Corte uma fatia de manga madura e firme em tiras grossas para o bebê segurar.',
+      },
+      'Jantar': {
+        foodName: 'Purê de Batata Doce com Carne Moída',
+        texture: 'amassada',
+        preparation: 'Cozinhe 1/2 batata doce e amasse. Refogue 30g de carne moída e misture ao purê.',
+      },
+    },
   },
   {
-    foodName: 'Batata Doce',
-    texture: 'purê',
-    preparation: 'Cozinhe a batata doce no vapor até ficar bem macia. Amasse com um garfo, adicionando um pouco de água do cozimento ou leite materno/fórmula para atingir a consistência desejada.',
+    id: '3',
+    meals: {
+      'Café da Manhã': {
+        foodName: 'Panqueca de Banana (2 ingredientes)',
+        texture: 'pedaços',
+        preparation: 'Amasse 1 banana madura e misture com 1 ovo. Faça pequenas panquecas em frigideira antiaderente.',
+      },
+      'Lanche da Manhã': {
+        foodName: 'Melancia',
+        texture: 'pedaços',
+        preparation: 'Ofereça um pedaço grande e seguro, sem sementes, para o bebê chupar e explorar.',
+      },
+      'Almoço': {
+        foodName: 'Peixe Desfiado com Purê de Inhame',
+        texture: 'amassada',
+        preparation: 'Cozinhe 1 filé pequeno de peixe branco (tilápia) no vapor e desfie, verificando espinhas. Sirva com purê de inhame.',
+      },
+      'Lanche da Tarde': {
+        foodName: 'Iogurte Natural',
+        texture: 'creme',
+        preparation: 'Ofereça 2-3 colheres de iogurte natural integral sem açúcar. Introduzir laticínios conforme orientação pediátrica.',
+      },
+      'Jantar': {
+        foodName: 'Creme de Ervilha com Hortelã',
+        texture: 'creme',
+        preparation: 'Cozinhe ervilhas frescas ou congeladas e bata com algumas folhas de hortelã para um sabor refrescante.',
+      },
+    },
   },
   {
-    foodName: 'Cenoura',
-    texture: 'purê',
-    preparation: 'Cozinhe a cenoura no vapor até ficar macia. Bata no liquidificador ou amasse bem com um garfo. É naturalmente adocicada e costuma ser bem aceita.',
+    id: '4',
+    meals: {
+      'Café da Manhã': {
+        foodName: 'Ovo Cozido Amassado',
+        texture: 'amassada',
+        preparation: 'Cozinhe 1 ovo por 10 min. Amasse bem a gema (e a clara, se já introduzida) com um garfo.',
+      },
+      'Lanche da Manhã': {
+        foodName: 'Gomos de Laranja',
+        texture: 'pedaços',
+        preparation: 'Ofereça um gomo de laranja lima ou outra laranja doce, sem sementes e sem a pele branca, para o bebê chupar.',
+      },
+      'Almoço': {
+        foodName: 'Polenta Mole com Brócolis',
+        texture: 'creme',
+        preparation: 'Prepare uma polenta mole com fubá e água. Sirva com "arvorezinhas" de brócolis cozidas no vapor e bem picadinhas.',
+      },
+      'Lanche da Tarde': {
+        foodName: 'Banana Assada',
+        texture: 'amassada',
+        preparation: 'Asse 1 banana com casca no forno até a casca ficar preta. Retire a polpa e amasse.',
+      },
+      'Jantar': {
+        foodName: 'Sopa de Lentilha com Legumes',
+        texture: 'lisa',
+        preparation: 'Cozinhe lentilha com cenoura e batata. Amasse com um garfo ou bata no liquidificador.',
+      },
+    },
   },
-  {
-    foodName: 'Mamão',
-    texture: 'amassada',
-    preparation: 'Raspe a polpa de um mamão papaia maduro com uma colher ou amasse um pedaço. É uma ótima fonte de vitaminas e ajuda na digestão.',
-  },
-  {
-    foodName: 'Brócolis',
-    texture: 'pedaços',
-    preparation: 'Cozinhe os floretes de brócolis no vapor até ficarem macios, mas ainda firmes o suficiente para o bebê segurar. O "tronquinho" serve como um pegador natural.',
-  },
-  {
-    foodName: 'Maçã',
-    texture: 'purê',
-    preparation: 'Cozinhe uma maçã sem casca no vapor até ficar bem macia. Amasse com um garfo. A maçã cozida é mais fácil de digerir do que a crua para os bebês.',
-  },
-  {
-    foodName: 'Pera',
-    texture: 'amassada',
-    preparation: 'Use uma pera bem madura e macia. Amasse com um garfo até virar um purê. É suculenta e ótima para bebês que estão começando.',
-  },
-  {
-    foodName: 'Manga',
-    texture: 'pedaços',
-    preparation: 'Ofereça um pedaço grande e firme de manga (sem fiapos) para o bebê segurar e chupar. Uma ótima experiência sensorial e de sabor.',
-  },
-  {
-    foodName: 'Inhame',
-    texture: 'purê',
-    preparation: 'Cozinhe o inhame no vapor ou na água até ficar bem macio. Amasse com um garfo. É um tubérculo muito nutritivo e de sabor suave.',
-  },
-  {
-    foodName: 'Abóbora',
-    texture: 'purê',
-    preparation: 'Asse ou cozinhe no vapor um pedaço de abóbora cabotiá. Amasse bem. É docinha, cremosa e rica em vitamina A.',
-  },
-  {
-    foodName: 'Couve-flor',
-    texture: 'pedaços',
-    preparation: 'Cozinhe os floretes de couve-flor no vapor até ficarem macios. Ofereça em "arvorezinhas" que o bebê possa segurar.',
-  },
-  {
-    foodName: 'Feijão',
-    texture: 'amassada',
-    preparation: 'Cozinhe o feijão sem sal e sem temperos. Amasse bem os grãos com um garfo para formar uma pasta. É uma excelente fonte de ferro.',
-  },
-  {
-    foodName: 'Frango',
-    texture: 'amassada',
-    preparation: 'Cozinhe um pedaço de peito de frango na água. Depois de cozido, desfie bem e amasse com um garfo. Misture com purê de batata para umedecer.',
-  },
-  {
-    foodName: 'Peixe',
-    texture: 'amassada',
-    preparation: 'Cozinhe no vapor um filé de peixe branco sem espinhas (como tilápia). Desfaça com um garfo e verifique cuidadosamente se não há espinhas antes de oferecer.',
-  },
-  {
-    foodName: 'Gema de Ovo',
-    texture: 'amassada',
-    preparation: 'Cozinhe um ovo por 10 minutos. Separe a gema e amasse com um garfo. A clara pode ser introduzida um pouco mais tarde.',
-  },
-  {
-    foodName: 'Melancia',
-    texture: 'pedaços',
-    preparation: 'Ofereça um pedaço grande, em formato de meia-lua, com um pouco da casca para o bebê segurar. Retire todas as sementes. É super refrescante!',
-  },
-  {
-    foodName: 'Lentilha',
-    texture: 'purê',
-    preparation: 'Cozinhe a lentilha vermelha (que cozinha mais rápido) até desmanchar. Tempere com um fio de azeite. É rica em proteínas e ferro.',
-  },
-  {
-    foodName: 'Chuchu',
-    texture: 'pedaços',
-    preparation: 'Cozinhe o chuchu no vapor até ficar macio, mas firme. Corte em palitos para o bebê segurar. É um alimento leve e com bastante água.',
-  },
-  {
-    foodName: 'Quiabo',
-    texture: 'pedaços',
-    preparation: 'Grelhe ou asse o quiabo inteiro em forno médio até ficar macio. Isso reduz a baba. Ofereça ao bebê para ele explorar a textura.',
-  }
 ];
 
 export const recipes: Recipe[] = [

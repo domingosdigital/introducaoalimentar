@@ -29,8 +29,19 @@ export interface GuideTopic {
   content: string;
 }
 
-export interface DailySuggestion {
+export interface MealSuggestion {
   foodName: string;
-  texture: 'lisa' | 'amassada' | 'pedaços' | 'purê';
+  texture: 'lisa' | 'amassada' | 'pedaços' | 'purê' | 'líquida' | 'creme';
   preparation: string;
+}
+
+export interface DailyMealPlan {
+  id: string;
+  meals: {
+    'Café da Manhã': MealSuggestion;
+    'Lanche da Manhã': MealSuggestion;
+    'Almoço': MealSuggestion;
+    'Lanche da Tarde': MealSuggestion;
+    'Jantar': MealSuggestion;
+  };
 }
