@@ -1,8 +1,3 @@
-// This file is intentionally left blank. 
-// It's a placeholder for your Firebase client-side configuration.
-// You can initialize Firebase here and export the necessary services.
-// For example:
-
 import { initializeApp, getApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
