@@ -1,4 +1,6 @@
-import type { DailyMealPlan, GuideTopic, Recipe } from './types';
+import type { DailyMealPlan, GuideTopic, Recipe, PhaseTopic } from './types';
+import {CheckCircle2} from "lucide-react";
+import React from 'react';
 
 export const dailyMealPlans: DailyMealPlan[] = [
   {
@@ -2038,15 +2040,15 @@ export const recipes: Recipe[] = [
   {
     id: '34',
     name: 'Biscoitinho de Polvilho (Caseiro)',
-    description: 'Um snack que derrete na boca, seguro para o bebê explorar texturas. Uma alternativa saudável aos biscoitos industrializados.',
+    description: 'A snack that melts in your mouth, safe for the baby to explore textures. A healthy alternative to industrialized biscuits.',
     image: '34',
-    ingredients: ['1 xícara de polvilho doce', '1/4 xícara de azeite de oliva', '1/4 xícara de água morna'],
+    ingredients: ['1 cup of sweet manioc starch', '1/4 cup of olive oil', '1/4 cup of warm water'],
     instructions: [
-        'Pré-aqueça o forno a 160°C.',
-        'Em uma tigela, misture o polvilho e o azeite. A mistura vai parecer uma areia úmida.',
-        'Aos poucos, adicione a água morna, misturando com as mãos até formar uma massa que não grude.',
-        'Faça rolinhos finos ou argolas com a massa e coloque em uma assadeira (não precisa untar).',
-        'Asse por cerca de 20-25 minutos, ou até ficarem secos e crocantes, mas sem dourar. Eles devem ficar branquinhos.',
+        'Preheat the oven to 160°C.',
+        'In a bowl, mix the manioc starch and olive oil. The mixture will look like wet sand.',
+        'Gradually add the warm water, mixing with your hands until it forms a dough that doesn\'t stick.',
+        'Make thin rolls or rings with the dough and place them on a baking sheet (no need to grease).',
+        'Bake for about 20-25 minutes, or until they are dry and crispy, but not browned. They should remain whitish.',
     ],
     mealType: 'Sobremesa',
     ageGroup: '9-11 meses',
@@ -2356,15 +2358,6 @@ export const recipes: Recipe[] = [
   }
 ];
 
-export const foodHistory: FoodHistory[] = [
-  { id: '1', foodName: 'Banana', date: '2024-07-20', reaction: 'liked' },
-  { id: '2', foodName: 'Mamão', date: '2024-07-20', reaction: 'liked' },
-  { id: '3', foodName: 'Abacate', date: '2024-07-19', reaction: 'disliked' },
-  { id: '4', foodName: 'Batata doce', date: '2024-07-18', reaction: 'liked' },
-  { id: '5', foodName: 'Cenoura', date: '2024-07-17', reaction: 'strange' },
-  { id: '6', foodName: 'Chuchu', date: '2024-07-16', reaction: 'none' },
-];
-
 export const guideTopics: GuideTopic[] = [
   {
     id: '1',
@@ -2377,14 +2370,19 @@ export const guideTopics: GuideTopic[] = [
     content: 'O Reflexo de GAG (ou de protusão da língua) é um mecanismo de defesa natural do bebê. Ele empurra o alimento para fora da boca para evitar um engasgo. O bebê pode tossir, fazer ânsia e ficar com o rosto vermelho, mas ele está no controle. Já o engasgo real é silencioso. A criança não consegue tossir, chorar ou respirar, e a pele pode ficar azulada. É crucial que os pais e cuidadores saibam a Manobra de Heimlich para bebês.',
   },
   {
+    id: '3',
+    title: 'Como introduzir alimentos alergênicos?',
+    content: 'Os principais alimentos alergênicos são: ovo, trigo, peixes, frutos do mar, amendoim, castanhas e leite. A recomendação atual é introduzir esses alimentos a partir dos 6 meses, junto com os outros. Ofereça um de cada vez, em pequena quantidade, pela manhã ou no almoço, e observe por 2 dias. Por exemplo, ofereça um pouco de ovo cozido e amassado e observe. Se não houver reação, pode continuar oferecendo. Consulte o pediatra.',
+  },
+  {
     id: '3.5',
     title: 'Quais temperos posso usar?',
     content: 'Você pode e deve usar temperos naturais desde o início para formar o paladar do bebê! Sal é proibido até 1 ano. Açúcar é proibido até 2 anos. Use e abuse de: cebola, alho, salsinha, cebolinha, coentro, orégano, manjericão, alecrim, tomilho, louro e um fio de azeite de oliva extra virgem. Eles tornam a comida muito mais saborosa.',
   },
   {
     id: '4',
-    title: 'Como introduzir alimentos alergênicos?',
-    content: 'Os principais alimentos alergênicos são: ovo, trigo, peixes, frutos do mar, amendoim, castanhas e leite. A recomendação atual é introduzir esses alimentos a partir dos 6 meses, junto com os outros. Ofereça um de cada vez, em pequena quantidade, pela manhã ou no almoço, e observe por 2 dias. Por exemplo, ofereça um pouco de ovo cozido e amassado e observe. Se não houver reação, pode continuar oferecendo. Consulte o pediatra.',
+    title: 'Meu bebê não quer comer. O que fazer?',
+    content: 'Calma, é super normal! A introdução alimentar é uma fase de aprendizado. Lembre-se que o principal alimento ainda é o leite. Continue oferecendo os alimentos de forma positiva e sem pressão. Varie o cardápio, a forma de apresentação (amassado, em pedaços), coma junto com o bebê (eles aprendem pelo exemplo) e evite distrações como telas. Se a recusa persistir por muitos dias, converse com o pediatra.',
   },
   {
     id: '5',
@@ -2398,22 +2396,133 @@ export const guideTopics: GuideTopic[] = [
   },
   {
     id: '7',
-    title: 'Meu bebê não quer comer. O que fazer?',
-    content: 'Calma, é super normal! A introdução alimentar é uma fase de aprendizado. Lembre-se que o principal alimento ainda é o leite. Continue oferecendo os alimentos de forma positiva e sem pressão. Varie o cardápio, a forma de apresentação (amassado, em pedaços), coma junto com o bebê (eles aprendem pelo exemplo) e evite distrações como telas. Se a recusa persistir por muitos dias, converse com o pediatra.',
-  },
-  {
-    id: '8',
     title: 'A importância da oferta de água',
     content: 'A partir do início da introdução alimentar (6 meses), a água deve ser oferecida ao bebê. Ofereça pequenas quantidades em um copo de treinamento várias vezes ao dia, nos intervalos entre as mamadas e as refeições. A água ajuda na hidratação, no funcionamento do intestino e na adaptação do corpo aos novos alimentos. Não substitua a água por sucos.',
   },
   {
-    id: '9',
+    id: '8',
     title: 'Como armazenar as papinhas?',
     content: 'Você pode cozinhar para alguns dias. Guarde em potes de vidro ou plástico livre de BPA com tampa. Na geladeira, a papinha dura até 3 dias. No congelador, pode durar até 3 meses. Use etiquetas com o nome do alimento e a data de fabricação. Para descongelar, deixe na geladeira de um dia para o outro ou aqueça em banho-maria. Nunca recongele uma papinha já descongelada.',
   },
   {
-    id: '10',
+    id: '9',
     title: 'Evolução das texturas',
     content: 'É crucial evoluir a textura dos alimentos para desenvolver a musculatura da mastigação. Comece com papas bem amassadas, mas não totalmente lisas (6 meses). Progrida para alimentos amassados com o garfo, deixando pequenos pedacinhos (7-8 meses). Depois, alimentos picados em pedaços pequenos e macios (9-11 meses). Próximo de 1 ano, o bebê já pode comer a mesma comida da família, com pequenos ajustes e sem sal.',
+  },
+];
+
+export const phaseTopics: PhaseTopic[] = [
+  {
+    id: '1',
+    title: '0 a 1 Mês: O Recém-Nascido',
+    content: {
+      behaviors: [
+        "Dorme a maior parte do tempo (16-18 horas por dia), mas em ciclos curtos.",
+        "Comunica-se principalmente pelo choro (fome, fralda suja, sono, desconforto).",
+        "Movimentos são reflexos: ele agarra seu dedo, suga e se assusta com barulhos.",
+        "Começa a fixar o olhar em rostos, especialmente o da mãe, a cerca de 20-30 cm de distância."
+      ],
+      tips: [
+        "Acalme-se, é normal se sentir perdida! O choro é a única forma de comunicação dele agora.",
+        "Converse, cante e faça contato visual. Sua voz e seu rosto são o mundo dele.",
+        "Não se preocupe com 'manias'. Colo e aconchego são necessidades básicas e criam um vínculo seguro.",
+        "A visão ainda está em desenvolvimento. Ele prefere contrastes (preto e branco) e o contorno do seu rosto."
+      ]
+    }
+  },
+  {
+    id: '2',
+    title: '2 a 3 Meses: Os Primeiros Sorrisos',
+    content: {
+      behaviors: [
+        "O sorriso social aparece! Ele sorri em resposta à sua interação, não mais por reflexo.",
+        "Começa a 'conversar' com sons e barulhinhos (gugu-dadá).",
+        "Sustenta a cabeça com mais firmeza quando está de bruços.",
+        "Segue objetos e pessoas com o olhar e pode dar gargalhadas.",
+        "Leva as mãos à boca com frequência - é uma forma de explorar o mundo!"
+      ],
+      tips: [
+        "Converse de volta! Responda aos sons dele como se estivessem batendo um papo.",
+        "Estimule o 'tummy time' (tempo de bruços) por alguns minutos, várias vezes ao dia, sempre com supervisão. Isso fortalece o pescoço e as costas.",
+        "Mostre brinquedos coloridos e com sons suaves para estimular a visão e a audição.",
+        "Os ciclos de sono podem começar a ficar um pouco mais longos durante a noite. Mas acordar ainda é normal!"
+      ]
+    }
+  },
+  {
+    id: '3',
+    title: '4 a 5 Meses: O Mundo na Mão',
+    content: {
+      behaviors: [
+        "Mostra grande interesse em pegar objetos e consegue segurá-los.",
+        "Rola! Geralmente, primeiro da barriga para as costas e depois o contrário.",
+        "Pode começar a babar muito, um sinal de que os dentinhos podem estar a caminho (mas não é regra!).",
+        "Ri alto e expressa alegria ou frustração com mais clareza.",
+        "Reconhece o próprio nome e vira a cabeça quando chamado."
+      ],
+      tips: [
+        "Ofereça brinquedos seguros para ele pegar, morder e explorar. Mordedores são ótimos!",
+        "Crie um espaço seguro no chão para ele poder rolar e se movimentar livremente.",
+        "A 'crise' ou 'salto' dos 4 meses é real. O sono pode piorar temporariamente porque o cérebro dele está se desenvolvendo rapidamente. Paciência!",
+        "Comece a ler livrinhos de pano ou plástico. Ele vai adorar as cores e texturas."
+      ]
+    }
+  },
+  {
+    id: '4',
+    title: '6 a 7 Meses: Sentando e Experimentando',
+    content: {
+      behaviors: [
+        "Começa a sentar sem apoio por alguns instantes.",
+        "É o início da introdução alimentar! Mostra curiosidade pela comida.",
+        "Transfere objetos de uma mão para a outra.",
+        "Pode começar a 'bater palminhas' ou 'dar tchau' se for estimulado.",
+        "Pode surgir a 'ansiedade de separação': ele chora quando você sai do campo de visão."
+      ],
+      tips: [
+        "Sente-se no chão com ele e ofereça almofadas ao redor para dar suporte e segurança.",
+        "Na introdução alimentar, não se estresse se ele não comer. O objetivo é explorar. A diversão é mais importante que a quantidade.",
+        "Brinque de 'cadê-achou'. Isso ajuda a entender que você vai, mas sempre volta, diminuindo a ansiedade de separação.",
+        "A gengiva pode coçar muito. Ofereça mordedores geladinhos ou frutas em redinhas alimentadoras."
+      ]
+    }
+  },
+  {
+    id: '5',
+    title: '8 a 10 Meses: O Explorador Engatinhando',
+    content: {
+      behaviors: [
+        "Começa a engatinhar (ou se arrastar, ou pular... cada bebê tem seu jeito!).",
+        "Puxa-se para ficar de pé, apoiando-se nos móveis.",
+        "Desenvolve o 'movimento de pinça' com o polegar e o indicador para pegar objetos pequenos.",
+        "Balbucia 'mamama' ou 'papapa', mas ainda sem associar diretamente à mãe ou ao pai.",
+        "Entende o 'não', embora nem sempre obedeça."
+      ],
+      tips: [
+        "Torne a casa segura! Coloque protetores em tomadas, quinas e tire objetos perigosos do alcance.",
+        "Estimule o movimento de pinça oferecendo alimentos seguros em pedaços pequenos, como ervilhas cozidas ou pedacinhos de fruta.",
+        "Converse muito, nomeando objetos. 'Olha o cachorro!', 'Vamos pegar a bola?'.",
+        "Ele vai querer comer sozinho. Deixe-o explorar a comida com as mãos. A bagunça faz parte do aprendizado!"
+      ]
+    }
+  },
+  {
+    id: '6',
+    title: '11 a 12 Meses: Quase Andando!',
+    content: {
+      behaviors: [
+        "Anda se segurando nos móveis e pode dar os primeiros passinhos sozinho.",
+        "Imita gestos, sons e comportamentos dos adultos.",
+        "Fala as primeiras palavras com intenção ('mamá' para a mãe, 'água' quando tem sede).",
+        "Aponta para o que quer e acena para dar tchau.",
+        "Começa a testar limites, como jogar objetos no chão para ver sua reação."
+      ],
+      tips: [
+        "Incentive os primeiros passos, mas não force. Ficar descalço ajuda no equilíbrio e na firmeza.",
+        "Continue lendo e cantando. Peça para ele apontar para as figuras do livro.",
+        "Quando ele jogar algo no chão, explique com calma: 'A bola fica aqui'. Ele está aprendendo sobre causa e efeito.",
+        "Comemore o primeiro aniversário! Foi um ano de imensas transformações para ele e para você. Vocês conseguiram!"
+      ]
+    }
   },
 ];

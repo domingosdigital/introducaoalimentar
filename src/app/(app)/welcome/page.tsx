@@ -89,7 +89,7 @@ export default function WelcomePage() {
         </div>
 
         {/* Fases e Comportamentos */}
-        <Link href="#" className="group block">
+        <Link href="/phases" className="group block">
             <Card className="shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader className="flex flex-row items-center gap-4">
                      <Baby className="h-6 w-6 text-foreground/70" />

@@ -24,6 +24,17 @@ export interface GuideTopic {
   content: string;
 }
 
+interface PhaseContentData {
+  behaviors: string[];
+  tips: string[];
+}
+
+export interface PhaseTopic {
+  id: string;
+  title: string;
+  content: PhaseContentData;
+}
+
 export interface MealSuggestion {
   foodName: string;
   texture: 'lisa' | 'amassada' | 'pedaços' | 'purê' | 'líquida' | 'creme';
