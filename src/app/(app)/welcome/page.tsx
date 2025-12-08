@@ -3,6 +3,8 @@
 import { Baby, Heart, Info, Lightbulb, NotebookText, Sparkles, Star } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { quickTips } from '@/lib/data';
+import { useState, useEffect } from 'react';
 
 const mainCards = [
   {
@@ -34,11 +36,20 @@ const mainCards = [
   },
 ];
 
-const quickTip = "Dica rápida: uma massagem de 2 minutos na barriguinha ajuda a aliviar os gases antes das refeições.";
+const getDailyTip = () => {
+    const now = new Date();
+    const dayOfYear = Math.floor((now.getTime() - new Date(now.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+    return quickTips[dayOfYear % quickTips.length];
+};
 
 const userName = 'Mamãe';
 
 export default function WelcomePage() {
+  const [quickTip, setQuickTip] = useState('');
+
+  useEffect(() => {
+    setQuickTip(getDailyTip());
+  }, []);
 
   const highlightedCard = mainCards.find(c => c.highlight);
   const otherCards = mainCards.filter(c => !c.highlight);
@@ -100,15 +111,7 @@ export default function WelcomePage() {
                 </CardHeader>
             </Card>
         </Link>
-
-        {/* Dica Rápida */}
-         <Card className="bg-accent border-accent-foreground/20 shadow-sm">
-            <CardHeader className="flex flex-row items-center gap-4">
-                <Lightbulb className="h-6 w-6 text-accent-foreground" />
-                <p className="text-sm text-accent-foreground font-medium">{quickTip}</p>
-            </CardHeader>
-        </Card>
-
+        
         {/* Favoritos */}
         <Link href="/favorites" className="group block">
             <Card className="shadow-sm hover:shadow-md transition-shadow">
@@ -121,6 +124,14 @@ export default function WelcomePage() {
                 </CardHeader>
             </Card>
         </Link>
+        
+        {/* Dica Rápida */}
+         <Card className="bg-accent border-accent-foreground/20 shadow-sm">
+            <CardHeader className="flex flex-row items-center gap-4">
+                <Lightbulb className="h-6 w-6 text-accent-foreground" />
+                <p className="text-sm text-accent-foreground font-medium">{quickTip}</p>
+            </CardHeader>
+        </Card>
         
         {/* Mensagem Emocional */}
         <div className="text-center py-4">

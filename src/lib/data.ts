@@ -2,6 +2,19 @@ import type { DailyMealPlan, GuideTopic, Recipe, PhaseTopic } from './types';
 import {CheckCircle2} from "lucide-react";
 import React from 'react';
 
+export const quickTips: string[] = [
+  "Dica rápida: uma massagem de 2 minutos na barriguinha ajuda a aliviar os gases antes das refeições.",
+  "Dica rápida: ofereça água ao bebê várias vezes ao dia em um copinho, mesmo que ele beba pouco.",
+  "Dica rápida: se o bebê recusar um alimento, tente oferecê-lo novamente em outro dia, preparado de outra forma.",
+  "Dica rápida: cozinhar legumes no vapor preserva mais nutrientes do que cozinhar em água.",
+  "Dica rápida: use temperos naturais como cebola, alho, salsinha e manjericão desde o início. Sal não!",
+  "Dica rápida: a bagunça faz parte! Deixar o bebê explorar a comida com as mãos é ótimo para o desenvolvimento.",
+  "Dica rápida: um picolé de leite materno ou de fruta natural pode aliviar o desconforto dos dentinhos.",
+  "Dica rápida: coma junto com seu bebê sempre que possível. Eles aprendem muito pelo exemplo.",
+  "Dica rápida: a consistência da comida deve evoluir. Comece com purês e avance para pedaços macios.",
+  "Dica rápida: congele papinhas em forminhas de gelo para ter porções práticas e individuais para a semana."
+];
+
 export const dailyMealPlans: DailyMealPlan[] = [
   {
     id: '1',
