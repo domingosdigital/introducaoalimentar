@@ -6,6 +6,12 @@ import { dailyMealPlans, ageBasedVariations } from "@/lib/data";
 import { Coffee, Grape, Soup, Fish, ToyBrick, RefreshCw, Star, Clock, AlertCircle, Scissors } from "lucide-react";
 import type { DailyMealPlan } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const mealIcons = {
   'Café da Manhã': <Coffee className="h-6 w-6 text-amber-600" />,
@@ -64,19 +70,21 @@ export default function TodayPage() {
         <p className="text-lg text-muted-foreground mt-1">Sugestões de refeições para seu bebê.</p>
       </header>
 
-      <div className="space-y-6">
+      <Accordion type="single" collapsible className="w-full space-y-4">
         {meals.map(([mealName, suggestion]) => {
           const variation = ageBasedVariations[suggestion.foodName];
           return (
-            <Card key={mealName} className="shadow-sm">
-              <CardHeader className="flex flex-row items-start gap-4">
-                {mealIcons[mealName as keyof typeof mealIcons]}
-                <div className='flex-1'>
-                  <CardTitle className="text-xl font-semibold">{mealName}</CardTitle>
-                  <CardDescription className="text-base font-bold text-primary">{suggestion.foodName}</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
+            <AccordionItem key={mealName} value={mealName} className="rounded-xl border bg-card shadow-sm">
+               <AccordionTrigger className="p-4 text-left hover:no-underline">
+                 <div className="flex flex-row items-start gap-4 flex-1">
+                    {mealIcons[mealName as keyof typeof mealIcons]}
+                    <div className='flex-1 text-left'>
+                      <p className="text-xl font-semibold">{mealName}</p>
+                      <p className="text-base font-bold text-primary">{suggestion.foodName}</p>
+                    </div>
+                  </div>
+              </AccordionTrigger>
+              <AccordionContent className="p-6 pt-2 space-y-4">
                 <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-sm">
                     <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4 text-muted-foreground" />
@@ -111,11 +119,11 @@ export default function TodayPage() {
                     <p className="text-muted-foreground"><span className="font-semibold text-foreground">Dica:</span> {suggestion.tip}</p>
                   </div>
                 )}
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
           );
         })}
-      </div>
+      </Accordion>
       
       <div className="pb-4">
           <Button size="lg" variant="outline" className="w-full bg-background h-12 text-base" onClick={handleNewPlan}>
@@ -126,4 +134,3 @@ export default function TodayPage() {
     </div>
   );
 }
-
