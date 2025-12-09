@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { dailyMealPlans, ageBasedVariations } from "@/lib/data";
-import { Coffee, Grape, Soup, Fish, ToyBrick, RefreshCw, Star, Clock, AlertCircle, Scissors } from "lucide-react";
+import { Coffee, Grape, Soup, Fish, ToyBrick, RefreshCw, Star, Clock, AlertCircle, Scissors, ChevronDown } from "lucide-react";
 import type { DailyMealPlan } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -70,60 +70,65 @@ export default function TodayPage() {
         <p className="text-lg text-muted-foreground mt-1">Sugestões de refeições para seu bebê.</p>
       </header>
 
-      <Accordion type="single" collapsible className="w-full space-y-4">
+      <div className="space-y-4">
         {meals.map(([mealName, suggestion]) => {
           const variation = ageBasedVariations[suggestion.foodName];
           return (
-            <AccordionItem key={mealName} value={mealName} className="rounded-xl border bg-card shadow-sm">
-               <AccordionTrigger className="p-4 text-left hover:no-underline">
-                 <div className="flex flex-row items-start gap-4 flex-1">
-                    {mealIcons[mealName as keyof typeof mealIcons]}
-                    <div className='flex-1 text-left'>
-                      <p className="text-xl font-semibold">{mealName}</p>
-                      <p className="text-base font-bold text-primary">{suggestion.foodName}</p>
-                    </div>
-                  </div>
-              </AccordionTrigger>
-              <AccordionContent className="p-6 pt-2 space-y-4">
-                <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-sm">
-                    <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-muted-foreground" />
-                        <span>Preparo: {suggestion.prepTime}</span>
-                    </div>
-                    {suggestion.allergyRisk &&
-                        <div className="flex items-center gap-2">
-                            <AlertCircle className="h-4 w-4 text-muted-foreground" />
-                            <span>Risco: <Badge variant={getRiskVariant(suggestion.allergyRisk)} className='text-xs'>{suggestion.allergyRisk}</Badge></span>
+            <Card key={mealName} className="shadow-sm">
+              <CardHeader className="flex-row items-start gap-4 pb-4">
+                {mealIcons[mealName as keyof typeof mealIcons]}
+                <div className="flex-1">
+                  <CardTitle className="text-xl font-semibold">{mealName}</CardTitle>
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1" className="border-b-0">
+                      <AccordionTrigger className="p-0 font-bold text-primary text-base hover:no-underline justify-start gap-2">
+                        {suggestion.foodName}
+                         <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+                      </AccordionTrigger>
+                      <AccordionContent className="pt-4 pb-0 space-y-4">
+                         <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-sm">
+                            <div className="flex items-center gap-2">
+                                <Clock className="h-4 w-4 text-muted-foreground" />
+                                <span>Preparo: {suggestion.prepTime}</span>
+                            </div>
+                            {suggestion.allergyRisk &&
+                                <div className="flex items-center gap-2">
+                                    <AlertCircle className="h-4 w-4 text-muted-foreground" />
+                                    <span>Risco: <Badge variant={getRiskVariant(suggestion.allergyRisk)} className='text-xs'>{suggestion.allergyRisk}</Badge></span>
+                                </div>
+                            }
+                            <div className="flex items-start gap-2 col-span-2">
+                                <Scissors className="h-4 w-4 text-muted-foreground mt-0.5" />
+                                <span><span className='font-semibold'>Textura/Corte:</span> {suggestion.texture}</span>
+                            </div>
                         </div>
-                    }
-                    <div className="flex items-start gap-2 col-span-2">
-                        <Scissors className="h-4 w-4 text-muted-foreground mt-0.5" />
-                        <span><span className='font-semibold'>Textura/Corte:</span> {suggestion.texture}</span>
-                    </div>
-                </div>
 
-                {variation && (
-                   <div className="space-y-3 pt-2">
-                     <h4 className="font-semibold text-foreground">Variações por idade:</h4>
-                     <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-                        {Object.entries(variation).map(([age, text]) => (
-                            <li key={age}><strong>{age}:</strong> {text}</li>
-                        ))}
-                     </ul>
-                   </div>
-                )}
-                
-                {suggestion.tip && (
-                  <div className="flex items-center gap-3 pt-2">
-                    <Star className="h-5 w-5 text-amber-500" />
-                    <p className="text-muted-foreground"><span className="font-semibold text-foreground">Dica:</span> {suggestion.tip}</p>
-                  </div>
-                )}
-              </AccordionContent>
-            </AccordionItem>
+                        {variation && (
+                        <div className="space-y-3 pt-2">
+                            <h4 className="font-semibold text-foreground">Variações por idade:</h4>
+                            <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
+                                {Object.entries(variation).map(([age, text]) => (
+                                    <li key={age}><strong>{age}:</strong> {text}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        )}
+                        
+                        {suggestion.tip && (
+                        <div className="flex items-start gap-3 pt-2">
+                            <Star className="h-5 w-5 text-amber-500" />
+                            <p className="text-muted-foreground"><span className="font-semibold text-foreground">Dica:</span> {suggestion.tip}</p>
+                        </div>
+                        )}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+              </CardHeader>
+            </Card>
           );
         })}
-      </Accordion>
+      </div>
       
       <div className="pb-4">
           <Button size="lg" variant="outline" className="w-full bg-background h-12 text-base" onClick={handleNewPlan}>
