@@ -90,12 +90,12 @@ export default function WelcomePage() {
           <h2 className="text-base text-muted-foreground mt-2">Passo a passo simples, seguro e criado para acompanhar cada fase do seu bebê.</h2>
         </header>
 
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-white">
           <Image
             src="https://i.imgur.com/l3FoDwn.png"
             alt="Bebê feliz comendo"
             fill
-            className="object-cover"
+            className="object-contain"
             priority
           />
         </div>
