@@ -1,10 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { dailyMealPlans } from "@/lib/data";
-import { Coffee, Grape, Soup, Fish, ToyBrick, RefreshCw } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { dailyMealPlans, ageBasedVariations } from "@/lib/data";
+import { Coffee, Grape, Soup, Fish, ToyBrick, RefreshCw, Clock, AlertCircle, Sparkles, Scissors, Smile } from "lucide-react";
 import type { DailyMealPlan } from '@/lib/types';
+import { Badge } from '@/components/ui/badge';
 
 const mealIcons = {
   'Café da Manhã': <Coffee className="h-6 w-6 text-amber-600" />,
@@ -25,6 +26,17 @@ const getTodaysPlan = (): DailyMealPlan => {
   const oneDay = 1000 * 60 * 60 * 24;
   const dayOfYear = Math.floor(diff / oneDay);
   return dailyMealPlans[dayOfYear % dailyMealPlans.length];
+};
+
+const getRiskVariant = (risk: 'Baixo' | 'Médio' | 'Alto' = 'Baixo') => {
+    switch (risk) {
+      case 'Alto':
+        return 'destructive';
+      case 'Médio':
+        return 'secondary';
+      default:
+        return 'default';
+    }
 };
 
 export default function TodayPage() {
@@ -57,15 +69,50 @@ export default function TodayPage() {
 
       <div className="space-y-4">
         {meals.map(([mealName, suggestion]) => {
+          const variations = ageBasedVariations[suggestion.foodName] || {};
           return (
             <Card key={mealName} className="shadow-sm">
-              <CardHeader className="flex-row items-center gap-4">
-                {mealIcons[mealName as keyof typeof mealIcons]}
-                <div className="flex-1">
-                  <CardTitle className="text-xl font-semibold">{mealName}</CardTitle>
-                  <p className="text-base text-primary font-bold">{suggestion.foodName}</p>
-                </div>
-              </CardHeader>
+                <CardHeader>
+                    <div className="flex items-center gap-4">
+                        {mealIcons[mealName as keyof typeof mealIcons]}
+                        <div className="flex-1">
+                            <CardTitle className="text-xl font-semibold">{mealName}</CardTitle>
+                            <p className="text-base text-primary font-bold">{suggestion.foodName}</p>
+                        </div>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4 pt-0">
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="flex items-center gap-2">
+                            <Clock className="h-4 w-4 text-muted-foreground" />
+                            <span>Preparo: {suggestion.prepTime}</span>
+                        </div>
+                        {suggestion.allergyRisk && (
+                         <div className="flex items-center gap-2">
+                            <AlertCircle className="h-4 w-4 text-muted-foreground" />
+                            <span>Risco Alergia: <Badge variant={getRiskVariant(suggestion.allergyRisk)} className='text-xs'>{suggestion.allergyRisk}</Badge></span>
+                        </div>
+                        )}
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <Smile className="h-5 w-5 text-orange-500" />
+                        <p><span className="font-semibold text-foreground">Textura:</span> {suggestion.texture}</p>
+                    </div>
+                     <div className="space-y-2 text-sm">
+                        <p className="font-semibold text-foreground flex items-center gap-2"><Scissors className="h-4 w-4" /> Variações por idade:</p>
+                        <ul className="list-disc list-inside pl-2 space-y-1 text-muted-foreground">
+                            {Object.entries(variations).map(([age, desc]) => (
+                                <li key={age}><strong>{age}:</strong> {desc}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    {suggestion.tip && (
+                        <div className="flex items-center gap-3">
+                            <Sparkles className="h-5 w-5 text-amber-500" />
+                            <p><span className="font-semibold text-foreground">Dica Prática:</span> {suggestion.tip}</p>
+                        </div>
+                    )}
+                </CardContent>
             </Card>
           );
         })}
