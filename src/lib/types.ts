@@ -3,6 +3,8 @@ export type Reaction = 'liked' | 'disliked' | 'strange' | 'none';
 export type MealType = 'Café da Manhã' | 'Almoço' | 'Jantar' | 'Sobremesa';
 export type AgeGroup = '6-8 meses' | '9-11 meses' | '12+ meses';
 export type Texture = 'Purê' | 'Amassado' | 'Pedaços macios' | 'Sopa' | 'Creme';
+export type AllergyRisk = 'Baixo' | 'Médio' | 'Alto';
+
 
 export interface Recipe {
   id: string;
@@ -37,8 +39,10 @@ export interface PhaseTopic {
 
 export interface MealSuggestion {
   foodName: string;
-  texture: 'lisa' | 'amassada' | 'pedaços' | 'purê' | 'líquida' | 'creme';
-  preparation: string;
+  texture: string;
+  prepTime: string;
+  allergyRisk?: AllergyRisk;
+  tip?: string;
 }
 
 export interface DailyMealPlan {
@@ -52,17 +56,34 @@ export interface DailyMealPlan {
   };
 }
 
+export interface AgeBasedVariation {
+  [foodName: string]: {
+    [age: string]: string;
+  };
+}
+
 export interface FoodChecklistItem {
   id: string;
   name: string;
-  category: 'Fruta' | 'Legume' | 'Proteína' | 'Grão' | 'Outro';
+  category: 'Fruta' | 'Legume' | 'Proteína' | 'Grão';
 }
+
+export interface AllergenicFood {
+  id: string;
+  name: string;
+  category: 'Alimento Alergênico';
+  introduction: string;
+  observation: string;
+}
+
 
 export interface PlanDay {
   day: number;
-  fruit: string;
-  vegetable: string;
-  preparation: string;
+  food: string;
+  textureAndCut: string;
+  prepTime: string;
+  allergyRisk: AllergyRisk;
+  tip: string;
 }
 
 export interface Routine {
@@ -77,4 +98,33 @@ export interface SafetyTopic {
   id: string;
   title: string;
   content: string | { title: string; items: string[] }[];
+}
+
+export interface EvolutionTopic {
+    id: string;
+    title: string;
+    content: {
+        title: string;
+        items: string[];
+    }[];
+}
+
+export interface CutAndTexture {
+  id: string;
+  food: string;
+  imageId: string;
+  cut_6_8_months: string;
+  cut_9_12_months: string;
+}
+
+export interface GagVsChoke {
+  normalReactions: string[];
+  alertReactions: string[];
+}
+
+export interface ChokingGuide {
+  description: string;
+  steps: string[];
+  link: string;
+  linkText: string;
 }

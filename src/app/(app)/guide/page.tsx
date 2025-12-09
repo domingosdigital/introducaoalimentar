@@ -10,7 +10,7 @@ export default function GuidePage() {
   return (
     <div className="animate-in fade-in p-6 sm:p-8">
       <header className="mb-8">
-        <h1 className="font-headline text-4xl font-bold text-foreground">Guia da Mamãe</h1>
+        <h1 className="font-headline text-4xl font-bold text-foreground">Primeiros Passos</h1>
         <p className="text-lg text-muted-foreground mt-1">Respostas para suas principais dúvidas.</p>
       </header>
 

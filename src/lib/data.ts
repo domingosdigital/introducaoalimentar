@@ -1,4 +1,4 @@
-import type { DailyMealPlan, GuideTopic, Recipe, PhaseTopic, FoodChecklistItem, PlanDay, Routine, SafetyTopic } from './types';
+import type { DailyMealPlan, GuideTopic, Recipe, PhaseTopic, FoodChecklistItem, PlanDay, Routine, SafetyTopic, AllergenicFood, CutAndTexture, GagVsChoke, ChokingGuide, EvolutionTopic, AgeBasedVariation } from './types';
 import {CheckCircle2} from "lucide-react";
 import React from 'react';
 
@@ -15,34 +15,59 @@ export const quickTips: string[] = [
   "Dica rápida: congele papinhas em forminhas de gelo para ter porções práticas e individuais para a semana."
 ];
 
+export const ageBasedVariations: AgeBasedVariation = {
+  'Abacate': {
+    '6 meses': 'Amasse bem com um garfo ou ofereça em fatias grandes (formato de meia lua) para o bebê segurar (BLW).',
+    '9 meses': 'Ofereça em pedaços menores para o bebê praticar o movimento de pinça.',
+    '12 meses': 'Pode ser oferecido em pedaços ou como pastinha em uma torrada integral.',
+  },
+  'Mingau de Aveia com Banana': {
+    '6 meses': 'Faça um mingau bem cremoso e liso. Amasse a banana completamente até virar um purê.',
+    '9 meses': 'Pode deixar o mingau com um pouco mais de textura e amassar a banana deixando pequenos pedaços.',
+    '12 meses': 'Pode servir a banana em rodelas junto com o mingau.',
+  },
+  'Creme de Mandioquinha com Frango Desfiado': {
+      '6 meses': 'Bata a mandioquinha até virar um purê liso. Desfie o frango muito bem e misture.',
+      '9 meses': 'Amasse a mandioquinha com o garfo. O frango pode ser desfiado em pedaços um pouco maiores.',
+      '12 meses': 'Sirva a mandioquinha em pedaços macios e o frango desfiado.',
+  }
+};
+
 export const dailyMealPlans: DailyMealPlan[] = [
   {
     id: '1',
     meals: {
       'Café da Manhã': {
         foodName: 'Mingau de Aveia com Banana',
-        texture: 'creme',
-        preparation: 'Cozinhe 2 colheres de sopa de aveia em flocos finos com água até formar um mingau. Misture 1/2 banana amassada.',
+        texture: 'Cremoso (6m) a pedaços (12m)',
+        prepTime: '5 min',
+        allergyRisk: 'Baixo',
+        tip: 'Polvilhe uma pitada de canela para um novo sabor.'
       },
       'Lanche da Manhã': {
         foodName: 'Mamão Papaia',
-        texture: 'amassada',
-        preparation: 'Amasse 1/4 de um mamão papaia maduro com um garfo.',
+        texture: 'Amassado ou em tiras',
+        prepTime: '2 min',
+        allergyRisk: 'Baixo',
       },
       'Almoço': {
         foodName: 'Creme de Mandioquinha com Frango Desfiado',
-        texture: 'purê',
-        preparation: 'Cozinhe 1 mandioquinha e 30g de peito de frango. Amasse a mandioquinha e desfie o frango, misturando-os.',
+        texture: 'Creme (6m) a pedaços (12m)',
+        prepTime: '20 min',
+        allergyRisk: 'Baixo',
+        tip: 'Cozinhe o frango com uma folha de louro para mais sabor.'
       },
       'Lanche da Tarde': {
         foodName: 'Pera cozida',
-        texture: 'amassada',
-        preparation: 'Cozinhe 1/2 pera no vapor até ficar macia e amasse com um garfo.',
+        texture: 'Amassada ou em fatias',
+        prepTime: '10 min',
+        allergyRisk: 'Baixo',
       },
       'Jantar': {
         foodName: 'Sopa de Abóbora com Cenoura',
-        texture: 'lisa',
-        preparation: 'Cozinhe 1 fatia de abóbora com 1/2 cenoura. Bata no liquidificador até obter um creme liso.',
+        texture: 'Sopa lisa ou com pedacinhos',
+        prepTime: '25 min',
+        allergyRisk: 'Baixo',
       },
     },
   },
@@ -51,418 +76,35 @@ export const dailyMealPlans: DailyMealPlan[] = [
     meals: {
       'Café da Manhã': {
         foodName: 'Purê de Maçã com Canela',
-        texture: 'purê',
-        preparation: 'Cozinhe 1 maçã sem casca no vapor e amasse. Polvilhe uma pitada de canela (opcional).',
+        texture: 'Purê liso',
+        prepTime: '10 min',
+        allergyRisk: 'Baixo',
       },
       'Lanche da Manhã': {
         foodName: 'Abacate',
-        texture: 'amassada',
-        preparation: 'Amasse 1/4 de abacate maduro com um garfo.',
+        texture: 'Amassado ou em tiras (meia lua)',
+        prepTime: '3 min',
+        allergyRisk: 'Baixo',
+        tip: 'O abacate é rico em gorduras boas para o cérebro do bebê.'
       },
       'Almoço': {
         foodName: 'Caldo de Feijão com Arroz',
-        texture: 'lisa',
-        preparation: 'Cozinhe feijão sem sal e amasse os grãos. Misture com um pouco de arroz bem cozido.',
+        texture: 'Caldo grosso com arroz amassado',
+        prepTime: '10 min (com feijão pronto)',
+        allergyRisk: 'Baixo',
       },
       'Lanche da Tarde': {
         foodName: 'Tiras de Manga',
-        texture: 'pedaços',
-        preparation: 'Corte uma fatia de manga madura e firme em tiras grossas para o bebê segurar.',
+        texture: 'Pedaços macios',
+        prepTime: '3 min',
+        allergyRisk: 'Baixo',
       },
       'Jantar': {
         foodName: 'Purê de Batata Doce com Carne Moída',
-        texture: 'amassada',
-        preparation: 'Cozinhe 1/2 batata doce e amasse. Refogue 30g de carne moída e misture ao purê.',
-      },
-    },
-  },
-  {
-    id: '3',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Panqueca de Banana (2 ingredientes)',
-        texture: 'pedaços',
-        preparation: 'Amasse 1 banana madura e misture com 1 ovo. Faça pequenas panquecas em frigideira antiaderente.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Melancia',
-        texture: 'pedaços',
-        preparation: 'Ofereça um pedaço grande e seguro, sem sementes, para o bebê chupar e explorar.',
-      },
-      'Almoço': {
-        foodName: 'Peixe Desfiado com Purê de Inhame',
-        texture: 'amassada',
-        preparation: 'Cozinhe 1 filé pequeno de peixe branco (tilápia) no vapor e desfie, verificando espinhas. Sirva com purê de inhame.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Iogurte Natural',
-        texture: 'creme',
-        preparation: 'Ofereça 2-3 colheres de iogurte natural integral sem açúcar. Introduzir laticínios conforme orientação pediátrica.',
-      },
-      'Jantar': {
-        foodName: 'Creme de Ervilha com Hortelã',
-        texture: 'creme',
-        preparation: 'Cozinhe ervilhas frescas ou congeladas e bata com algumas folhas de hortelã para um sabor refrescante.',
-      },
-    },
-  },
-  {
-    id: '4',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Ovo Cozido Amassado',
-        texture: 'amassada',
-        preparation: 'Cozinhe 1 ovo por 10 min. Amasse bem a gema (e a clara, se já introduzida) com um garfo.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Gomos de Laranja',
-        texture: 'pedaços',
-        preparation: 'Ofereça um gomo de laranja lima ou outra laranja doce, sem sementes e sem a pele branca, para o bebê chupar.',
-      },
-      'Almoço': {
-        foodName: 'Polenta Mole com Brócolis',
-        texture: 'creme',
-        preparation: 'Prepare uma polenta mole com fubá e água. Sirva com "arvorezinhas" de brócolis cozidas no vapor e bem picadinhas.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Banana Assada',
-        texture: 'amassada',
-        preparation: 'Asse 1 banana com casca no forno até a casca ficar preta. Retire a polpa e amasse.',
-      },
-      'Jantar': {
-        foodName: 'Sopa de Lentilha com Legumes',
-        texture: 'lisa',
-        preparation: 'Cozinhe lentilha com cenoura e batata. Amasse com um garfo ou bata no liquidificador.',
-      },
-    },
-  },
-  {
-    id: '5',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Mingau de Amaranto',
-        texture: 'creme',
-        preparation: 'Cozinhe 2 colheres de sopa de amaranto em flocos com água ou leite vegetal. Sirva com purê de frutas.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Pêssego em pedaços',
-        texture: 'pedaços',
-        preparation: 'Ofereça pedaços de pêssego maduro e macio, sem casca, em formato seguro.',
-      },
-      'Almoço': {
-        foodName: 'Cuscuz de Milho com Frango Desfiado',
-        texture: 'amassada',
-        preparation: 'Prepare um cuscuz simples e sirva com frango cozido e bem desfiado por cima, regado com azeite.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Bolinho de Chuva de Banana (Assado)',
-        texture: 'pedaços',
-        preparation: 'Amasse uma banana, misture com aveia e um ovo. Molde bolinhos e asse até dourar. Sem açúcar.',
-      },
-      'Jantar': {
-        foodName: 'Sopa de Feijão Branco com Espinafre',
-        texture: 'lisa',
-        preparation: 'Cozinhe feijão branco e bata no liquidificador com folhas de espinafre cozidas. Tempere com um fio de azeite.',
-      },
-    },
-  },
-  {
-    id: '6',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Crepioca de Banana',
-        texture: 'pedaços',
-        preparation: 'Misture 1 ovo com 2 colheres de goma de tapioca e 1/2 banana amassada. Asse em frigideira antiaderente.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Uvas sem semente (cortadas em 4)',
-        texture: 'pedaços',
-        preparation: 'Corte uvas Thompson ou outras sem sementes em 4 partes no sentido do comprimento para segurança.',
-      },
-      'Almoço': {
-        foodName: 'Escondidinho de Mandioca com Carne Moída',
-        texture: 'amassada',
-        preparation: 'Faça um purê de mandioca e cubra uma camada de carne moída refogada. Sirva a porção do bebê separada.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Kiwi Amassado',
-        texture: 'amassada',
-        preparation: 'Amasse um kiwi maduro com um garfo. A acidez é ótima para o paladar em desenvolvimento.',
-      },
-      'Jantar': {
-        foodName: 'Creme de Beterraba com Batata',
-        texture: 'creme',
-        preparation: 'Cozinhe beterraba e batata. Bata no liquidificador até obter um creme rosa vibrante.',
-      },
-    },
-  },
-  {
-    id: '7',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Smoothie de Morango e Iogurte',
-        texture: 'líquida',
-        preparation: 'Bata 3 morangos com 2 colheres de iogurte natural. Sirva em copo de treinamento.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Palitos de Cenoura Cozida',
-        texture: 'pedaços',
-        preparation: 'Cozinhe cenouras no vapor até ficarem macias e corte em formato de palito para o bebê segurar.',
-      },
-      'Almoço': {
-        foodName: 'Risoto Primavera (Arroz com Legumes Picados)',
-        texture: 'amassada',
-        preparation: 'Cozinhe arroz com caldo de legumes caseiro e adicione ervilhas, milho e cenoura picadinha. Deixe bem "molhadinho".',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Purê de Ameixa',
-        texture: 'purê',
-        preparation: 'Cozinhe 2 ameixas secas em pouca água até amolecerem bem e amasse.',
-      },
-      'Jantar': {
-        foodName: 'Sopa de Abobrinha com Manjericão',
-        texture: 'lisa',
-        preparation: 'Refogue abobrinha com cebola, cozinhe e bata com folhas de manjericão fresco. Um jantar leve e digestivo.',
-      },
-    },
-  },
-    {
-    id: '8',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Mingau de Quinoa com Maçã',
-        texture: 'creme',
-        preparation: 'Cozinhe 2 colheres de sopa de quinoa em flocos com água. Adicione 1/2 maçã ralada no final.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Tiras de Pimentão Amarelo',
-        texture: 'pedaços',
-        preparation: 'Asse tiras de pimentão amarelo sem pele até ficarem macias.',
-      },
-      'Almoço': {
-        foodName: 'Carne de Panela Desfiada com Batata',
-        texture: 'amassada',
-        preparation: 'Cozinhe músculo na pressão até desmanchar. Sirva com batata cozida e amassada.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Gomos de Mexerica',
-        texture: 'pedaços',
-        preparation: 'Ofereça gomos de mexerica sem sementes e sem a pele branca.',
-      },
-      'Jantar': {
-        foodName: 'Sopa de Ervilha Fresca',
-        texture: 'lisa',
-        preparation: 'Cozinhe ervilhas frescas e bata no liquidificador com um fio de azeite.',
-      },
-    },
-  },
-  {
-    id: '9',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Iogurte com Purê de Manga',
-        texture: 'creme',
-        preparation: 'Misture 3 colheres de iogurte natural com 2 colheres de purê de manga.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Biscoito de Arroz',
-        texture: 'pedaços',
-        preparation: 'Ofereça um biscoito de arroz integral sem sal para o bebê roer.',
-      },
-      'Almoço': {
-        foodName: 'Purê de Inhame com Couve',
-        texture: 'purê',
-        preparation: 'Cozinhe e amasse o inhame. Misture com couve cozida e bem picadinha.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Pêssego Amassado',
-        texture: 'amassada',
-        preparation: 'Amasse um pêssego maduro e macio sem casca.',
-      },
-      'Jantar': {
-        foodName: 'Creme de Milho Verde',
-        texture: 'creme',
-        preparation: 'Bata o milho verde (de espiga) cozido com um pouco de água e passe na peneira.',
-      },
-    },
-  },
-  {
-    id: '10',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Mamão com Aveia',
-        texture: 'amassada',
-        preparation: 'Amasse 1/4 de mamão papaia e polvilhe 1 colher de chá de aveia em flocos finos.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Melão em Pedaços',
-        texture: 'pedaços',
-        preparation: 'Corte o melão em pedaços seguros e fáceis de pegar.',
-      },
-      'Almoço': {
-        foodName: 'Frango com Quiabo',
-        texture: 'pedaços',
-        preparation: 'Cozinhe frango em cubos pequenos com quiabo picado, até ambos ficarem bem macios.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Suco de Melancia',
-        texture: 'líquida',
-        preparation: 'Bata melancia sem sementes no liquidificador. Sirva em copo de treinamento.',
-      },
-      'Jantar': {
-        foodName: 'Sopa de Feijão com Macarrãozinho',
-        texture: 'sopa',
-        preparation: 'Cozinhe o caldo de feijão com macarrão de letrinhas ou estrelinhas até ficar bem macio.',
-      },
-    },
-  },
-  {
-    id: '11',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Ovo Mexido com Tomate',
-        texture: 'amassada',
-        preparation: 'Faça um ovo mexido bem cremoso e adicione tomate picado sem pele e sem sementes.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Abacaxi em Pedaços',
-        texture: 'pedaços',
-        preparation: 'Ofereça pedaços de abacaxi maduro para o bebê chupar.',
-      },
-      'Almoço': {
-        foodName: 'Macarrão com Molho de Abóbora',
-        texture: 'amassada',
-        preparation: 'Cozinhe macarrão pequeno e sirva com um purê de abóbora como molho.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Purê de Ameixa com Maçã',
-        texture: 'purê',
-        preparation: 'Cozinhe ameixa seca e maçã juntas, depois amasse bem.',
-      },
-      'Jantar': {
-        foodName: 'Creme de Mandioquinha',
-        texture: 'creme',
-        preparation: 'Cozinhe mandioquinha até ficar bem macia e bata com um pouco da água do cozimento.',
-      },
-    },
-  },
-  {
-    id: '12',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Torrada com Abacate Amassado',
-        texture: 'pedaços',
-        preparation: 'Toste levemente uma fatia de pão integral e cubra com abacate amassado.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Kiwi em Pedaços',
-        texture: 'pedaços',
-        preparation: 'Corte o kiwi maduro em pedaços seguros.',
-      },
-      'Almoço': {
-        foodName: 'Risoto de Frango para Bebê',
-        texture: 'amassada',
-        preparation: 'Cozinhe arroz com frango desfiado e caldo de legumes até ficar bem cremoso.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Banana com Pasta de Amendoim',
-        texture: 'amassada',
-        preparation: 'Amasse uma banana e misture uma camada bem fina de pasta de amendoim integral.',
-      },
-      'Jantar': {
-        foodName: 'Sopa de Cenoura com Gengibre',
-        texture: 'lisa',
-        preparation: 'Cozinhe a cenoura e bata com uma rodela fina de gengibre para um sabor especial.',
-      },
-    },
-  },
-  {
-    id: '13',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Cuscuz com Leite de Coco',
-        texture: 'amassada',
-        preparation: 'Prepare o cuscuz e regue com um pouco de leite de coco na hora de servir.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Palitos de Pepino',
-        texture: 'pedaços',
-        preparation: 'Ofereça palitos de pepino sem casca para o bebê. É ótimo para os dentes.',
-      },
-      'Almoço': {
-        foodName: 'Escondidinho de Batata Doce',
-        texture: 'purê',
-        preparation: 'Faça um purê de batata doce e sirva com carne moída refogada por baixo.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Morango Amassado',
-        texture: 'amassada',
-        preparation: 'Amasse morangos frescos com um garfo.',
-      },
-      'Jantar': {
-        foodName: 'Caldo Verde Adaptado',
-        texture: 'sopa',
-        preparation: 'Faça um creme de batata e misture couve picada bem fininha e cozida.',
-      },
-    },
-  },
-  {
-    id: '14',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Mingau de Tapioca',
-        texture: 'creme',
-        preparation: 'Cozinhe a goma de tapioca com água ou leite vegetal até formar um mingau.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Uvas cortadas em 4',
-        texture: 'pedaços',
-        preparation: 'Corte uvas sem semente em 4 partes no sentido do comprimento.',
-      },
-      'Almoço': {
-        foodName: 'Bife de Fígado Moído',
-        texture: 'amassada',
-        preparation: 'Refogue fígado de boi moído com cebola e tomate. É uma excelente fonte de ferro.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Maçã Assada com Canela',
-        texture: 'amassada',
-        preparation: 'Asse uma maçã no forno até ficar macia e sirva a polpa com canela.',
-      },
-      'Jantar': {
-        foodName: 'Sopa de Letrinhas com Legumes',
-        texture: 'sopa',
-        preparation: 'Cozinhe macarrão de letrinhas em um caldo caseiro de legumes.',
-      },
-    },
-  },
-    {
-    id: '15',
-    meals: {
-      'Café da Manhã': {
-        foodName: 'Crepioca',
-        texture: 'pedaços',
-        preparation: 'Misture 1 ovo com 1 colher de sopa de goma de tapioca. Asse em frigideira antiaderente.',
-      },
-      'Lanche da Manhã': {
-        foodName: 'Goiaba',
-        texture: 'pedaços',
-        preparation: 'Ofereça pedaços de goiaba vermelha madura, sem casca e sem sementes.',
-      },
-      'Almoço': {
-        foodName: 'Quibebe de Abóbora',
-        texture: 'purê',
-        preparation: 'Cozinhe abóbora com cebola e cheiro verde, depois amasse com o garfo.',
-      },
-      'Lanche da Tarde': {
-        foodName: 'Iogurte com Morango Picado',
-        texture: 'creme',
-        preparation: 'Misture iogurte natural com morangos frescos bem picados.',
-      },
-      'Jantar': {
-        foodName: 'Sopa de Abobrinha',
-        texture: 'lisa',
-        preparation: 'Cozinhe abobrinha com cebola e bata no liquidificador com folhas de manjericão.',
+        texture: 'Amassado',
+        prepTime: '25 min',
+        allergyRisk: 'Baixo',
+        tip: 'Use patinho moído por ser uma carne mais magra.'
       },
     },
   },
@@ -2424,120 +2066,103 @@ export const guideTopics: GuideTopic[] = [
   },
 ];
 
-export const phaseTopics: PhaseTopic[] = [
+export const evolutionTopics: EvolutionTopic[] = [
   {
     id: '1',
-    title: '0 a 1 Mês: O Recém-Nascido',
-    content: {
-      behaviors: [
-        "Dorme a maior parte do tempo (16-18 horas por dia), mas em ciclos curtos.",
-        "Comunica-se principalmente pelo choro (fome, fralda suja, sono, desconforto).",
-        "Movimentos são reflexos: ele agarra seu dedo, suga e se assusta com barulhos.",
-        "Começa a fixar o olhar em rostos, especialmente o da mãe, a cerca de 20-30 cm de distância."
-      ],
-      tips: [
-        "Acalme-se, é normal se sentir perdida! O choro é a única forma de comunicação dele agora.",
-        "Converse, cante e faça contato visual. Sua voz e seu rosto são o mundo dele.",
-        "Não se preocupe com 'manias'. Colo e aconchego são necessidades básicas e criam um vínculo seguro.",
-        "A visão ainda está em desenvolvimento. Ele prefere contrastes (preto e branco) e o contorno do seu rosto."
-      ]
-    }
+    title: '6 Meses: O Início da Aventura',
+    content: [
+      {
+        title: "Comportamento Esperado:",
+        items: [
+          "Mostra grande interesse pela comida dos adultos.",
+          "Leva tudo à boca para explorar.",
+          "Senta com apoio e tem bom controle da cabeça.",
+          "O reflexo de colocar a língua para fora (protrusão) está diminuindo."
+        ]
+      },
+      {
+        title: "Alimentação e Habilidades:",
+        items: [
+          "Início das primeiras refeições (1 a 2 por dia).",
+          "Textura: purês, papas bem amassadas (não liquidas).",
+          "No BLW, alimentos em tiras grandes e macias, fáceis de segurar.",
+          "O principal alimento ainda é o leite materno ou fórmula."
+        ]
+      }
+    ]
   },
   {
     id: '2',
-    title: '2 a 3 Meses: Os Primeiros Sorrisos',
-    content: {
-      behaviors: [
-        "O sorriso social aparece! Ele sorri em resposta à sua interação, não mais por reflexo.",
-        "Começa a 'conversar' com sons e barulhinhos (gugu-dadá).",
-        "Sustenta a cabeça com mais firmeza quando está de bruços.",
-        "Segue objetos e pessoas com o olhar e pode dar gargalhadas.",
-        "Leva as mãos à boca com frequência - é uma forma de explorar o mundo!"
-      ],
-      tips: [
-        "Converse de volta! Responda aos sons dele como se estivessem batendo um papo.",
-        "Estimule o 'tummy time' (tempo de bruços) por alguns minutos, várias vezes ao dia, sempre com supervisão. Isso fortalece o pescoço e as costas.",
-        "Mostre brinquedos coloridos e com sons suaves para estimular a visão e a audição.",
-        "Os ciclos de sono podem começar a ficar um pouco mais longos durante a noite. Mas acordar ainda é normal!"
-      ]
-    }
+    title: '7 a 8 Meses: Aprimorando a Mastigação',
+    content: [
+      {
+        title: "Comportamento Esperado:",
+        items: [
+          "Senta sem apoio por mais tempo.",
+          "Começa a transferir objetos de uma mão para a outra.",
+          "Pode começar a 'fazer pinça' com os dedos, mas ainda de forma imatura.",
+          "Faz movimentos de 'roer' e morder, mesmo sem dentes."
+        ]
+      },
+      {
+        title: "Alimentação e Habilidades:",
+        items: [
+          "2 refeições principais + 1 a 2 lanches de frutas.",
+          "Textura: evoluir de purês lisos para amassados com garfo, com pequenos pedaços macios.",
+          "Pode começar a oferecer alimentos mais 'grumosos'.",
+          "Já consegue segurar pedaços de comida com mais destreza."
+        ]
+      }
+    ]
   },
   {
     id: '3',
-    title: '4 a 5 Meses: O Mundo na Mão',
-    content: {
-      behaviors: [
-        "Mostra grande interesse em pegar objetos e consegue segurá-los.",
-        "Rola! Geralmente, primeiro da barriga para as costas e depois o contrário.",
-        "Pode começar a babar muito, um sinal de que os dentinhos podem estar a caminho (mas não é regra!).",
-        "Ri alto e expressa alegria ou frustração com mais clareza.",
-        "Reconhece o próprio nome e vira a cabeça quando chamado."
-      ],
-      tips: [
-        "Ofereça brinquedos seguros para ele pegar, morder e explorar. Mordedores são ótimos!",
-        "Crie um espaço seguro no chão para ele poder rolar e se movimentar livremente.",
-        "A 'crise' ou 'salto' dos 4 meses é real. O sono pode piorar temporariamente porque o cérebro dele está se desenvolvendo rapidamente. Paciência!",
-        "Comece a ler livrinhos de pano ou plástico. Ele vai adorar as cores e texturas."
-      ]
-    }
+    title: '9 a 11 Meses: O Pequeno Explorador',
+    content: [
+      {
+        title: "Comportamento Esperado:",
+        items: [
+          "Engatinha ou se arrasta pela casa.",
+          "Fica de pé se apoiando nos móveis.",
+          "Desenvolve o movimento de pinça (pegar coisas com o polegar e o indicador).",
+          "Começa a entender comandos simples e a imitar gestos."
+        ]
+      },
+      {
+        title: "Alimentação e Habilidades:",
+        items: [
+          "A comida da família começa a ser a referência principal.",
+          "Textura: alimentos em pedaços pequenos e macios que o bebê pode pegar com a pinça.",
+          "Começa a usar a colher, mas ainda com muita bagunça.",
+          "Bebe água no copinho com mais autonomia."
+        ]
+      }
+    ]
   },
   {
     id: '4',
-    title: '6 a 7 Meses: Sentando e Experimentando',
-    content: {
-      behaviors: [
-        "Começa a sentar sem apoio por alguns instantes.",
-        "É o início da introdução alimentar! Mostra curiosidade pela comida.",
-        "Transfere objetos de uma mão para a outra.",
-        "Pode começar a 'bater palminhas' ou 'dar tchau' se for estimulado.",
-        "Pode surgir a 'ansiedade de separação': ele chora quando você sai do campo de visão."
-      ],
-      tips: [
-        "Sente-se no chão com ele e ofereça almofadas ao redor para dar suporte e segurança.",
-        "Na introdução alimentar, não se estresse se ele não comer. O objetivo é explorar. A diversão é mais importante que a quantidade.",
-        "Brinque de 'cadê-achou'. Isso ajuda a entender que você vai, mas sempre volta, diminuindo a ansiedade de separação.",
-        "A gengiva pode coçar muito. Ofereça mordedores geladinhos ou frutas em redinhas alimentadoras."
-      ]
-    }
-  },
-  {
-    id: '5',
-    title: '8 a 10 Meses: O Explorador Engatinhando',
-    content: {
-      behaviors: [
-        "Começa a engatinhar (ou se arrastar, ou pular... cada bebê tem seu jeito!).",
-        "Puxa-se para ficar de pé, apoiando-se nos móveis.",
-        "Desenvolve o 'movimento de pinça' com o polegar e o indicador para pegar objetos pequenos.",
-        "Balbucia 'mamama' ou 'papapa', mas ainda sem associar diretamente à mãe ou ao pai.",
-        "Entende o 'não', embora nem sempre obedeça."
-      ],
-      tips: [
-        "Torne a casa segura! Coloque protetores em tomadas, quinas e tire objetos perigosos do alcance.",
-        "Estimule o movimento de pinça oferecendo alimentos seguros em pedaços pequenos, como ervilhas cozidas ou pedacinhos de fruta.",
-        "Converse muito, nomeando objetos. 'Olha o cachorro!', 'Vamos pegar a bola?'.",
-        "Ele vai querer comer sozinho. Deixe-o explorar a comida com as mãos. A bagunça faz parte do aprendizado!"
-      ]
-    }
-  },
-  {
-    id: '6',
-    title: '11 a 12 Meses: Quase Andando!',
-    content: {
-      behaviors: [
-        "Anda se segurando nos móveis e pode dar os primeiros passinhos sozinho.",
-        "Imita gestos, sons e comportamentos dos adultos.",
-        "Fala as primeiras palavras com intenção ('mamá' para a mãe, 'água' quando tem sede).",
-        "Aponta para o que quer e acena para dar tchau.",
-        "Começa a testar limites, como jogar objetos no chão para ver sua reação."
-      ],
-      tips: [
-        "Incentive os primeiros passos, mas não force. Ficar descalço ajuda no equilíbrio e na firmeza.",
-        "Continue lendo e cantando. Peça para ele apontar para as figuras do livro.",
-        "Quando ele jogar algo no chão, explique com calma: 'A bola fica aqui'. Ele está aprendendo sobre causa e efeito.",
-        "Comemore o primeiro aniversário! Foi um ano de imensas transformações para ele e para você. Vocês conseguiram!"
-      ]
-    }
-  },
+    title: '12 Meses: Rumo à Independência',
+    content: [
+      {
+        title: "Comportamento Esperado:",
+        items: [
+          "Pode dar os primeiros passos.",
+          "Usa a pinça com perfeição para pegar pequenos objetos.",
+          "Demonstra claramente suas preferências alimentares.",
+          "Fala as primeiras palavras e aponta para o que quer."
+        ]
+      },
+      {
+        title: "Alimentação e Habilidades:",
+        items: [
+          "A criança já pode fazer as mesmas refeições da família (sem sal e açúcar).",
+          "Textura: comida bem picada, mas já com texturas variadas (carne em tiras, grãos inteiros).",
+          "Consegue manusear talheres infantis com mais habilidade.",
+          "Participa ativamente das refeições em família."
+        ]
+      }
+    ]
+  }
 ];
 
 
@@ -2567,8 +2192,6 @@ export const foodChecklist: FoodChecklistItem[] = [
   // Proteínas
   { id: 'p1', name: 'Frango', category: 'Proteína' },
   { id: 'p2', name: 'Carne Bovina', category: 'Proteína' },
-  { id: 'p3', name: 'Peixe Branco', category: 'Proteína' },
-  { id: 'p4', name: 'Ovo', category: 'Proteína' },
   { id: 'p5', name: 'Feijão', category: 'Proteína' },
   { id: 'p6', name: 'Lentilha', category: 'Proteína' },
   { id: 'p7', name: 'Grão de Bico', category: 'Proteína' },
@@ -2577,27 +2200,68 @@ export const foodChecklist: FoodChecklistItem[] = [
   { id: 'g2', name: 'Aveia', category: 'Grão' },
   { id: 'g3', name: 'Milho', category: 'Grão' },
   { id: 'g4', name: 'Quinoa', category: 'Grão' },
-  { id: 'g5', name: 'Trigo (pão/macarrão)', category: 'Grão' },
-  // Outros (Alergênicos)
-  { id: 'o1', name: 'Leite e Derivados', category: 'Outro' },
-  { id: 'o2', name: 'Amendoim/Castanhas', category: 'Outro' },
+];
+
+export const allergenicFoods: AllergenicFood[] = [
+    {
+      id: 'a1',
+      name: 'Ovo',
+      category: 'Alimento Alergênico',
+      introduction: 'Ofereça o ovo inteiro (clara e gema) bem cozido (10 min de fervura). Pode ser amassado ou em tiras. Ofereça uma pequena quantidade e aguarde 2 dias.',
+      observation: 'Sinais leves: vermelhidão ao redor da boca. Sinais de alerta: urticária (placas vermelhas na pele), inchaço de lábios/olhos, vômitos ou dificuldade para respirar.'
+    },
+    {
+      id: 'a2',
+      name: 'Trigo',
+      category: 'Alimento Alergênico',
+      introduction: 'Ofereça através de pão (sem sal/açúcar) em tiras para o bebê chupar, ou macarrão bem cozido. Comece com pouca quantidade.',
+      observation: 'Fique atento a desconforto abdominal, diarreia, ou reações de pele como urticária.'
+    },
+    {
+      id: 'a3',
+      name: 'Leite de Vaca e Derivados',
+      category: 'Alimento Alergênico',
+      introduction: 'Pode ser introduzido em pequenas quantidades em receitas (ex: purê) ou através de iogurte natural integral sem açúcar. Não substitui o leite materno/fórmula como bebida principal antes de 1 ano.',
+      observation: 'Alergia (APLV) pode causar reações de pele, vômitos, diarreia com ou sem sangue e chiado no peito. Intolerância à lactose geralmente causa gases e diarreia.'
+    },
+    {
+      id: 'a4',
+      name: 'Amendoim e Castanhas',
+      category: 'Alimento Alergênico',
+      introduction: 'NUNCA ofereça inteiros pelo alto risco de engasgo. Introduza em forma de pasta (espalhando uma camada fina em uma fruta) ou farinha (misturada no mingau).',
+      observation: 'Alergias a amendoim/castanhas podem ser graves. Fique atento a qualquer inchaço, urticária ou dificuldade para respirar e procure ajuda médica imediatamente.'
+    },
+    {
+      id: 'a5',
+      name: 'Peixe e Frutos do Mar',
+      category: 'Alimento Alergênico',
+      introduction: 'Comece com peixes brancos (ex: tilápia) bem cozidos e desfiados, verificando cuidadosamente a ausência de espinhas. Frutos do mar (camarão, etc.) devem ser introduzidos com mais cautela e orientação pediátrica.',
+      observation: 'Urticária, inchaço e vômitos são os sinais mais comuns. Reações podem ser rápidas e intensas.'
+    },
+    {
+      id: 'a6',
+      name: 'Soja',
+      category: 'Alimento Alergênico',
+      introduction: 'Pode ser oferecida na forma de tofu (em tiras ou amassado) ou edamame cozido (sem a vagem).',
+      observation: 'Acompanhe por possíveis reações de pele, gastrointestinais ou respiratórias.'
+    }
 ];
 
 export const firstWeeksPlan: PlanDay[] = [
-  { day: 1, fruit: "Mamão", vegetable: "Cenoura", preparation: "Ambos cozidos e amassados separadamente." },
-  { day: 2, fruit: "Banana", vegetable: "Batata Doce", preparation: "Banana amassada, batata cozida e amassada." },
-  { day: 3, fruit: "Maçã", vegetable: "Abóbora", preparation: "Maçã raspada ou cozida, abóbora cozida e amassada." },
-  { day: 4, fruit: "Pera", vegetable: "Mandioquinha", preparation: "Pera raspada ou cozida, mandioquinha cozida e amassada." },
-  { day: 5, fruit: "Abacate", vegetable: "Brócolis", preparation: "Abacate amassado, brócolis (só as flores) cozido e amassado." },
-  { day: 6, fruit: "Mamão", vegetable: "Cenoura", preparation: "Repetir para reforçar o sabor." },
-  { day: 7, fruit: "Banana", vegetable: "Batata Doce", preparation: "Repetir para reforçar o sabor." },
-  { day: 8, fruit: "Manga", vegetable: "Abobrinha", preparation: "Manga raspada, abobrinha cozida (sem sementes) e amassada." },
-  { day: 9, fruit: "Pera", vegetable: "Inhame", preparation: "Pera cozida, inhame cozido e amassado." },
-  { day: 10, fruit: "Maçã", vegetable: "Couve-flor", preparation: "Maçã cozida, couve-flor cozida e amassada." },
-  { day: 11, fruit: "Abacate", vegetable: "Beterraba", preparation: "Abacate amassado, beterraba cozida e amassada." },
-  { day: 12, fruit: "Banana", vegetable: "Brócolis", preparation: "Banana amassada, brócolis cozido e amassado." },
-  { day: 13, fruit: "Mamão", vegetable: "Mandioquinha", preparation: "Mamão amassado, mandioquinha cozida e amassada." },
-  { day: 14, fruit: "Manga", vegetable: "Abóbora", preparation: "Manga raspada, abóbora cozida e amassada." }
+  { day: 1, food: "Cenoura", textureAndCut: "Purê liso ou palitos cozidos muito macios.", prepTime: "15 min", allergyRisk: "Baixo", tip: "Deixe o bebê explorar o alimento com as mãos antes de levar à boca." },
+  { day: 2, food: "Banana", textureAndCut: "Amassada com garfo ou em tiras grandes.", prepTime: "5 min", allergyRisk: "Baixo", tip: "Use uma banana bem madura, que é mais doce e fácil de amassar." },
+  { day: 3, food: "Batata Doce", textureAndCut: "Purê ou palitos assados/cozidos bem macios.", prepTime: "25 min", allergyRisk: "Baixo", tip: "Asse em vez de cozinhar para um sabor mais adocicado." },
+  { day: 4, food: "Mamão", textureAndCut: "Amassado ou em tiras largas (sem sementes).", prepTime: "5 min", allergyRisk: "Baixo", tip: "O mamão ajuda no funcionamento do intestino do bebê." },
+  { day: 5, food: "Abóbora", textureAndCut: "Cozida e amassada com garfo.", prepTime: "20 min", allergyRisk: "Baixo", tip: "Use temperos naturais como cebola e salsinha no cozimento." },
+  { day: 6, food: "Pera", textureAndCut: "Raspada ou cozida em pedaços macios.", prepTime: "10 min", allergyRisk: "Baixo", tip: "Se a pera estiver dura, cozinhe no vapor por alguns minutos." },
+  { day: 7, food: "Abacate", textureAndCut: "Amassado ou em fatias grandes em formato de meia-lua.", prepTime: "5 min", allergyRisk: "Baixo", tip: "Rico em gorduras boas, essenciais para o cérebro do bebê." },
+  { day: 8, food: "Frango", textureAndCut: "Cozido e bem desfiado, misturado em um purê.", prepTime: "20 min", allergyRisk: "Baixo", tip: "Use o caldo do cozimento do frango para umedecer e dar sabor." },
+  { day: 9, food: "Maçã", textureAndCut: "Cozida e amassada ou ralada (se bem macia).", prepTime: "10 min", allergyRisk: "Baixo", tip: "Adicione uma pitada de canela para um sabor diferente." },
+  { day: 10, food: "Brócolis", textureAndCut: "'Arvorezinhas' cozidas no vapor bem macias.", prepTime: "10 min", allergyRisk: "Baixo", tip: "Ofereça o talo para o bebê segurar, ele vai adorar explorar." },
+  { day: 11, food: "Feijão", textureAndCut: "Apenas o caldo grosso ou grãos bem amassados.", prepTime: "5 min (com feijão pronto)", allergyRisk: "Baixo", tip: "O feijão é uma excelente fonte de ferro." },
+  { day: 12, food: "Ovo", textureAndCut: "Ovo cozido por 10 min, bem amassado.", prepTime: "12 min", allergyRisk: "Alto", tip: "Ofereça pela manhã para observar possíveis reações ao longo do dia." },
+  { day: 13, food: "Manga", textureAndCut: "Raspada ou em tiras grossas e seguras.", prepTime: "5 min", allergyRisk: "Baixo", tip: "Escolha uma manga sem fiapos, como a Palmer." },
+  { day: 14, food: "Peixe Branco", textureAndCut: "Cozido no vapor e bem desfiado, sem espinhas.", prepTime: "15 min", allergyRisk: "Médio", tip: "Verifique 3 vezes se não há espinhas antes de oferecer." }
 ];
 
 export const ageRoutines: Routine[] = [
@@ -2670,3 +2334,40 @@ export const safetyTopics: SafetyTopic[] = [
     content: "Cozinhe bem legumes duros como cenoura e batata, até que você consiga amassá-los facilmente com um garfo. Retire peles, sementes grandes e caroços. Desfie bem as carnes e verifique CUIDADOSAMENTE se não há espinhas em peixes. Evite mel até 1 ano de idade pelo risco de botulismo."
   }
 ];
+
+export const cutsAndTextures: CutAndTexture[] = [
+  { id: 'cut1', food: 'Banana', imageId: '11', cut_6_8_months: 'Em palito: corte a banana ao meio e depois novamente ao meio no comprimento. Deixe um pedaço da casca na base para o bebê segurar melhor.', cut_9_12_months: 'Em rodelas ou pedaços menores para o bebê praticar o movimento de pinça.' },
+  { id: 'cut2', food: 'Abacate', imageId: '13', cut_6_8_months: 'Em fatias grandes (formato de meia-lua), com ou sem casca. A casca ajuda na pega. Pode também "empanar" na farinha de aveia para não escorregar.', cut_9_12_months: 'Em cubos pequenos e macios para o bebê pegar com os dedos.' },
+  { id: 'cut3', food: 'Batata Doce / Cenoura', imageId: '47', cut_6_8_months: 'Cozinhe ou asse bem até ficar muito macio (teste do garfo). Sirva em formato de palitos grossos.', cut_9_12_months: 'Em cubos pequenos e macios ou continue em palitos.' },
+  { id: 'cut4', food: 'Maçã / Pera', imageId: '4', cut_6_8_months: 'NUNCA ofereça crua. Cozinhe ou asse até ficar muito macia. Sirva em fatias grandes ou amassada.', cut_9_12_months: 'Cozida em pedaços menores. Se muito macia, pode ralar crua em ralo grosso.' },
+  { id: 'cut5', food: 'Carne / Frango', imageId: '17', cut_6_8_months: 'Cozinhe bem (na pressão é ótimo) e sirva em tiras grandes e bem macias que se desfaçam, ou muito bem desfiado e misturado em purês.', cut_9_12_months: 'Em pedaços pequenos e macios, ou desfiado.' }
+];
+
+export const gagVsChoke: GagVsChoke = {
+  normalReactions: [
+    'Tosse para trazer o alimento para frente.',
+    'Faz ânsia de vômito (mas não vomita).',
+    'Rosto fica vermelho, mas a respiração continua normal.',
+    'Cospe o pedaço de comida.',
+    'Continua tentando comer depois do episódio.'
+  ],
+  alertReactions: [
+    'Silêncio! A criança não consegue tossir, chorar ou emitir som.',
+    'Dificuldade para respirar, pode haver um chiado agudo.',
+    'Lábios, língua ou rosto começam a ficar azulados.',
+    'Expressão de pânico nos olhos.',
+    'Perda de consciência.'
+  ]
+};
+
+export const whatToDoInChoking: ChokingGuide = {
+  description: "Diferente do GAG, o engasgo é uma emergência. A criança não consegue respirar. Aja rápido:",
+  steps: [
+    "NÃO tente tirar o objeto com o dedo, você pode empurrá-lo mais fundo.",
+    "Ligue para a emergência (192) e coloque no viva-voz.",
+    "Aplique a Manobra de Heimlich para bebês menores de 1 ano (tapas nas costas e compressões no peito).",
+    "Mantenha a calma e siga as instruções do socorro."
+  ],
+  link: "https://www.youtube.com/watch?v=5rK3934n-tA",
+  linkText: "Assista a um vídeo da manobra aqui (link para fonte confiável)"
+};

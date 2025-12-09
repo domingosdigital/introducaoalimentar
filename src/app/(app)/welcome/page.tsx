@@ -23,7 +23,7 @@ const mainCards = [
   },
   {
     href: '/guide',
-    label: 'Guia da Mamãe',
+    label: 'Primeiros Passos',
     description: 'Respostas para suas dúvidas.',
     icon: BookHeart,
     highlight: false,
@@ -31,25 +31,20 @@ const mainCards = [
 ];
 
 const featureCards = [
-  {
+    {
     href: '/phases',
-    label: 'Fases e comportamentos',
+    label: 'Evolução do Bebê',
     icon: Baby,
   },
   {
     href: '/checklist',
     label: 'Checklist de Alimentos',
-    icon: CheckSquare,
+    icon: NotebookText,
   },
   {
     href: '/plan',
     label: 'Plano de 14 Dias',
     icon: CalendarDays,
-  },
-  {
-    href: '/routine',
-    label: 'Rotina por Idade',
-    icon: Clock,
   },
   {
     href: '/safety',
