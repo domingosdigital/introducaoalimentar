@@ -92,7 +92,7 @@ export default function WelcomePage() {
 
         <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
           <Image
-            src="https://i.imgur.com/spP6Lkb.png"
+            src="https://i.imgur.com/l3FoDwn.png"
             alt="Bebê feliz comendo"
             fill
             className="object-cover"
