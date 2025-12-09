@@ -1,0 +1,224 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user account within the application.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user.",
+          "format": "email"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The name the user wants to be displayed as."
+        },
+        "babyIds": {
+          "type": "array",
+          "description": "References to Babies. (Relationship: User 1:N Baby)",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "displayName"
+      ]
+    },
+    "Baby": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Baby",
+      "type": "object",
+      "description": "Represents a baby profile within the application.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the baby."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Baby)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the baby."
+        },
+        "birthDate": {
+          "type": "string",
+          "description": "Birth date of the baby.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "name",
+        "birthDate"
+      ]
+    },
+    "FoodHistory": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "FoodHistory",
+      "type": "object",
+      "description": "Represents a record of a food item introduced to the baby.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the food history record."
+        },
+        "babyId": {
+          "type": "string",
+          "description": "Reference to Baby. (Relationship: Baby 1:N FoodHistory)"
+        },
+        "foodName": {
+          "type": "string",
+          "description": "Name of the food item."
+        },
+        "dateOffered": {
+          "type": "string",
+          "description": "Date when the food was offered.",
+          "format": "date-time"
+        },
+        "reaction": {
+          "type": "string",
+          "description": "Reaction of the baby to the food (Liked, Disliked, Strange Reaction)."
+        }
+      },
+      "required": [
+        "id",
+        "babyId",
+        "foodName",
+        "dateOffered",
+        "reaction"
+      ]
+    },
+    "Recipe": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Recipe",
+      "type": "object",
+      "description": "Represents a quick recipe for baby food.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the recipe."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the recipe."
+        },
+        "ingredients": {
+          "type": "array",
+          "description": "List of ingredients for the recipe.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "instructions": {
+          "type": "string",
+          "description": "Step-by-step instructions for preparing the recipe."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "ingredients",
+        "instructions"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user account information. Uses path-based ownership for user data.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "Unique identifier for the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/babies/{babyId}",
+        "definition": {
+          "entityName": "Baby",
+          "schema": {
+            "$ref": "#/backend/entities/Baby"
+          },
+          "description": "Stores baby profiles associated with a user. Uses path-based ownership. Includes denormalized userId for authorization independence.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "Unique identifier for the user (owner)."
+            },
+            {
+              "name": "babyId",
+              "description": "Unique identifier for the baby profile."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/babies/{babyId}/foodHistory/{foodHistoryId}",
+        "definition": {
+          "entityName": "FoodHistory",
+          "schema": {
+            "$ref": "#/backend/entities/FoodHistory"
+          },
+          "description": "Stores food history records for a specific baby. Uses path-based ownership. Includes denormalized userId and babyId for authorization independence.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "Unique identifier for the user (owner)."
+            },
+            {
+              "name": "babyId",
+              "description": "Unique identifier for the baby."
+            },
+            {
+              "name": "foodHistoryId",
+              "description": "Unique identifier for the food history record."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/recipes/{recipeId}",
+        "definition": {
+          "entityName": "Recipe",
+          "schema": {
+            "$ref": "#/backend/entities/Recipe"
+          },
+          "description": "Stores general recipes. Accessible to all users.",
+          "params": [
+            {
+              "name": "recipeId",
+              "description": "Unique identifier for the recipe."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to securely manage user, baby, food history, and recipe data for the \"Primeiras Mordidas\" application. The structure prioritizes authorization independence and supports efficient data retrieval. User accounts are stored in the `/users` collection, enabling path-based ownership for user-specific data like baby profiles stored in `/users/{userId}/babies`. Food history records, associated with specific babies, are stored in `/users/{userId}/babies/{babyId}/foodHistory`, maintaining the ownership hierarchy. Recipes are stored in a global `/recipes` collection, accessible to all users. This design eliminates the need for `get()` calls in security rules, enabling atomic operations. It supports secure `list` operations by segregating data based on ownership and employing path-based access control, ensuring users can only access data they own or have permission to access."
+  }
+}

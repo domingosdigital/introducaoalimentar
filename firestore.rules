@@ -1,0 +1,124 @@
+/**
+ * Core Philosophy: This ruleset enforces a strict user-ownership model where all private user data, including baby profiles and their food histories, is securely nested within a user-specific document path. This ensures that users can only access their own information. Publicly accessible data, like recipes, is stored in a separate top-level collection.
+ *
+ * Data Structure: The data is organized hierarchically. The root of all private data is the `/users/{userId}` path. Nested under this are subcollections for `/babies` and further down, `/babies/{babyId}/foodHistory`. This structure provides clear, path-based ownership. A separate top-level collection, `/recipes`, holds data that is readable by all users.
+ *
+ * Key Security Decisions:
+ * - User data is strictly private. A user can only read or write documents within their own `/users/{userId}` data tree.
+ * - Listing users is disallowed. The rules do not provide a `list` permission on the top-level `/users` collection.
+ * - Recipes are public and read-only. All authenticated and unauthenticated users can read recipes, but write operations are currently disabled as a security precaution, pending the addition of an ownership field to the data model.
+ * - The default security posture is to deny access. Permissions are granted explicitly.
+ *
+ * Denormalization for Authorization: The rules rely on path-based security, which is a form of denormalization. The user's ID in the path (`/users/{userId}`) is the source of truth for all ownership checks on nested documents, eliminating the need for slow and costly `get()` calls to parent documents. Additionally, the rules enforce that documents contain internal ID fields (e.g., `userId` on a `Baby` document) that match the path, ensuring relational integrity on creation.
+ *
+ * Structural Segregation: The ruleset leverages structural segregation by separating private user data (in `/users`) from public data (in `/recipes`). This is a highly secure and performant pattern that prevents accidental data exposure and simplifies rules for list operations.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ----------------------------------------------------------------------
+    // Helper Functions
+    // ----------------------------------------------------------------------
+
+    /**
+     * Returns true if the user is authenticated.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * Returns true if the authenticated user's UID matches the provided userId.
+     * This is the primary function for establishing document ownership.
+     */
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    /**
+     * Returns true if the document exists and the user is the owner.
+     * Used for safe update and delete operations.
+     */
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+
+    // ----------------------------------------------------------------------
+    // User Profile Rules
+    // ----------------------------------------------------------------------
+
+    /**
+     * @description Controls access to a user's own profile document.
+     * @path /users/{userId}
+     * @allow (create) An authenticated user creating their own profile document, where the document ID matches their UID.
+     * @deny (create) An authenticated user trying to create a profile for another user's UID.
+     * @principle A user has sole control over their own root document.
+     */
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId); // Effectively allows a 'get' on their own doc, prevents listing others
+      allow create: if isOwner(userId) && request.resource.data.id == userId;
+      allow update: if isExistingOwner(userId) && request.resource.data.id == resource.data.id;
+      allow delete: if isExistingOwner(userId);
+
+      // ----------------------------------------------------------------------
+      // Baby Profile Rules
+      // ----------------------------------------------------------------------
+
+      /**
+       * @description Controls access to baby profiles, which are subcollections of a user.
+       * @path /users/{userId}/babies/{babyId}
+       * @allow (create) The owner of the user account adding a new baby profile.
+       * @deny (get) A different user trying to read a baby's profile.
+       * @principle Enforces inherited ownership from the parent user document.
+       */
+      match /babies/{babyId} {
+        allow get: if isOwner(userId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && request.resource.data.userId == userId;
+        allow update: if isExistingOwner(userId) && request.resource.data.userId == resource.data.userId;
+        allow delete: if isExistingOwner(userId);
+
+        // ----------------------------------------------------------------------
+        // Food History Rules
+        // ----------------------------------------------------------------------
+
+        /**
+         * @description Controls access to food history records for a specific baby.
+         * @path /users/{userId}/babies/{babyId}/foodHistory/{foodHistoryId}
+         * @allow (create) The parent user adding a food history record for their baby.
+         * @deny (update) Any other user trying to modify a food history record.
+         * @principle Deeply nested ownership; access is determined by the top-level user ID in the path.
+         */
+        match /foodHistory/{foodHistoryId} {
+          allow get: if isOwner(userId);
+          allow list: if isOwner(userId);
+          allow create: if isOwner(userId) && request.resource.data.babyId == babyId;
+          allow update: if isExistingOwner(userId) && request.resource.data.babyId == resource.data.babyId;
+          allow delete: if isExistingOwner(userId);
+        }
+      }
+    }
+
+    // ----------------------------------------------------------------------
+    // Public Recipe Rules
+    // ----------------------------------------------------------------------
+
+    /**
+     * @description Controls access to the public collection of recipes.
+     * @path /recipes/{recipeId}
+     * @allow (get) Any user, including unauthenticated ones, reading a recipe.
+     * @deny (create) Any user trying to add a new recipe.
+     * @principle Provides public read access but denies all writes for security. Writes cannot be implemented securely without an ownership field (e.g., 'authorId') on the Recipe document.
+     */
+    match /recipes/{recipeId} {
+      allow get: if true;
+      allow list: if true;
+      // CRITICAL: Cannot implement owner-only writes. The 'Recipe' entity is missing an 'ownerId' or 'authorId' field.
+      allow create: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+      allow update: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+      allow delete: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+    }
+  }
+}
