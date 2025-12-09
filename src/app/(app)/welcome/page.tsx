@@ -76,15 +76,16 @@ export default function WelcomePage() {
 
   return (
     <div className="animate-in fade-in flex h-full flex-col bg-muted/50 p-6 sm:p-8 space-y-6">
-      <header className="text-left">
-        <h1 className="font-headline text-3xl font-bold text-foreground tracking-tight">
-          Olá, <span className="text-primary">{userName}</span>!
-        </h1>
-        <p className="text-lg text-muted-foreground mt-1">O que vamos explorar hoje?</p>
-      </header>
 
       <div className="space-y-6">
         
+        <header className="text-left">
+          <h1 className="font-headline text-3xl font-bold text-foreground tracking-tight">
+            Olá, <span className="text-primary">{userName}</span>!
+          </h1>
+          <p className="text-lg text-muted-foreground mt-1">O que vamos explorar hoje?</p>
+        </header>
+
          <div className="text-center">
           <h1 className="text-xl font-bold font-headline text-foreground leading-tight">
             A introdução alimentar do seu bebê<br/>sem medo e sem dúvidas.
