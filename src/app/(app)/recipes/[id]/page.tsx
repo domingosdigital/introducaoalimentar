@@ -4,11 +4,11 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { recipes } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ChevronLeft, Soup, Drumstick, Clock, Flame, UtensilsCrossed, Star } from 'lucide-react';
+import { ChevronLeft, Soup, Drumstick, Clock, Flame, UtensilsCrossed, Star, Scissors } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useFavorites } from '@/hooks/use-favorites';
 import { cn } from '@/lib/utils';
 
@@ -81,6 +81,22 @@ export default function RecipeDetailPage({ params }: { params: { id: string } })
             </div>
           </CardHeader>
         </Card>
+
+        {recipe.ageVariations && (
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Scissors className="h-6 w-6 text-primary" />
+              <h2 className="font-headline text-2xl font-semibold">Variações por Idade</h2>
+            </div>
+            <Card>
+              <CardContent className="p-4 space-y-3 text-sm">
+                <p><strong>6-8 meses:</strong> {recipe.ageVariations['6-8 meses']}</p>
+                <p><strong>9-11 meses:</strong> {recipe.ageVariations['9-11 meses']}</p>
+                <p><strong>12+ meses:</strong> {recipe.ageVariations['12+ meses']}</p>
+              </CardContent>
+            </Card>
+          </div>
+        )}
 
         <div>
           <div className="flex items-center gap-3 mb-4">

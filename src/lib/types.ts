@@ -18,6 +18,11 @@ export interface Recipe {
   texture: Texture;
   cookingTime: string;
   cookingInfo: string;
+  ageVariations?: {
+    '6-8 meses': string;
+    '9-11 meses': string;
+    '12+ meses': string;
+  };
 }
 
 export interface GuideTopic {

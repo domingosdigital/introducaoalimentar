@@ -131,6 +131,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '5-7 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê liso e cremoso.',
+        '9-11 meses': 'Amasse a banana com garfo deixando pequenos pedaços para estimular a mastigação.',
+        '12+ meses': 'Pode adicionar pedaços de outras frutas macias, como morango picado.'
+    }
   },
   {
     id: '11',
@@ -152,6 +157,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '10 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado pelo ovo. Introduza o ovo primeiro separadamente. Se já introduzido, sirva em tiras largas.',
+        '9-11 meses': 'Perfeita para essa idade. Sirva em tiras ou pedaços pequenos para o bebê praticar o movimento de pinça.',
+        '12+ meses': 'Pode servir a panqueca inteira e até adicionar uma fina camada de pasta de castanhas.'
+    }
   },
   {
     id: '12',
@@ -171,6 +181,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '5 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Cozinhe bem o ovo e amasse com um garfo. Certifique-se de que não há pedaços grandes.',
+        '9-11 meses': 'Sirva como ovos mexidos cremosos, em pedaços que o bebê consiga pegar.',
+        '12+ meses': 'Pode adicionar vegetais bem picados, como tomate ou espinafre, durante o preparo.'
+    }
   },
   {
     id: '13',
@@ -190,6 +205,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '3 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Ofereça como um purê espesso para comer de colher.',
+        '9-11 meses': 'Pode deixar um pouco mais consistente e oferecer em copo de transição.',
+        '12+ meses': 'Sirva em copo com canudo ou copo aberto, incentivando a autonomia.'
+    }
   },
   {
     id: '14',
@@ -208,6 +228,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '3 min',
     cookingInfo: 'Torradeira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. Introduza amendoim (em pasta) e trigo separadamente primeiro.',
+        '9-11 meses': 'Se já introduzido, ofereça a torrada em tiras finas com uma camada muito fina da pasta.',
+        '12+ meses': 'Corte em pedaços menores para o bebê comer sozinho. Pode combinar com rodelas de banana.'
+    }
   },
   {
     id: '41',
@@ -227,6 +252,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '15 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Certifique-se de que o mingau está bem liso e sem pedaços. Use a peneira mais fina possível.',
+        '9-11 meses': 'Textura cremosa perfeita para esta idade.',
+        '12+ meses': 'Pode servir como creme ou misturado com outras frutas.'
+    }
   },
   {
     id: '44',
@@ -245,6 +275,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '3 min',
     cookingInfo: 'Tigela',
+    ageVariations: {
+        '6-8 meses': 'Se o pediatra liberar laticínios, amasse bem as frutas no iogurte para uma textura mais lisa.',
+        '9-11 meses': 'Pode deixar as frutas em pedaços pequenos para o bebê explorar.',
+        '12+ meses': 'Sirva com frutas picadas e um punhado de aveia para mais fibras.'
+    }
   },
   {
     id: '48',
@@ -264,6 +299,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '15 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Bata a geleia no liquidificador para uma textura bem lisa antes de servir.',
+        '9-11 meses': 'A textura rústica da geleia já é adequada. Sirva com frutas ou em panquecas.',
+        '12+ meses': 'Perfeita para passar em torradas ou pães.'
+    }
   },
   {
     id: '49',
@@ -283,6 +323,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '15 min',
     cookingInfo: 'Cuscuzeira',
+    ageVariations: {
+        '6-8 meses': 'Ofereça o cuscuz bem macio e umedecido com leite. O ovo deve ser bem amassado.',
+        '9-11 meses': 'Sirva o cuscuz em pedaços pequenos e o ovo picado para o bebê pegar.',
+        '12+ meses': 'Pode servir como na receita ou até adicionar um queijo ralado por cima.'
+    }
   },
   {
     id: '51',
@@ -301,6 +346,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '10 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Garanta que o mingau esteja bem cremoso e a pera ralada finamente.',
+        '9-11 meses': 'Pode deixar o mingau um pouco mais espesso.',
+        '12+ meses': 'Pode adicionar outras frutas picadas, como maçã ou banana.'
+    }
   },
   {
     id: '52',
@@ -321,6 +371,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '7 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado pelo ovo. Após introdução do ovo, sirva em tiras largas e macias.',
+        '9-11 meses': 'Sirva em tiras ou enrolada para o bebê praticar a mastigação.',
+        '12+ meses': 'Pode ser recheada com queijo, frango desfiado ou pasta de abacate.'
+    }
   },
   {
     id: '53',
@@ -341,6 +396,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '25 min',
     cookingInfo: 'Forminhas de Muffin',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado devido à textura e ovo. Ofereça os ingredientes separadamente primeiro.',
+        '9-11 meses': 'Se o bebê já mastiga bem, pode oferecer em pedaços.',
+        '12+ meses': 'Perfeito para esta idade. Sirva o mini muffin inteiro.'
+    }
   },
   {
     id: '54',
@@ -359,6 +419,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '5 min',
     cookingInfo: 'Tigela',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem o mamão para formar um purê.',
+        '9-11 meses': 'Ofereça em pedaços pequenos para o bebê praticar a pinça.',
+        '12+ meses': 'Pode servir em fatias maiores para o bebê morder.'
+    }
   },
   {
     id: '55',
@@ -378,6 +443,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '10 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado (ovo e queijo). Introduza os ingredientes separadamente.',
+        '9-11 meses': 'Após introdução de ovo e laticínios, sirva em tiras macias.',
+        '12+ meses': 'Perfeito para esta idade, corte em pedaços ou tiras.'
+    }
   },
     {
     id: '56',
@@ -395,6 +465,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '8 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um creme liso.',
+        '9-11 meses': 'Pode adicionar pedaços pequenos de manga para textura.',
+        '12+ meses': 'Sirva com outras frutas e um fio de mel (se o pediatra liberar).'
+    }
   },
   {
     id: '57',
@@ -413,6 +488,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '10 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Introduza ovo de galinha primeiro. Depois, pode oferecer o de codorna cozido e amassado.',
+        '9-11 meses': 'Corte em 4 partes no sentido do comprimento para segurança.',
+        '12+ meses': 'Corte ao meio e sirva.'
+    }
   },
   {
     id: '58',
@@ -430,6 +510,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '4 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê para comer de colher.',
+        '9-11 meses': 'Sirva em copo de transição.',
+        '12+ meses': 'Sirva em copo aberto ou com canudo.'
+    }
   },
   {
     id: '59',
@@ -448,6 +533,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '20 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê liso.',
+        '9-11 meses': 'Amasse com o garfo, deixando alguns pedacinhos.',
+        '12+ meses': 'Pode servir em pedaços macios cozidos, temperados com o suco de laranja.'
+    }
   },
   {
     id: '60',
@@ -466,6 +556,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '20 min',
     cookingInfo: 'Forminhas de Muffin',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado (ovo). Introduza separadamente.',
+        '9-11 meses': 'Ofereça o bolinho em pedaços.',
+        '12+ meses': 'Sirva o bolinho inteiro.'
+    }
   },
   {
     id: '61',
@@ -485,6 +580,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '8 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado (ovo, pão). Introduza separadamente.',
+        '9-11 meses': 'Após introdução de ovo e trigo, sirva em tiras macias.',
+        '12+ meses': 'Sirva em tiras ou pedaços.'
+    }
   },
   {
     id: '62',
@@ -503,6 +603,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '7 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um creme liso e morno.',
+        '9-11 meses': 'Pode misturar com um purê de frutas para enriquecer.',
+        '12+ meses': 'Sirva como base para frutas picadas.'
+    }
   },
   {
     id: '63',
@@ -522,6 +627,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '15 min',
     cookingInfo: 'Máquina de Waffle',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado (ovo, trigo).',
+        '9-11 meses': 'Sirva em tiras macias para o bebê segurar.',
+        '12+ meses': 'Pode servir com iogurte ou frutas por cima.'
+    }
   },
   {
     id: '64',
@@ -540,6 +650,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '5 min (+ tempo de geladeira)',
     cookingInfo: 'Geladeira',
+    ageVariations: {
+        '6-8 meses': 'Use um purê de frutas bem liso. Sirva como um mingau frio.',
+        '9-11 meses': 'Pode deixar pedacinhos de fruta no purê.',
+        '12+ meses': 'Sirva como na receita.'
+    }
   },
   {
     id: '65',
@@ -557,6 +672,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '3 min',
     cookingInfo: 'Tigela',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem para formar um purê.',
+        '9-11 meses': 'Ofereça em pedaços para o bebê praticar a pinça.',
+        '12+ meses': 'Use como pasta em torradas ou sirva em fatias.'
+    }
   },
   {
     id: '66',
@@ -576,6 +696,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '25 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um creme liso.',
+        '9-11 meses': 'Pode servir mais espesso, para o bebê comer sozinho.',
+        '12+ meses': 'Experimente com diferentes frutas.'
+    }
   },
 
   // Almoço (28 receitas)
@@ -597,6 +722,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '15 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Faça um purê bem liso, se necessário, passe pela peneira.',
+        '9-11 meses': 'Amasse com o garfo, deixando alguns pedacinhos.',
+        '12+ meses': 'Sirva em cubos cozidos e macios para o bebê comer com a mão.'
+    }
   },
   {
     id: '3',
@@ -617,6 +747,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '20 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Bata o frango cozido com a cenoura e um pouco de água para formar um purê.',
+        '9-11 meses': 'Sirva o frango bem desfiado e a cenoura em pedaços pequenos e macios.',
+        '12+ meses': 'Ofereça o frango em tiras e a cenoura em palitos cozidos.'
+    }
   },
   {
     id: '7',
@@ -636,6 +771,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '5 min (com feijão já cozido)',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Ofereça apenas o caldo peneirado, sem as cascas.',
+        '9-11 meses': 'Amasse os grãos de feijão com um garfo e sirva com o caldo.',
+        '12+ meses': 'Sirva os grãos de feijão inteiros com o caldo, junto com arroz.'
+    }
   },
   {
     id: '8',
@@ -656,6 +796,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '12 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva o ovo bem cozido e amassado com um garfo.',
+        '9-11 meses': 'Ofereça em pedaços pequenos ou como um omelete bem cozido e cortado em tiras.',
+        '12+ meses': 'Pode fazer ovos mexidos ou um ovinho frito (em água ou pouco azeite).'
+    }
   },
   {
     id: '9',
@@ -675,6 +820,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '20 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Prepare um purê liso e homogêneo.',
+        '9-11 meses': 'Amasse com garfo, deixando uma textura mais rústica.',
+        '12+ meses': 'Sirva em cubos cozidos e macios para o bebê comer com as mãos.'
+    }
   },
   {
     id: '15',
@@ -694,6 +844,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '25 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Cozinhe bem e bata no liquidificador para formar um creme.',
+        '9-11 meses': 'Cozinhe bem até ficar "papa", amassando os maiores pedaços de legumes.',
+        '12+ meses': 'Sirva como um risoto úmido e macio.'
+    }
   },
   {
     id: '16',
@@ -714,6 +869,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '15 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem o peixe e a batata juntos, formando um purê.',
+        '9-11 meses': 'Sirva o peixe em lascas e a batata em pedaços pequenos e macios.',
+        '12+ meses': 'Ofereça um pedaço maior do filé de peixe para o bebê explorar.'
+    }
   },
   {
     id: '17',
@@ -732,6 +892,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '40 min',
     cookingInfo: 'Panela de Pressão',
+    ageVariations: {
+        '6-8 meses': 'Cozinhe bem a carne, desfie e depois bata no liquidificador com um purê de legumes.',
+        '9-11 meses': 'Sirva a carne bem desfiada, para o bebê pegar com a mão ou misturada no arroz.',
+        '12+ meses': 'Ofereça a carne em cubos bem macios ou desfiada.'
+    }
   },
   {
     id: '18',
@@ -751,6 +916,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '30 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Bata no liquidificador para uma sopa cremosa e lisa.',
+        '9-11 meses': 'Amasse com um garfo, deixando pedaços pequenos e macios.',
+        '12+ meses': 'Sirva como uma sopa rústica, com os legumes e lentilhas inteiros.'
+    }
   },
   {
     id: '37',
@@ -769,6 +939,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '10 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê liso.',
+        '9-11 meses': 'Amasse com o garfo para uma textura mais rústica.',
+        '12+ meses': 'Sirva as ervilhas inteiras e cozidas, misturadas com arroz.'
+    }
   },
   {
     id: '38',
@@ -787,6 +962,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '3 min',
     cookingInfo: 'Faca',
+    ageVariations: {
+        '6-8 meses': 'Tomate sem pele e sementes, bem amassado. Pepino não recomendado por ser duro.',
+        '9-11 meses': 'Sirva tomate e pepino (sem casca) em palitos para o bebê explorar.',
+        '12+ meses': 'Pode servir em pedaços menores, como em uma salada.'
+    }
   },
   {
     id: '43',
@@ -806,6 +986,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '10 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Sirva o frango cozido e desfiado, misturado em purês.',
+        '9-11 meses': 'Ofereça tiras finas e macias para o bebê segurar e comer.',
+        '12+ meses': 'Sirva em tiras ou cubos, para o bebê treinar o garfo.'
+    }
   },
   {
     id: '45',
@@ -824,6 +1009,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '10 min (com ingredientes pré-preparados)',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. Introduza os ingredientes separadamente.',
+        '9-11 meses': 'Se a carne estiver muito bem desfiada, pode misturar ao purê.',
+        '12+ meses': 'Sirva como na receita, com a carne desfiada e o purê.'
+    }
   },
   {
     id: '47',
@@ -844,6 +1034,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '25 min',
     cookingInfo: 'Assadeira',
+    ageVariations: {
+        '6-8 meses': 'Sirva a cenoura cozida e bem amassada.',
+        '9-11 meses': 'Asse em palitos até ficarem bem macios.',
+        '12+ meses': 'Pode deixar um pouco mais firme para estimular a mastigação.'
+    }
   },
   {
     id: '67',
@@ -862,6 +1057,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '30 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Ofereça o purê de batata doce.',
+        '9-11 meses': 'Após introdução do trigo (se usar farinha de trigo), sirva os nhoques cortados ao meio.',
+        '12+ meses': 'Sirva os nhoques inteiros com um molho de tomate caseiro.'
+    }
   },
   {
     id: '68',
@@ -880,6 +1080,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '20 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem o brócolis junto com a batata para um purê liso.',
+        '9-11 meses': 'Pique o brócolis e misture no purê para dar textura.',
+        '12+ meses': 'Sirva as "arvorezinhas" de brócolis cozidas ao lado do purê.'
+    }
   },
   {
     id: '69',
@@ -898,6 +1103,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '30 min',
     cookingInfo: 'Refratário',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. Sirva os ingredientes como purês separados.',
+        '9-11 meses': 'Desconstrua a lasanha, servindo a abobrinha cozida em pedaços e a carne moída ao lado.',
+        '12+ meses': 'Sirva em pedaços para o bebê comer com garfo ou com as mãos.'
+    }
   },
   {
     id: '70',
@@ -917,6 +1127,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '30 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Cozinhe bem e bata no liquidificador para formar um creme.',
+        '9-11 meses': 'Amasse com um garfo para uma consistência de "papa".',
+        '12+ meses': 'Sirva como um arroz úmido com as lentilhas inteiras.'
+    }
   },
   {
     id: '71',
@@ -935,6 +1150,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '35 min',
     cookingInfo: 'Panela de Pressão',
+    ageVariations: {
+        '6-8 meses': 'Misture o frango bem desfiado no purê liso de mandioca.',
+        '9-11 meses': 'Sirva em camadas (escondidinho) ou misturado.',
+        '12+ meses': 'Pode gratinar com um pouco de queijo por cima.'
+    }
   },
   {
     id: '72',
@@ -954,6 +1174,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '15 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Bata o fígado cozido no liquidificador com um purê de batata para disfarçar o sabor forte.',
+        '9-11 meses': 'Sirva em pedacinhos bem pequenos e macios.',
+        '12+ meses': 'Sirva em tiras finas e macias.'
+    }
   },
   {
     id: '73',
@@ -972,6 +1197,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '10 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Amasse o salmão cozido junto com o purê de ervilhas.',
+        '9-11 meses': 'Sirva o salmão em lascas e o purê de ervilhas ao lado.',
+        '12+ meses': 'Ofereça o filé de salmão em pedaços para o bebê comer com garfo.'
+    }
   },
   {
     id: '74',
@@ -990,6 +1220,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '10 min (com grão de bico cozido)',
     cookingInfo: 'Processador de alimentos',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê bem liso e cremoso.',
+        '9-11 meses': 'Ótimo para servir com palitos de legumes cozidos para o bebê "mergulhar".',
+        '12+ meses': 'Pode passar em torradas ou servir com pão sírio.'
+    }
   },
     {
     id: '75',
@@ -1008,6 +1243,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '25 min',
     cookingInfo: 'Assadeira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. Ofereça peixe e batata amassados.',
+        '9-11 meses': 'Sirva os bolinhos macios e cortados ao meio.',
+        '12+ meses': 'Sirva os bolinhos inteiros.'
+    }
   },
   {
     id: '76',
@@ -1026,6 +1266,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '25 min',
     cookingInfo: 'Assadeira',
+    ageVariations: {
+        '6-8 meses': 'Ofereça a abobrinha cozida em palitos macios, sem empanar.',
+        '9-11 meses': 'Sirva as tiras assadas, garantindo que o interior está macio.',
+        '12+ meses': 'Perfeito para esta idade.'
+    }
   },
   {
     id: '77',
@@ -1044,6 +1289,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '20 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê liso, sem gratinar.',
+        '9-11 meses': 'A versão amassada e gratinada é ótima para esta idade.',
+        '12+ meses': 'Pode servir os floretes inteiros, cozidos e gratinados.'
+    }
   },
   {
     id: '78',
@@ -1062,6 +1312,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '20 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. Sirva o frango desfiado.',
+        '9-11 meses': 'Sirva as almôndegas bem cozidas e cortadas em quatro.',
+        '12+ meses': 'Sirva as almôndegas inteiras ou cortadas ao meio.'
+    }
   },
   {
     id: '79',
@@ -1081,6 +1336,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '30 min',
     cookingInfo: 'Refratário',
+    ageVariations: {
+        '6-8 meses': 'Ofereça apenas o purê de cenoura.',
+        '9-11 meses': 'O suflê é perfeito por ser muito macio e fácil de comer.',
+        '12+ meses': 'Sirva como na receita.'
+    }
   },
   {
     id: '80',
@@ -1099,6 +1359,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '30 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como uma sopa lisa.',
+        '9-11 meses': 'Pode servir com macarrãozinho de sopa para adicionar textura.',
+        '12+ meses': 'Sirva com pedacinhos de pão para o bebê "mergulhar".'
+    }
   },
 
   // Jantar (26 receitas)
@@ -1120,6 +1385,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '25 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Pique o espinafre o mais fino possível e misture no purê liso.',
+        '9-11 meses': 'Sirva o purê mais rústico com o espinafre refogado.',
+        '12+ meses': 'Ofereça a batata doce em cubos e o espinafre refogado como acompanhamento.'
+    }
   },
   {
     id: '19',
@@ -1138,6 +1408,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '15 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Cozinhe o brócolis e bata com água para fazer um creme. Sirva com o macarrão bem cozido.',
+        '9-11 meses': 'Amasse o brócolis grosseiramente com o garfo para fazer um molho pedaçudo.',
+        '12+ meses': 'Sirva como na receita, com os pedaços de brócolis.'
+    }
   },
   {
     id: '20',
@@ -1156,6 +1431,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '30 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Bata a canja no liquidificador para formar uma sopa cremosa.',
+        '9-11 meses': 'Amasse os ingredientes com um garfo para uma sopa pedaçuda.',
+        '12+ meses': 'Sirva a sopa com os ingredientes em pedaços pequenos.'
+    }
   },
   {
     id: '21',
@@ -1175,6 +1455,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '15 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um creme liso.',
+        '9-11 meses': 'Deixe a sopa mais rústica, amassando com o garfo.',
+        '12+ meses': 'Pode adicionar outras legumes e servir com pedaços.'
+    }
   },
   {
     id: '22',
@@ -1192,6 +1477,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '20 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva a polenta mole com o molho de carne batido (para ficar liso).',
+        '9-11 meses': 'Sirva a polenta mole com a carne moída bem cozida.',
+        '12+ meses': 'Sirva como na receita.'
+    }
   },
   {
     id: '23',
@@ -1212,6 +1502,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '20 min',
     cookingInfo: 'Forminhas de Muffin',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. Introduza ovo e queijo separadamente.',
+        '9-11 meses': 'Após introdução dos ingredientes, sirva o omelete em pedaços.',
+        '12+ meses': 'Sirva o mini omelete inteiro.'
+    }
   },
   {
     id: '24',
@@ -1230,6 +1525,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '20 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como uma sopa lisa.',
+        '9-11 meses': 'Amasse com garfo para uma sopa mais espessa e com textura.',
+        '12+ meses': 'Sirva com sementes de abóbora torradas e trituradas por cima.'
+    }
   },
   {
     id: '25',
@@ -1249,6 +1549,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '25 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva o frango desfiado com purê de espinafre.',
+        '9-11 meses': 'Sirva os rolinhos cortados em fatias finas.',
+        '12+ meses': 'Sirva as rodelas para o bebê comer com as mãos.'
+    }
   },
   {
     id: '26',
@@ -1267,6 +1572,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '20 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Pique a couve bem fina e misture no purê liso de inhame.',
+        '9-11 meses': 'Sirva como um purê amassado com a couve refogada.',
+        '12+ meses': 'Sirva o inhame em pedaços e a couve refogada ao lado.'
+    }
   },
   {
     id: '27',
@@ -1286,6 +1596,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '25 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê mais liso, amassando bem ou batendo.',
+        '9-11 meses': 'A textura rústica do quibebe é ideal para esta fase.',
+        '12+ meses': 'Pode servir com arroz e frango desfiado.'
+    }
   },
   {
     id: '28',
@@ -1305,6 +1620,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '20 min',
     cookingInfo: 'Assadeira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. Ofereça o arroz e legumes amassados.',
+        '9-11 meses': 'Sirva os bolinhos macios e cortados ao meio.',
+        '12+ meses': 'Sirva os bolinhos inteiros.'
+    }
   },
   {
     id: '39',
@@ -1325,6 +1645,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '15 min',
     cookingInfo: 'Assadeira',
+    ageVariations: {
+        '6-8 meses': 'Sirva a abobrinha cozida e amassada com o molho.',
+        '9-11 meses': 'Ofereça as rodelas de abobrinha cozidas (sem queijo) com molho para o bebê pegar.',
+        '12+ meses': 'Sirva como na receita.'
+    }
   },
   {
     id: '42',
@@ -1344,6 +1669,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '5 min (com legumes já cozidos)',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como uma sopa lisa.',
+        '9-11 meses': 'Amasse com garfo para uma sopa com pedaços.',
+        '12+ meses': 'Pode adicionar um pouco de iogurte natural no final para cremosidade.'
+    }
   },
   {
     id: '46',
@@ -1362,6 +1692,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '15 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Passe o creme por uma peneira bem fina para garantir que não haja casquinhas.',
+        '9-11 meses': 'O creme é perfeito para esta idade.',
+        '12+ meses': 'Pode servir com frango desfiado por cima.'
+    }
   },
   {
     id: '81',
@@ -1380,6 +1715,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '25 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Bata tudo junto no liquidificador para uma sopa cremosa.',
+        '9-11 meses': 'Sirva como na receita, com o frango desfiado no creme.',
+        '12+ meses': 'Sirva com os pedaços de mandioquinha e frango na sopa.'
+    }
   },
   {
     id: '82',
@@ -1397,6 +1737,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '20 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Bata a sopa inteira no liquidificador.',
+        '9-11 meses': 'Amasse os legumes e grãos com um garfo.',
+        '12+ meses': 'Sirva como na receita.'
+    }
   },
   {
     id: '83',
@@ -1415,6 +1760,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '20 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê liso.',
+        '9-11 meses': 'Sirva amassado com garfo.',
+        '12+ meses': 'Sirva em palitos cozidos temperados com o suco de laranja.'
+    }
   },
   {
     id: '84',
@@ -1432,6 +1782,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '10 min',
     cookingInfo: 'Frigideira',
+    ageVariations: {
+        '6-8 meses': 'Após introdução do ovo, sirva em tiras largas.',
+        '9-11 meses': 'Sirva em tiras ou enrolada.',
+        '12+ meses': 'Pode rechear com ricota ou frango desfiado.'
+    }
   },
   {
     id: '85',
@@ -1450,6 +1805,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '15 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva a couve picada finamente com a carne moída, em forma de papa.',
+        '9-11 meses': 'Pique o charutinho em pedaços pequenos.',
+        '12+ meses': 'Sirva o charutinho para o bebê comer com as mãos.'
+    }
   },
   {
     id: '86',
@@ -1468,6 +1828,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '25 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como uma sopa lisa.',
+        '9-11 meses': 'Deixe pedaços pequenos para estimular a mastigação.',
+        '12+ meses': 'Sirva com pedaços de pão para acompanhar.'
+    }
   },
   {
     id: '87',
@@ -1486,6 +1851,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '25 min',
     cookingInfo: 'Refratário',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. Sirva os ingredientes separados e amassados.',
+        '9-11 meses': 'Sirva em tiras macias.',
+        '12+ meses': 'Sirva em quadrados ou triângulos.'
+    }
   },
   {
     id: '88',
@@ -1504,6 +1874,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '20 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê liso, misturando os dois ingredientes.',
+        '9-11 meses': 'Sirva como um purê mais rústico com o frango desfiado.',
+        '12+ meses': 'Sirva o frango em pedaços com cubos de maçã cozida.'
+    }
   },
   {
     id: '89',
@@ -1522,6 +1897,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '40 min',
     cookingInfo: 'Panela de Pressão',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um caldo liso.',
+        '9-11 meses': 'Deixe o caldo mais espesso.',
+        '12+ meses': 'Sirva com pedacinhos de carne ou frango.'
+    }
   },
   {
     id: '90',
@@ -1540,6 +1920,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '35 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado.',
+        '9-11 meses': 'Após introdução dos ingredientes, sirva em pedaços macios.',
+        '12+ meses': 'Sirva em quadrados para o bebê comer sozinho.'
+    }
   },
   {
     id: '91',
@@ -1558,6 +1943,11 @@ export const recipes: Recipe[] = [
     texture: 'Sopa',
     cookingTime: '15 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado (trigo, recheio).',
+        '9-11 meses': 'Se já come trigo, cozinhe bem e corte cada capeletti em 4 pedaços.',
+        '12+ meses': 'Corte os capelettis ao meio.'
+    }
   },
   
   // Sobremesas (25 receitas)
@@ -1580,6 +1970,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '10 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem para um purê liso.',
+        '9-11 meses': 'Ofereça em pedaços cozidos e macios.',
+        '12+ meses': 'Sirva a pera crua em fatias finas (se for macia).'
+    }
   },
   {
     id: '10',
@@ -1598,6 +1993,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '2 min',
     cookingInfo: 'Faca',
+    ageVariations: {
+        '6-8 meses': 'Ofereça a manga raspada com uma colher ou em tiras bem grandes.',
+        '9-11 meses': 'Sirva em tiras ou cubos para o bebê praticar o movimento de pinça.',
+        '12+ meses': 'Sirva em cubos ou fatias.'
+    }
   },
   {
     id: '29',
@@ -1616,6 +2016,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '10 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê liso.',
+        '9-11 meses': 'Ofereça a maçã cozida em pedaços macios.',
+        '12+ meses': 'Pode ralar a maçã crua ou servir em fatias finas.'
+    }
   },
   {
     id: '30',
@@ -1635,6 +2040,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '15 min',
     cookingInfo: 'Assadeira',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem a polpa assada.',
+        '9-11 meses': 'Sirva a polpa amassada ou em pedaços.',
+        '12+ meses': 'Sirva a banana assada cortada ao meio para o bebê comer de colher.'
+    }
   },
   {
     id: '31',
@@ -1654,6 +2064,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '4 horas (congelamento)',
     cookingInfo: 'Congelador',
+    ageVariations: {
+        '6-8 meses': 'Ofereça o suco da melancia em um copinho ou congele em formas de gelo para o bebê chupar.',
+        '9-11 meses': 'Sirva em picolés seguros para bebês ou pedaços da fruta.',
+        '12+ meses': 'Perfeito como picolé.'
+    }
   },
   {
     id: '32',
@@ -1672,6 +2087,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '5 min',
     cookingInfo: 'Liquidificador',
+    ageVariations: {
+        '6-8 meses': 'Use apenas a manga e bata para um purê liso.',
+        '9-11 meses': 'Pode introduzir o maracujá (peneirado) e servir como creme.',
+        '12+ meses': 'Sirva como na receita.'
+    }
   },
   {
     id: '33',
@@ -1691,6 +2111,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '15 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê bem amassado.',
+        '9-11 meses': 'Deixe pedaços pequenos de fruta na compota.',
+        '12+ meses': 'Sirva com iogurte natural.'
+    }
   },
   {
     id: '34',
@@ -1710,6 +2135,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '30 min',
     cookingInfo: 'Assadeira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado, textura pode ser muito seca.',
+        '9-11 meses': 'Ofereça com supervisão. O biscoito deve desmanchar fácil na boca.',
+        '12+ meses': 'Ótimo para lanches.'
+    }
   },
   {
       id: '35',
@@ -1728,6 +2158,11 @@ export const recipes: Recipe[] = [
       texture: 'Pedaços macios',
       cookingTime: '5 min',
       cookingInfo: 'Tigela',
+      ageVariations: {
+        '6-8 meses': 'Sirva as frutas separadamente, amassadas ou em tiras seguras.',
+        '9-11 meses': 'Pique as frutas em pedaços pequenos para o bebê praticar a pinça.',
+        '12+ meses': 'Sirva como uma salada de frutas colorida.'
+    }
   },
   {
       id: '36',
@@ -1746,6 +2181,11 @@ export const recipes: Recipe[] = [
       texture: 'Creme',
       cookingTime: '5 min (+ tempo de geladeira)',
       cookingInfo: 'Processador de alimentos',
+      ageVariations: {
+        '6-8 meses': 'Sirva como um purê de abacate, sem o cacau.',
+        '9-11 meses': 'Pode introduzir o cacau e servir como um creme.',
+        '12+ meses': 'A tâmara pode ser usada para adoçar levemente.'
+    }
   },
   {
     id: '40',
@@ -1764,6 +2204,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '5 min',
     cookingInfo: 'Processador de alimentos',
+    ageVariations: {
+        '6-8 meses': 'Amasse as frutas frescas (não congeladas) para um purê.',
+        '9-11 meses': 'Pode começar a oferecer o sorbet, garantindo que não esteja muito gelado.',
+        '12+ meses': 'Perfeito como um sorvete saudável.'
+    }
   },
   {
     id: '50',
@@ -1784,6 +2229,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '15 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem para formar um purê.',
+        '9-11 meses': 'Sirva em pedaços cozidos e macios.',
+        '12+ meses': 'Sirva com iogurte ou como recheio de panquecas.'
+    }
   },
   {
     id: '92',
@@ -1801,6 +2251,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '15 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem para formar um purê.',
+        '9-11 meses': 'Sirva em pedaços cozidos e macios.',
+        '12+ meses': 'Sirva as fatias cozidas para o bebê comer sozinho.'
+    }
   },
   {
     id: '93',
@@ -1818,6 +2273,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '3 min',
     cookingInfo: 'Faca',
+    ageVariations: {
+        '6-8 meses': 'Ofereça em tiras bem largas e finas para o bebê chupar.',
+        '9-11 meses': 'Sirva em tiras ou cubos macios.',
+        '12+ meses': 'Sirva em cubos.'
+    }
   },
   {
     id: '94',
@@ -1835,6 +2295,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '4 horas (congelamento)',
     cookingInfo: 'Congelador',
+    ageVariations: {
+        '6-8 meses': 'Perfeito para aliviar a gengiva.',
+        '9-11 meses': 'Continue oferecendo em dias quentes ou para coçar a gengiva.',
+        '12+ meses': 'Pode fazer picolés de frutas batidas com o leite.'
+    }
   },
   {
     id: '95',
@@ -1853,6 +2318,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '10 min (+ tempo de geladeira)',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado. A textura pode ser perigosa.',
+        '9-11 meses': 'Após 9 meses, pode oferecer em pedaços bem pequenos com supervisão.',
+        '12+ meses': 'Sirva em cubos para o bebê comer com as mãos.'
+    }
   },
   {
     id: '96',
@@ -1871,6 +2341,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '1.5 horas',
     cookingInfo: 'Batedeira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado.',
+        '9-11 meses': 'Não recomendado.',
+        '12+ meses': 'Ofereça como um doce diferente, que desmancha na boca.'
+    }
   },
   {
     id: '97',
@@ -1888,6 +2363,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '5 min',
     cookingInfo: 'Processador',
+    ageVariations: {
+        '6-8 meses': 'Sirva o purê de abacate sem cacau.',
+        '9-11 meses': 'Sirva como um creme.',
+        '12+ meses': 'Pode adoçar com 1/2 tâmara (sem caroço) batida junto.'
+    }
   },
   {
     id: '98',
@@ -1906,6 +2386,11 @@ export const recipes: Recipe[] = [
     texture: 'Purê',
     cookingTime: '5 min',
     cookingInfo: 'Vaporizador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê liso.',
+        '9-11 meses': 'Deixe pedacinhos na compota.',
+        '12+ meses': 'Ofereça a ameixa em pedaços (sem caroço).'
+    }
   },
   {
     id: '99',
@@ -1924,6 +2409,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '20 min',
     cookingInfo: 'Assadeira',
+    ageVariations: {
+        '6-8 meses': 'Não recomendado pela textura.',
+        '9-11 meses': 'Sirva os biscoitos macios.',
+        '12+ meses': 'Pode adicionar canela ou uva passa na massa.'
+    }
   },
   {
     id: '100',
@@ -1942,6 +2432,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '25 min',
     cookingInfo: 'Refratário',
+    ageVariations: {
+        '6-8 meses': 'Sirva apenas a maçã cozida e amassada.',
+        '9-11 meses': 'Sirva a maçã em cubos macios com a farofa por cima.',
+        '12+ meses': 'Sirva como na receita.'
+    }
   },
     {
     id: '101',
@@ -1958,6 +2453,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '2 min',
     cookingInfo: 'Garfo',
+    ageVariations: {
+        '6-8 meses': 'Amasse bem para um purê.',
+        '9-11 meses': 'Sirva em pedaços pequenos.',
+        '12+ meses': 'Sirva em fatias para o bebê morder.'
+    }
   },
   {
     id: '102',
@@ -1975,6 +2475,11 @@ export const recipes: Recipe[] = [
     texture: 'Pedaços macios',
     cookingTime: '3 min',
     cookingInfo: 'Faca',
+    ageVariations: {
+        '6-8 meses': 'Ofereça amassado com garfo.',
+        '9-11 meses': 'Corte em rodelas ou meias-luas.',
+        '12+ meses': 'Sirva em cubos.'
+    }
   },
   {
     id: '103',
@@ -1992,6 +2497,11 @@ export const recipes: Recipe[] = [
     texture: 'Creme',
     cookingTime: '4 horas (congelamento)',
     cookingInfo: 'Congelador',
+    ageVariations: {
+        '6-8 meses': 'Sirva como um purê geladinho (sem congelar totalmente).',
+        '9-11 meses': 'Faça os picolés em formas seguras para bebês.',
+        '12+ meses': 'Perfeito para esta idade.'
+    }
   },
   {
     id: '104',
@@ -2010,6 +2520,11 @@ export const recipes: Recipe[] = [
     texture: 'Amassado',
     cookingTime: '12 min',
     cookingInfo: 'Panela',
+    ageVariations: {
+        '6-8 meses': 'Bata no liquidificador para um purê bem liso.',
+        '9-11 meses': 'Sirva amassado com garfo.',
+        '12+ meses': 'Ofereça em cubos cozidos.'
+    }
   }
 ];
 
