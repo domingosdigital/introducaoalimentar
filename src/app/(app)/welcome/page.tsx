@@ -1,17 +1,17 @@
 'use client';
 
-import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut } from 'lucide-react';
+import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut, UploadCloud, X } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { quickTips } from '@/lib/data';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useUser } from '@/firebase';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { signOut } from 'firebase/auth';
 import { useAuth } from '@/firebase';
-
+import { cn } from '@/lib/utils';
 
 const mainCards = [
   {
@@ -70,18 +70,49 @@ const getDailyTip = () => {
     return quickTips[dayOfYear % quickTips.length];
 };
 
+const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
 export default function WelcomePage() {
   const [quickTip, setQuickTip] = useState('');
   const { user } = useUser();
   const auth = useAuth();
   const router = useRouter();
+  const [babyPhoto, setBabyPhoto] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const userName = user?.displayName || 'Mamãe';
 
   useEffect(() => {
     setQuickTip(getDailyTip());
+    const storedPhoto = localStorage.getItem(PHOTO_STORAGE_KEY);
+    if (storedPhoto) {
+      setBabyPhoto(storedPhoto);
+    }
   }, []);
+  
+  const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result as string;
+        localStorage.setItem(PHOTO_STORAGE_KEY, base64String);
+        setBabyPhoto(base64String);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleRemovePhoto = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    localStorage.removeItem(PHOTO_STORAGE_KEY);
+    setBabyPhoto(null);
+    if(fileInputRef.current) {
+        fileInputRef.current.value = '';
+    }
+  }
+
 
   const handleLogout = async () => {
     await signOut(auth);
@@ -110,22 +141,56 @@ export default function WelcomePage() {
           <h2 className="text-base text-muted-foreground mt-2">Passo a passo simples, seguro e criado para acompanhar cada fase do seu bebê.</h2>
         </header>
 
-        <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-md">
-            <Image
-              src="https://i.imgur.com/l3FoDwn.png"
-              alt="Bebê comendo"
-              fill
-              className="object-contain"
-            />
-        </div>
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={handlePhotoUpload}
+          className="hidden"
+          accept="image/*"
+        />
+        
+        {babyPhoto ? (
+           <div 
+             className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-md cursor-pointer group"
+             onClick={() => fileInputRef.current?.click()}
+            >
+              <Image
+                src={babyPhoto}
+                alt="Foto do bebê"
+                fill
+                className="object-contain"
+                data-ai-hint="baby photo"
+              />
+              <div className='absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center'>
+                  <p className='text-white font-semibold'>Trocar foto</p>
+              </div>
+               <Button 
+                variant="destructive" 
+                size="icon" 
+                className="absolute top-2 right-2 h-8 w-8 z-10 opacity-50 group-hover:opacity-100 transition-opacity"
+                onClick={handleRemovePhoto}
+                >
+                <X className="h-4 w-4" />
+              </Button>
+          </div>
+        ) : (
+          <div 
+            className="w-full aspect-[4/3] rounded-2xl shadow-md border-2 border-dashed border-muted-foreground/50 bg-card flex flex-col items-center justify-center text-center p-4 cursor-pointer hover:bg-accent transition-colors"
+            onClick={() => fileInputRef.current?.click()}
+          >
+            <UploadCloud className="h-10 w-10 text-primary mb-2" />
+            <p className="font-semibold text-foreground">Clique para enviar uma foto do seu bebê</p>
+            <p className="text-sm text-muted-foreground">E deixe o app com a sua cara!</p>
+          </div>
+        )}
         
         <div className="space-y-4">
             {highlightedCards.map((card) => (
                 <Link href={card.href} key={card.href} className="group block">
                     <Card className="shadow-sm hover:shadow-lg transition-shadow">
                         <CardHeader className="flex flex-row items-center gap-4">
-                            <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20`}>
-                                <card.icon className={`h-6 w-6 text-primary transition-colors group-hover:text-primary`} />
+                            <div className={cn('flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20')}>
+                                <card.icon className={cn('h-6 w-6 text-primary transition-colors group-hover:text-primary')} />
                             </div>
                             <div>
                                 <CardTitle className="font-headline text-xl">{card.label}</CardTitle>
@@ -142,9 +207,9 @@ export default function WelcomePage() {
             <Link href={item.href} key={item.href} className="group">
               <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
                 <div
-                  className={`mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20`}
+                  className={cn('mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
                 >
-                  <item.icon className={`h-7 w-7 text-primary transition-colors group-hover:text-primary`} />
+                  <item.icon className={cn('h-7 w-7 text-primary transition-colors group-hover:text-primary')} />
                 </div>
                 <span className="font-semibold text-foreground text-sm leading-tight">{item.label}</span>
               </div>
