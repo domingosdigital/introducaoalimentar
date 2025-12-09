@@ -1,11 +1,17 @@
 'use client';
 
-import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb } from 'lucide-react';
+import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { quickTips } from '@/lib/data';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useUser } from '@/firebase';
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { signOut } from 'firebase/auth';
+import { useAuth } from '@/firebase';
+
 
 const mainCards = [
   {
@@ -64,14 +70,23 @@ const getDailyTip = () => {
     return quickTips[dayOfYear % quickTips.length];
 };
 
-const userName = 'Mamãe';
 
 export default function WelcomePage() {
   const [quickTip, setQuickTip] = useState('');
+  const { user } = useUser();
+  const auth = useAuth();
+  const router = useRouter();
+
+  const userName = user?.displayName || 'Mamãe';
 
   useEffect(() => {
     setQuickTip(getDailyTip());
   }, []);
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push('/');
+  };
 
   const highlightedCards = mainCards.filter(c => c.highlight);
 
@@ -81,9 +96,14 @@ export default function WelcomePage() {
       <div className="space-y-6">
         
         <header className="text-left">
-          <h1 className="font-headline text-3xl font-bold text-foreground tracking-tight">
-            Olá, <span className="text-primary">{userName}</span>!
-          </h1>
+          <div className="flex justify-between items-center">
+            <h1 className="font-headline text-3xl font-bold text-foreground tracking-tight">
+              Olá, <span className="text-primary">{userName}</span>!
+            </h1>
+            <Button variant="ghost" size="icon" onClick={handleLogout}>
+              <LogOut className="h-6 w-6" />
+            </Button>
+          </div>
           <h1 className="text-xl font-bold font-headline text-foreground leading-tight mt-6">
             A introdução alimentar do seu bebê<br/>sem medo e sem dúvidas.
           </h1>
@@ -95,7 +115,7 @@ export default function WelcomePage() {
               src="https://i.imgur.com/l3FoDwn.png"
               alt="Bebê comendo"
               fill
-              className="object-cover"
+              className="object-contain"
             />
         </div>
         
