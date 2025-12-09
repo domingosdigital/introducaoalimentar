@@ -1,10 +1,11 @@
 'use client';
 
-import { Baby, Heart, NotebookText, Star, CheckSquare, CalendarDays, Clock, ShieldCheck, CalendarHeart, BookHeart, Lightbulb } from 'lucide-react';
+import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { quickTips } from '@/lib/data';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const mainCards = [
   {
@@ -83,13 +84,20 @@ export default function WelcomePage() {
           <h1 className="font-headline text-3xl font-bold text-foreground tracking-tight">
             Olá, <span className="text-primary">{userName}</span>!
           </h1>
-        </header>
-
-         <div className="text-center">
-          <h1 className="text-xl font-bold font-headline text-foreground leading-tight">
+          <h1 className="text-xl font-bold font-headline text-foreground leading-tight mt-6">
             A introdução alimentar do seu bebê<br/>sem medo e sem dúvidas.
           </h1>
           <h2 className="text-base text-muted-foreground mt-2">Passo a passo simples, seguro e criado para acompanhar cada fase do seu bebê.</h2>
+        </header>
+
+        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+          <Image
+            src="https://i.imgur.com/spP6Lkb.png"
+            alt="Bebê feliz comendo"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
         
         <div className="space-y-4">
