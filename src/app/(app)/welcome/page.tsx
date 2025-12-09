@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { quickTips } from '@/lib/data';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const mainCards = [
   {
@@ -88,6 +89,15 @@ export default function WelcomePage() {
           </h1>
           <h2 className="text-base text-muted-foreground mt-2">Passo a passo simples, seguro e criado para acompanhar cada fase do seu bebê.</h2>
         </header>
+
+        <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-md">
+            <Image
+              src="https://i.imgur.com/l3FoDwn.png"
+              alt="Bebê comendo"
+              fill
+              className="object-cover"
+            />
+        </div>
         
         <div className="space-y-4">
             {highlightedCards.map((card) => (
