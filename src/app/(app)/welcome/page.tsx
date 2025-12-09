@@ -19,19 +19,18 @@ const mainCards = [
     label: 'Sugestão do Dia',
     description: 'Um plano de refeições para hoje.',
     icon: CalendarHeart,
-    highlight: false,
-  },
-  {
-    href: '/guide',
-    label: 'Primeiros Passos',
-    description: 'Respostas para suas dúvidas.',
-    icon: BookHeart,
-    highlight: false,
+    highlight: true,
   },
 ];
 
 const featureCards = [
     {
+    href: '/guide',
+    label: 'Primeiros Passos',
+    description: 'Respostas para suas dúvidas.',
+    icon: BookHeart,
+  },
+  {
     href: '/phases',
     label: 'Evolução do Bebê',
     icon: Baby,
@@ -73,8 +72,7 @@ export default function WelcomePage() {
     setQuickTip(getDailyTip());
   }, []);
 
-  const highlightedCard = mainCards.find(c => c.highlight);
-  const otherCards = mainCards.filter(c => !c.highlight);
+  const highlightedCards = mainCards.filter(c => c.highlight);
 
   return (
     <div className="animate-in fade-in flex h-full flex-col bg-muted/50 p-6 sm:p-8 space-y-6">
@@ -87,35 +85,25 @@ export default function WelcomePage() {
 
       <div className="space-y-6">
         
-        {highlightedCard && (
-            <Link href={highlightedCard.href} className="group block">
-                <Card className="shadow-sm hover:shadow-lg transition-shadow">
-                    <CardHeader className="flex flex-row items-center gap-4">
-                        <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20`}>
-                            <highlightedCard.icon className={`h-6 w-6 text-primary transition-colors group-hover:text-primary`} />
-                        </div>
-                        <div>
-                            <CardTitle className="font-headline text-xl">{highlightedCard.label}</CardTitle>
-                            <CardDescription className="text-sm">{highlightedCard.description}</CardDescription>
-                        </div>
-                    </CardHeader>
-                </Card>
-            </Link>
-        )}
+        <div className="space-y-4">
+            {highlightedCards.map((card) => (
+                <Link href={card.href} key={card.href} className="group block">
+                    <Card className="shadow-sm hover:shadow-lg transition-shadow">
+                        <CardHeader className="flex flex-row items-center gap-4">
+                            <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20`}>
+                                <card.icon className={`h-6 w-6 text-primary transition-colors group-hover:text-primary`} />
+                            </div>
+                            <div>
+                                <CardTitle className="font-headline text-xl">{card.label}</CardTitle>
+                                <CardDescription className="text-sm">{card.description}</CardDescription>
+                            </div>
+                        </CardHeader>
+                    </Card>
+                </Link>
+            ))}
+        </div>
         
         <div className="grid grid-cols-2 gap-4">
-          {otherCards.map((item) => (
-            <Link href={item.href} key={item.href} className="group">
-              <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-                <div
-                  className={`mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20`}
-                >
-                  <item.icon className={`h-7 w-7 text-primary transition-colors group-hover:text-primary`} />
-                </div>
-                <span className="font-semibold text-foreground text-sm leading-tight">{item.label}</span>
-              </div>
-            </Link>
-          ))}
           {featureCards.map((item) => (
             <Link href={item.href} key={item.href} className="group">
               <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
