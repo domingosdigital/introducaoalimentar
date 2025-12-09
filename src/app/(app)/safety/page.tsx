@@ -1,3 +1,4 @@
+'use client';
 import {
   Accordion,
   AccordionContent,
@@ -20,13 +21,13 @@ export default function SafetyPage() {
 
       <div className="space-y-8">
         
-        <Card className="border-destructive bg-destructive/10">
+        <Card className="border-destructive bg-background text-foreground">
           <CardHeader>
             <CardTitle className="text-destructive flex items-center gap-3"><Siren/> O que fazer em caso de engasgo</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-base">
-            <p className="text-destructive-foreground">{whatToDoInChoking.description}</p>
-            <ol className="list-decimal list-inside space-y-2 text-destructive-foreground">
+            <p className="text-foreground">{whatToDoInChoking.description}</p>
+            <ol className="list-decimal list-inside space-y-2 text-foreground">
               {whatToDoInChoking.steps.map((step, index) => <li key={index}>{step}</li>)}
             </ol>
             <a href={whatToDoInChoking.link} target="_blank" rel="noopener noreferrer" className="text-destructive font-semibold underline">
