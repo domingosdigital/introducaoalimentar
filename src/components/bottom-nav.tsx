@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, NotebookText, Info, Sparkles, Star, Bot } from 'lucide-react';
+import { Home, NotebookText, Info, Sparkles, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -10,7 +10,7 @@ const navItems = [
   { href: '/recipes', label: 'Receitas', icon: NotebookText },
   { href: '/today', label: 'Hoje', icon: Sparkles },
   { href: '/favorites', label: 'Favoritos', icon: Star },
-  { href: '/nutri-ia', label: 'Nutri IA', icon: Bot },
+  { href: '/guide', label: 'Guia', icon: Info },
 ];
 
 export default function BottomNav() {
