@@ -83,7 +83,6 @@ export default function WelcomePage() {
           <h1 className="font-headline text-3xl font-bold text-foreground tracking-tight">
             Olá, <span className="text-primary">{userName}</span>!
           </h1>
-          <p className="text-lg text-muted-foreground mt-1">O que vamos explorar hoje?</p>
         </header>
 
          <div className="text-center">
