@@ -85,6 +85,11 @@ export default function WelcomePage() {
 
       <div className="space-y-6">
         
+         <div className="text-center">
+          <h1 className="text-2xl font-bold font-headline text-foreground">A Introdução Alimentar do Seu Bebê, Sem Medo e Sem Dúvidas</h1>
+          <h2 className="text-base text-muted-foreground mt-2">Passo a passo simples, seguro e criado para acompanhar cada fase do seu bebê.</h2>
+        </div>
+        
         <div className="space-y-4">
             {highlightedCards.map((card) => (
                 <Link href={card.href} key={card.href} className="group block">
