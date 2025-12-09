@@ -8,7 +8,7 @@ export default function RedirectToWelcome() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace('/welcome');
+    router.replace('/');
   }, [router]);
 
   return null; // Render nothing as the redirect happens
