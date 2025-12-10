@@ -214,11 +214,11 @@ export default function WelcomePage() {
             <Link href={item.href} key={item.href} className="group">
               <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
                 <div
-                  className={cn('mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
+                  className={cn('mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
                 >
-                  <item.icon className={cn('h-7 w-7 text-primary transition-colors group-hover:text-primary')} />
+                  <item.icon className={cn('h-8 w-8 text-primary transition-colors group-hover:text-primary')} />
                 </div>
-                <span className="font-semibold text-foreground text-sm leading-tight">{item.label}</span>
+                <span className="font-semibold text-foreground text-base leading-tight">{item.label}</span>
               </div>
             </Link>
           ))}
