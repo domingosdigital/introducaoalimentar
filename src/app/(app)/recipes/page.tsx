@@ -6,6 +6,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { Recipe, MealType, AgeGroup } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
+import { ChevronRight } from 'lucide-react';
 
 const mealTypes: MealType[] = ['Café da Manhã', 'Almoço', 'Jantar', 'Sobremesa'];
 const ageGroups: AgeGroup[] = ['6-8 meses', '9-11 meses', '12+ meses'];
@@ -14,26 +15,30 @@ function RecipeCard({ recipe }: { recipe: Recipe }) {
   const placeholder = PlaceHolderImages.find(p => p.id === recipe.image);
   return (
     <Link href={`/recipes/${recipe.id}`} className="group block">
-      <Card className="overflow-hidden transition-all h-full flex flex-col group-hover:shadow-xl group-hover:-translate-y-1">
-        <div className="relative h-48 w-full">
-          {placeholder && (
-            <Image
-              src={placeholder.imageUrl}
-              alt={recipe.name}
-              fill
-              className="object-cover"
-              data-ai-hint={placeholder.imageHint}
-            />
-          )}
-           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-           <div className="absolute bottom-3 left-4 flex flex-wrap gap-2">
-              <Badge variant="secondary" className="bg-white/90 text-secondary-foreground backdrop-blur-sm">{recipe.ageGroup}</Badge>
-              <Badge variant="outline" className="bg-white/90 text-secondary-foreground backdrop-blur-sm">{recipe.texture}</Badge>
+      <Card className="overflow-hidden transition-all group-hover:shadow-lg group-hover:bg-accent">
+        <div className="flex items-center">
+            <div className="relative h-28 w-28 shrink-0">
+              {placeholder && (
+                <Image
+                  src={placeholder.imageUrl}
+                  alt={recipe.name}
+                  fill
+                  className="object-cover"
+                  data-ai-hint={placeholder.imageHint}
+                />
+              )}
+            </div>
+            <div className="flex-1 p-4 pr-2">
+                <CardTitle className="font-headline text-lg leading-snug mb-2">{recipe.name}</CardTitle>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">{recipe.ageGroup}</Badge>
+                  <Badge variant="outline">{recipe.texture}</Badge>
+                </div>
+            </div>
+            <div className="p-4 pl-0">
+                <ChevronRight className="h-6 w-6 text-muted-foreground transition-transform group-hover:translate-x-1" />
             </div>
         </div>
-        <CardHeader className="flex-1">
-            <CardTitle className="font-headline text-xl leading-snug">{recipe.name}</CardTitle>
-        </CardHeader>
       </Card>
     </Link>
   );
@@ -49,7 +54,7 @@ function RecipesByAgeGroup({ recipes }: { recipes: Recipe[] }) {
         return (
           <div key={ageGroup}>
             <h2 className="mb-5 text-2xl font-bold text-foreground">{ageGroup}</h2>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="flex flex-col gap-4">
               {filteredRecipes.map((recipe) => (
                 <RecipeCard key={recipe.id} recipe={recipe} />
               ))}
