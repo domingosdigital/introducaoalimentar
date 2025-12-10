@@ -35,6 +35,11 @@ export default function AppLayout({
   }
   return (
     <div className="mobile-container">
+      <header className="sticky top-0 z-20 flex h-16 items-center justify-center border-b bg-background/95 backdrop-blur-sm">
+        <h1 className="font-headline text-xl font-bold text-primary">
+          BabyFood®
+        </h1>
+      </header>
       <main className="flex-1 overflow-y-auto">{children}</main>
       <BottomNav />
     </div>
