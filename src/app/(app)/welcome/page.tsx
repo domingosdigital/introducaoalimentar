@@ -23,7 +23,7 @@ const mainCards = [
   },
   {
     href: '/today',
-    label: 'Sugestão do Dia',
+    label: 'Cardápio do Dia',
     description: 'Um plano de refeições para hoje.',
     icon: CalendarHeart,
     highlight: true,
@@ -33,7 +33,7 @@ const mainCards = [
 const featureCards = [
     {
     href: '/guide',
-    label: 'Primeiros Passos',
+    label: 'Dicas Úteis',
     description: 'Respostas para suas dúvidas.',
     icon: BookHeart,
   },
@@ -232,3 +232,5 @@ export default function WelcomePage() {
     </div>
   );
 }
+
+    

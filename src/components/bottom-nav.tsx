@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 const navItems = [
   { href: '/welcome', label: 'Início', icon: Home },
   { href: '/recipes', label: 'Receitas', icon: NotebookText },
-  { href: '/today', label: 'Hoje', icon: Sparkles },
+  { href: '/today', label: 'Cardápio', icon: Sparkles },
   { href: '/exams', label: 'Exames', icon: Stethoscope },
   { href: '/favorites', label: 'Favoritos', icon: Star },
 ];
@@ -39,3 +39,5 @@ export default function BottomNav() {
     </nav>
   );
 }
+
+    
