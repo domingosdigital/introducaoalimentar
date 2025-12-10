@@ -2,15 +2,15 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, NotebookText, Info, Sparkles, Star } from 'lucide-react';
+import { Home, NotebookText, Sparkles, Star, Stethoscope } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/welcome', label: 'Início', icon: Home },
   { href: '/recipes', label: 'Receitas', icon: NotebookText },
   { href: '/today', label: 'Hoje', icon: Sparkles },
+  { href: '/exams', label: 'Exames', icon: Stethoscope },
   { href: '/favorites', label: 'Favoritos', icon: Star },
-  { href: '/guide', label: 'Guia', icon: Info },
 ];
 
 export default function BottomNav() {

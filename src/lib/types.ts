@@ -81,6 +81,13 @@ export interface AllergenicFood {
   observation: string;
 }
 
+export interface ExamChecklistItem {
+  id: string;
+  name: string;
+  when: string;
+  description: string;
+}
+
 
 export interface PlanDay {
   day: number;

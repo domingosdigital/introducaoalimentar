@@ -1,4 +1,4 @@
-import type { DailyMealPlan, GuideTopic, Recipe, PhaseTopic, FoodChecklistItem, PlanDay, Routine, SafetyTopic, AllergenicFood, CutAndTexture, GagVsChoke, ChokingGuide, EvolutionTopic, AgeBasedVariation } from './types';
+import type { DailyMealPlan, GuideTopic, Recipe, PhaseTopic, FoodChecklistItem, PlanDay, Routine, SafetyTopic, AllergenicFood, CutAndTexture, GagVsChoke, ChokingGuide, EvolutionTopic, AgeBasedVariation, ExamChecklistItem } from './types';
 import {CheckCircle2} from "lucide-react";
 import React from 'react';
 
@@ -2761,6 +2761,19 @@ export const allergenicFoods: AllergenicFood[] = [
       observation: 'Acompanhe por possíveis reações de pele, gastrointestinais ou respiratórias.'
     }
 ];
+
+export const examChecklist: ExamChecklistItem[] = [
+  { id: 'ex1', name: 'Teste do Pezinho', when: 'Até o 5º dia de vida', description: 'Coleta de sangue no calcanhar para detectar doenças metabólicas, genéticas e infecciosas.' },
+  { id: 'ex2', name: 'Teste da Orelhinha', when: 'Na maternidade ou 1º mês', description: 'Detecta problemas de audição. É rápido e indolor.' },
+  { id: 'ex3', name: 'Teste do Olhinho', when: 'Na maternidade e nas consultas de rotina', description: 'Verifica a presença de problemas de visão como catarata congênita e glaucoma.' },
+  { id: 'ex4', name: 'Teste do Coraçãozinho', when: 'Entre 24h e 48h de vida', description: 'Mede a oxigenação do sangue para detectar problemas cardíacos graves.' },
+  { id: 'ex5', name: 'Teste da Linguinha', when: 'Na maternidade', description: 'Avalia o frênulo da língua, que pode dificultar a amamentação.' },
+  { id: 'ex6', name: 'Consulta Pediátrica', when: 'Mensalmente no 1º ano', description: 'Acompanhamento do crescimento, desenvolvimento, vacinas e orientações gerais.' },
+  { id: 'ex7', name: 'Vacinas (PNC, Rotavírus, etc.)', when: 'Aos 2, 4 e 6 meses', description: 'Primeiras doses das vacinas fundamentais do calendário infantil.' },
+  { id: 'ex8', name: 'Vacina da Gripe (Influenza)', when: 'Anualmente, a partir dos 6 meses', description: 'Protege contra os principais vírus da gripe em circulação.' },
+  { id: 'ex9', name: 'Exame de Hemoglobina', when: 'Por volta dos 9 a 12 meses', description: 'O pediatra pode solicitar para verificar a presença de anemia ferropriva.' },
+];
+
 
 export const firstWeeksPlan: PlanDay[] = [
   { day: 1, food: "Cenoura", textureAndCut: "Purê liso ou palitos cozidos muito macios.", prepTime: "15 min", allergyRisk: "Baixo", tip: "Deixe o bebê explorar o alimento com as mãos antes de levar à boca." },
