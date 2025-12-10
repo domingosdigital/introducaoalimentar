@@ -99,7 +99,7 @@
     {
       "id": "17",
       "description": "Carne de panela desfiada",
-      "imageUrl": "https://images.unsplash.com/photo-1724008847844-8a07df13717d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzaHJlZGRlZCUyMGJlZWZ8ZW58MHx8fHwxNzY0OTQ4MDM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1724008847844-8a07df13717d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzaHJlZGRlZCUyMGJlZWZ8ZW58MHx8fHwxNzY0OTQ4MDM5fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "shredded beef"
     },
     {
@@ -117,7 +117,7 @@
     {
       "id": "20",
       "description": "Canja de galinha para bebê",
-      "imageUrl": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlja2VuJTIwc291cHxlbnwwfHx8fDE3NjQ5NDgwMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlja2VuJTIwc291cHxlbnwwfHx8fDE3NjQ5NDgwMzl8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "chicken soup"
     },
     {
@@ -135,13 +135,13 @@
     {
       "id": "23",
       "description": "Omelete de forno com queijo",
-      "imageUrl": "https://images.unsplash.com/photo-1759216280664-0af82adcf592?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiYWtlZCUyMG9tZWxldHRlfGVufDB8fHx8MTc2NDk0ODAzOXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1759216280664-0af82adcf592?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiYWtlZCUyMG9tZWxldHRlfGVufDB8fHx8MTc2NDk0ODAzOXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "baked omelette"
     },
     {
       "id": "24",
       "description": "Sopa de abóbora com gengibre",
-      "imageUrl": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwdW1wa2luJTIwc291cHxlbnwwfHx8fDE3NjQ5MzIwMDR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwdW1wa2luJTIwc291cHxlbnwwfHx8fDE3NjQ5MzIwMDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "pumpkin soup"
     },
     {
@@ -159,7 +159,7 @@
     {
       "id": "27",
       "description": "Quibebe de abóbora",
-      "imageUrl": "https://images.unsplash.com/photo-1697519521252-8f493b470706?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwdW1wa2luJTIwcXVpYmViZXxlbnwwfHx8fDE3NjQ5NDgwMzl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1697519521252-8f493b470706?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwdW1wa2luJTIwcXVpYmViZXxlbnwwfHx8fDE3NjQ5NDgwMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "pumpkin quibebe"
     },
     {
@@ -177,7 +177,7 @@
     {
       "id": "30",
       "description": "Banana assada com canela",
-      "imageUrl": "https://images.unsplash.com/photo-1552056711-84ca09c0a8cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiYWtlZCUyMGJhbmFuYXxlbnwwfHx8fDE3NjQ5NDgwMzl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1552056711-84ca09c0a8cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiYWtlZCUyMGJhbmFuYXxlbnwwfHx8fDE3NjQ5NDgwMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "baked banana"
     },
     {
@@ -351,7 +351,7 @@
     {
       "id": "59",
       "description": "Purê de inhame com laranja",
-      "imageUrl": "https://images.unsplash.com/photo-1596797379760-b0c68c139c81?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1700658116909-08a6e7c19672?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx5YW0lMjBwdXJlZXxlbnwwfHx8fDE3NjUyMzkzOTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "yam puree"
     },
     {
