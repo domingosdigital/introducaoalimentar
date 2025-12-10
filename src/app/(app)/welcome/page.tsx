@@ -28,6 +28,13 @@ const mainCards = [
     icon: CalendarHeart,
     highlight: true,
   },
+  {
+    href: '/checklist',
+    label: 'Checklist de Alimentos',
+    description: 'Acompanhe a evolução do seu bebê.',
+    icon: NotebookText,
+    highlight: true,
+  },
 ];
 
 const featureCards = [
@@ -43,9 +50,9 @@ const featureCards = [
     icon: Baby,
   },
   {
-    href: '/checklist',
-    label: 'Checklist de Alimentos',
-    icon: NotebookText,
+    href: '/exams',
+    label: 'Exames',
+    icon: Stethoscope,
   },
   {
     href: '/plan',
