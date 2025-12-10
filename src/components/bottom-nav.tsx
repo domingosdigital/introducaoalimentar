@@ -2,14 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, NotebookText, Sparkles, Star, Stethoscope } from 'lucide-react';
+import { Home, NotebookText, Sparkles, Star, Apple } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/welcome', label: 'Início', icon: Home },
   { href: '/recipes', label: 'Receitas', icon: NotebookText },
   { href: '/today', label: 'Cardápio', icon: Sparkles },
-  { href: '/exams', label: 'Exames', icon: Stethoscope },
+  { href: '/checklist', label: 'Checklist', icon: Apple },
   { href: '/favorites', label: 'Favoritos', icon: Star },
 ];
 
@@ -39,5 +39,3 @@ export default function BottomNav() {
     </nav>
   );
 }
-
-    
