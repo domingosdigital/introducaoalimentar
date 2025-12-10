@@ -16,7 +16,7 @@ import { cn } from '@/lib/utils';
 const mainCards = [
   {
     href: '/recipes',
-    label: 'Receitas',
+    label: 'Minhas receitas',
     description: 'Explore pratos por idade e refeição.',
     icon: NotebookText,
     highlight: true,
