@@ -84,7 +84,7 @@ export default function WelcomePage() {
   const { user } = useUser();
   const auth = useAuth();
   const router = useRouter();
-  const [babyPhoto, setBabyPhoto] = useState<string | null>(null);
+  const [babyPhotoUrl, setBabyPhotoUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const userName = user?.displayName || 'Mamãe';
@@ -93,18 +93,30 @@ export default function WelcomePage() {
     setQuickTip(getDailyTip());
     const storedPhoto = localStorage.getItem(PHOTO_STORAGE_KEY);
     if (storedPhoto) {
-      setBabyPhoto(storedPhoto);
+      setBabyPhotoUrl(storedPhoto);
+    }
+
+    return () => {
+        if (babyPhotoUrl && babyPhotoUrl.startsWith('blob:')) {
+            URL.revokeObjectURL(babyPhotoUrl);
+        }
     }
   }, []);
   
   const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      const url = URL.createObjectURL(file);
+      if (babyPhotoUrl && babyPhotoUrl.startsWith('blob:')) {
+          URL.revokeObjectURL(babyPhotoUrl);
+      }
+      setBabyPhotoUrl(url);
+
+      // Save to localStorage as Base64 for persistence across sessions
       const reader = new FileReader();
       reader.onloadend = () => {
         const base64String = reader.result as string;
         localStorage.setItem(PHOTO_STORAGE_KEY, base64String);
-        setBabyPhoto(base64String);
       };
       reader.readAsDataURL(file);
     }
@@ -114,7 +126,12 @@ export default function WelcomePage() {
     e.stopPropagation();
     e.preventDefault();
     localStorage.removeItem(PHOTO_STORAGE_KEY);
-    setBabyPhoto(null);
+     if (babyPhotoUrl) {
+      if (babyPhotoUrl.startsWith('blob:')) {
+        URL.revokeObjectURL(babyPhotoUrl);
+      }
+      setBabyPhotoUrl(null);
+    }
     if(fileInputRef.current) {
         fileInputRef.current.value = '';
     }
@@ -156,13 +173,13 @@ export default function WelcomePage() {
           accept="image/*"
         />
         
-        {babyPhoto ? (
+        {babyPhotoUrl ? (
            <div 
              className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-md cursor-pointer group"
              onClick={() => fileInputRef.current?.click()}
             >
               <Image
-                src={babyPhoto}
+                src={babyPhotoUrl}
                 alt="Foto do bebê"
                 fill
                 className="object-contain"
