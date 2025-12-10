@@ -31,7 +31,7 @@ const mainCards = [
   {
     href: '/checklist',
     label: 'Checklist de Alimentos',
-    description: 'Acompanhe a evolução do seu bebê.',
+    description: 'Acompanhe os alimentos que seu bebê já experimentou.',
     icon: Apple,
     highlight: true,
   },
