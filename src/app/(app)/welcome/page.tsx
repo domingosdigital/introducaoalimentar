@@ -204,7 +204,7 @@ export default function WelcomePage() {
           </div>
         )}
         
-        <h1 className="text-xl font-bold font-headline text-foreground leading-tight text-center">
+        <h1 className="text-xl font-bold font-headline text-foreground leading-tight">
             A introdução alimentar do seu bebê<br/>sem medo e sem dúvidas.
         </h1>
 
