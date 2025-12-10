@@ -1,6 +1,6 @@
 'use client';
 
-import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut, UploadCloud, X, Apple } from 'lucide-react';
+import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut, UploadCloud, X, Apple, Stethoscope } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { quickTips } from '@/lib/data';
@@ -52,7 +52,7 @@ const featureCards = [
   {
     href: '/exams',
     label: 'Exames',
-    icon: Apple,
+    icon: Stethoscope,
   },
   {
     href: '/plan',
