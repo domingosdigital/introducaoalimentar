@@ -162,7 +162,6 @@ export default function WelcomePage() {
           <h1 className="text-xl font-bold font-headline text-foreground leading-tight mt-6">
             A introdução alimentar do seu bebê<br/>sem medo e sem dúvidas.
           </h1>
-          <h2 className="text-base text-muted-foreground mt-2">Passo a passo simples, seguro e criado para acompanhar cada fase do seu bebê.</h2>
         </header>
 
         <input
