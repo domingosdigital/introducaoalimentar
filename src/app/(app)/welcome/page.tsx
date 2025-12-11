@@ -173,10 +173,8 @@ export default function WelcomePage() {
   const highlightedCards = mainCards.filter(c => c.highlight);
 
   return (
-    <div className="animate-in fade-in flex h-full flex-col bg-muted/50 p-6 sm:p-8 space-y-6">
-
-      <div className="space-y-6">
-        
+    <div className="animate-in fade-in flex h-full flex-col">
+      <div className="space-y-6 bg-muted/50 p-6 sm:p-8">
         <header className="text-left">
           <div className="flex justify-between items-center">
             <h1 className="font-headline text-2xl font-bold text-foreground tracking-tight">
@@ -248,7 +246,9 @@ export default function WelcomePage() {
                 </Link>
             ))}
         </div>
-        
+      </div>
+
+      <div className="space-y-6 bg-background p-6 sm:p-8">
         <div className="grid grid-cols-2 gap-4">
           {featureCards.map((item) => (
             <Link href={item.href} key={item.href} className="group">
@@ -263,11 +263,13 @@ export default function WelcomePage() {
             </Link>
           ))}
         </div>
-
+      </div>
+      
+      <div className="space-y-6 bg-muted/50 p-6 sm:p-8">
         <div>
             <div className="flex items-center justify-center gap-3 mb-2">
               <Trophy className="h-6 w-6 text-amber-500" />
-              <h2 className="font-headline text-2xl font-semibold">Top 5 da Semana</h2>
+              <h2 className="font-headline text-2xl font-semibold text-center">Top 5 da Semana</h2>
             </div>
             <p className="text-center text-sm text-muted-foreground mb-4">
               Essas são as receitas mais usadas
@@ -322,7 +324,6 @@ export default function WelcomePage() {
         <div className="text-center py-4">
             <p className="text-muted-foreground flex items-center justify-center gap-2">Você está criando ótimos hábitos para o seu bebê. Continue assim ❤️</p>
         </div>
-
       </div>
     </div>
   );
