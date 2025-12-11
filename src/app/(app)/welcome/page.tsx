@@ -96,7 +96,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['65', '48', '5', '79', '10'];
+const popularRecipeIds = ['65', '48', '79', '5', '10'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
@@ -241,17 +241,17 @@ export default function WelcomePage() {
           </div>
         )}
         
-        <div className="space-y-2">
+        <div className="space-y-3">
             {highlightedCards.map((card) => (
                 <Link href={card.href} key={card.href} className="group block">
                     <Card className="shadow-md hover:shadow-lg transition-shadow">
-                        <CardHeader className="flex min-h-[120px] flex-row items-center gap-4">
+                        <CardHeader className="flex flex-row items-center gap-4 py-4">
                             <div className={cn('flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20')}>
                                 <card.icon className={cn('h-6 w-6 text-primary transition-colors group-hover:text-primary')} />
                             </div>
                             <div>
                                 <CardTitle className="font-headline text-xl">{card.label}</CardTitle>
-                                <CardDescription className="text-sm">{card.description}</CardDescription>
+                                <CardDescription className="text-sm leading-tight mt-1">{card.description}</CardDescription>
                             </div>
                         </CardHeader>
                     </Card>
