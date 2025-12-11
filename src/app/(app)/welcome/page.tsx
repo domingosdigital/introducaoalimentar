@@ -93,24 +93,31 @@ export default function WelcomePage() {
 
   useEffect(() => {
     setQuickTip(getDailyTip());
-    let storedPhoto = localStorage.getItem(PHOTO_STORAGE_KEY);
+    const storedPhoto = localStorage.getItem(PHOTO_STORAGE_KEY);
     if (storedPhoto) {
-      if (!storedPhoto.startsWith('data:image')) {
-        const url = URL.createObjectURL(new Blob([storedPhoto]));
-        setBabyPhotoUrl(url);
-      } else {
-        setBabyPhotoUrl(storedPhoto);
+      // Create a URL from the stored base64 string to optimize rendering
+      const byteCharacters = atob(storedPhoto.split(',')[1]);
+      const byteNumbers = new Array(byteCharacters.length);
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
       }
+      const byteArray = new Uint8Array(byteNumbers);
+      const blob = new Blob([byteArray], { type: 'image/jpeg' }); // Adjust type if needed
+      const objectURL = URL.createObjectURL(blob);
+      setBabyPhotoUrl(objectURL);
+
+      // Clean up the object URL when the component unmounts
+      return () => URL.revokeObjectURL(objectURL);
     }
   }, []);
   
   const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      const url = URL.createObjectURL(file);
-      if (babyPhotoUrl && babyPhotoUrl.startsWith('blob:')) {
-          URL.revokeObjectURL(babyPhotoUrl);
+      if (babyPhotoUrl) {
+        URL.revokeObjectURL(babyPhotoUrl);
       }
+      const url = URL.createObjectURL(file);
       setBabyPhotoUrl(url);
 
       // Save to localStorage as Base64 for persistence across sessions
@@ -128,9 +135,7 @@ export default function WelcomePage() {
     e.preventDefault();
     localStorage.removeItem(PHOTO_STORAGE_KEY);
      if (babyPhotoUrl) {
-      if (babyPhotoUrl.startsWith('blob:')) {
-        URL.revokeObjectURL(babyPhotoUrl);
-      }
+      URL.revokeObjectURL(babyPhotoUrl);
       setBabyPhotoUrl(null);
     }
     if(fileInputRef.current) {
@@ -212,7 +217,7 @@ export default function WelcomePage() {
         <div className="space-y-4">
             {highlightedCards.map((card) => (
                 <Link href={card.href} key={card.href} className="group block">
-                    <Card className="shadow-sm hover:shadow-lg transition-shadow">
+                    <Card className="shadow-md hover:shadow-lg transition-shadow">
                         <CardHeader className="flex flex-row items-center gap-4">
                             <div className={cn('flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20')}>
                                 <card.icon className={cn('h-6 w-6 text-primary transition-colors group-hover:text-primary')} />
