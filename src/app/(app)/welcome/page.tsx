@@ -35,6 +35,13 @@ const mainCards = [
     icon: Apple,
     highlight: true,
   },
+  {
+    href: '/plan',
+    label: 'Plano de 14 Dias',
+    description: 'Um guia prático para começar a introdução alimentar com tranquilidade.',
+    icon: CalendarDays,
+    highlight: true,
+  },
 ];
 
 const featureCards = [
@@ -53,11 +60,6 @@ const featureCards = [
     href: '/exams',
     label: 'Exames',
     icon: Stethoscope,
-  },
-  {
-    href: '/plan',
-    label: 'Plano de 14 Dias',
-    icon: CalendarDays,
   },
   {
     href: '/safety',
@@ -91,15 +93,14 @@ export default function WelcomePage() {
 
   useEffect(() => {
     setQuickTip(getDailyTip());
-    const storedPhoto = localStorage.getItem(PHOTO_STORAGE_KEY);
+    let storedPhoto = localStorage.getItem(PHOTO_STORAGE_KEY);
     if (storedPhoto) {
-      setBabyPhotoUrl(storedPhoto);
-    }
-
-    return () => {
-        if (babyPhotoUrl && babyPhotoUrl.startsWith('blob:')) {
-            URL.revokeObjectURL(babyPhotoUrl);
-        }
+      if (!storedPhoto.startsWith('data:image')) {
+        const url = URL.createObjectURL(new Blob([storedPhoto]));
+        setBabyPhotoUrl(url);
+      } else {
+        setBabyPhotoUrl(storedPhoto);
+      }
     }
   }, []);
   
