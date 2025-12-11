@@ -152,7 +152,7 @@ export default function WelcomePage() {
         
         <header className="text-left">
           <div className="flex justify-between items-center">
-            <h1 className="font-headline text-3xl font-bold text-foreground tracking-tight">
+            <h1 className="font-headline text-2xl font-bold text-foreground tracking-tight">
               Olá, <span className="text-primary">{userName}</span>!
             </h1>
             <Button variant="ghost" size="icon" onClick={handleLogout}>
