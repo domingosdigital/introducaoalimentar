@@ -84,7 +84,7 @@ const featureCards = [
     label: 'Nutri IA',
     icon: Brain,
     wip: true,
-    wipLabel: "Em breve",
+    wipLabel: "Em construção",
   }
 ];
 
@@ -245,7 +245,7 @@ export default function WelcomePage() {
             {highlightedCards.map((card) => (
                 <Link href={card.href} key={card.href} className="group block">
                     <Card className="shadow-md hover:shadow-lg transition-shadow">
-                        <CardHeader className="flex flex-row items-center gap-4">
+                        <CardHeader className="flex min-h-[120px] flex-row items-center gap-4">
                             <div className={cn('flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20')}>
                                 <card.icon className={cn('h-6 w-6 text-primary transition-colors group-hover:text-primary')} />
                             </div>
@@ -271,7 +271,7 @@ export default function WelcomePage() {
             return (
               <Wrapper key={item.label} {...props} className={cn("group", isNonClickable && "cursor-not-allowed")}>
                 <Card className="relative flex aspect-square flex-col items-center justify-center rounded-2xl p-2 text-center shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
-                  {isWip && <Badge variant="secondary" className='absolute top-2 right-2 text-xs'>{item.wipLabel || "Em breve"}</Badge>}
+                  {isWip && <Badge variant="secondary" className='absolute top-2 right-2 text-xs'>{item.wipLabel || "Novo"}</Badge>}
                   <div
                     className={cn('mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
                   >
