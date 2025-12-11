@@ -91,7 +91,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['22', '84', '37', '28', '30'];
+const popularRecipeIds = ['20', '39', '5', '42', '10'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
@@ -115,7 +115,8 @@ export default function WelcomePage() {
   
   const topRecipes = useMemo(() => {
     const popularRecipes = allRecipes.filter(r => popularRecipeIds.includes(r.id));
-    return shuffle([...popularRecipes]).slice(0, 5);
+    // Ensure the order is as defined in popularRecipeIds
+    return popularRecipeIds.map(id => popularRecipes.find(r => r.id === id)).filter((r): r is Recipe => !!r);
   }, []);
 
   useEffect(() => {
@@ -263,7 +264,7 @@ export default function WelcomePage() {
 
             return (
               <Wrapper key={item.label} {...props} className={cn("group", isWip && "cursor-not-allowed")}>
-              <div className="relative flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
+              <Card className="relative flex aspect-square flex-col items-center justify-center rounded-2xl p-4 text-center shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
                 {isWip && <Badge variant="secondary" className='absolute top-2 right-2 text-xs'>Em construção</Badge>}
                 <div
                   className={cn('mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
@@ -271,7 +272,7 @@ export default function WelcomePage() {
                   <item.icon className={cn('h-8 w-8 text-primary transition-colors group-hover:text-primary')} />
                 </div>
                 <span className="font-semibold text-foreground text-base leading-tight">{item.label}</span>
-              </div>
+              </Card>
             </Wrapper>
             )
           })}
@@ -291,6 +292,7 @@ export default function WelcomePage() {
             </p>
             <div className="space-y-3">
               {topRecipes.map((recipe, index) => {
+                if (!recipe) return null;
                 const placeholder = PlaceHolderImages.find(p => p.id === recipe.image);
                 return (
                   <Link href={`/recipes/${recipe.id}`} key={recipe.id} className="group block">
