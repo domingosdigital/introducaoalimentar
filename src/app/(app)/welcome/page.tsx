@@ -210,7 +210,7 @@ export default function WelcomePage() {
           </div>
         )}
         
-        <div className="space-y-4">
+        <div className="space-y-2">
             {highlightedCards.map((card) => (
                 <Link href={card.href} key={card.href} className="group block">
                     <Card className="shadow-md hover:shadow-lg transition-shadow">
