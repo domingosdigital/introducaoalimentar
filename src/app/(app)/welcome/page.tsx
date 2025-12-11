@@ -311,13 +311,15 @@ export default function WelcomePage() {
               })}
             </div>
         </div>
+      </div>
 
+      <div className="space-y-6 bg-background p-6 sm:p-8">
         <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
           <CardHeader className="flex flex-row items-center gap-4">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
                   <Lightbulb className="h-6 w-6 text-yellow-600" />
               </div>
-              <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
+              <p className="text-sm text-yellow-800 font-medium">{quickTip}</p>
           </CardHeader>
         </Card>
         
