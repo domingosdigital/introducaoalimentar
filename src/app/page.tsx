@@ -60,11 +60,9 @@ export default function LoginPage() {
 
   return (
     <div 
-        className="flex min-h-dvh items-center justify-center p-4 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://i.imgur.com/puNctJd.png')" }}
+        className="flex min-h-dvh items-center justify-center bg-muted p-4"
     >
-      <div className="absolute inset-0 bg-black/50 z-0" />
-      <div className="w-full max-w-sm animate-in fade-in zoom-in-95 z-10">
+      <div className="w-full max-w-sm animate-in fade-in zoom-in-95">
         <Card className="shadow-2xl">
           <CardHeader className="text-center p-8">
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary">
