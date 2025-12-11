@@ -71,7 +71,7 @@ export default function LoginPage() {
               <Baby className="h-10 w-10" />
             </div>
             <CardTitle className="font-headline text-4xl font-bold text-primary">
-              BabyFood®
+              Baby<span className="font-normal">Food®</span>
             </CardTitle>
             <CardDescription className="text-base text-muted-foreground pt-1">
               Seu guia para a introdução alimentar.
