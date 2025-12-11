@@ -210,10 +210,6 @@ export default function WelcomePage() {
           </div>
         )}
         
-        <h1 className="text-xl font-headline text-foreground leading-tight">
-            A <span className="font-bold">introdução alimentar</span> do seu bebê<br/>sem medo e sem dúvidas.
-        </h1>
-
         <div className="space-y-4">
             {highlightedCards.map((card) => (
                 <Link href={card.href} key={card.href} className="group block">
