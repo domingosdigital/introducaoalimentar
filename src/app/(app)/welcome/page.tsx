@@ -96,7 +96,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['65', '48', '5', '79', '87'];
+const popularRecipeIds = ['65', '48', '79', '88', '10'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
@@ -113,8 +113,6 @@ export default function WelcomePage() {
   const { user } = useUser();
   const auth = useAuth();
   const router = useRouter();
-  const [babyPhotoUrl, setBabyPhotoUrl] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const userName = user?.displayName || 'Mamãe';
   
@@ -126,57 +124,8 @@ export default function WelcomePage() {
 
   useEffect(() => {
     setQuickTip(getDailyTip());
-    const storedPhoto = localStorage.getItem(PHOTO_STORAGE_KEY);
-    if (storedPhoto) {
-      // Create a URL from the stored base64 string to optimize rendering
-      const byteCharacters = atob(storedPhoto.split(',')[1]);
-      const byteNumbers = new Array(byteCharacters.length);
-      for (let i = 0; i < byteCharacters.length; i++) {
-        byteNumbers[i] = byteCharacters.charCodeAt(i);
-      }
-      const byteArray = new Uint8Array(byteNumbers);
-      const blob = new Blob([byteArray], { type: 'image/jpeg' }); // Adjust type if needed
-      const objectURL = URL.createObjectURL(blob);
-      setBabyPhotoUrl(objectURL);
-
-      // Clean up the object URL when the component unmounts
-      return () => URL.revokeObjectURL(objectURL);
-    }
   }, []);
   
-  const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      if (babyPhotoUrl) {
-        URL.revokeObjectURL(babyPhotoUrl);
-      }
-      const url = URL.createObjectURL(file);
-      setBabyPhotoUrl(url);
-
-      // Save to localStorage as Base64 for persistence across sessions
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64String = reader.result as string;
-        localStorage.setItem(PHOTO_STORAGE_KEY, base64String);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleRemovePhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    e.preventDefault();
-    localStorage.removeItem(PHOTO_STORAGE_KEY);
-     if (babyPhotoUrl) {
-      URL.revokeObjectURL(babyPhotoUrl);
-      setBabyPhotoUrl(null);
-    }
-    if(fileInputRef.current) {
-        fileInputRef.current.value = '';
-    }
-  }
-
-
   const handleLogout = async () => {
     await signOut(auth);
     router.push('/');
@@ -201,48 +150,14 @@ export default function WelcomePage() {
           </p>
         </header>
 
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handlePhotoUpload}
-          className="hidden"
-          accept="image/*"
-        />
-        
-        {babyPhotoUrl ? (
-           <div 
-             className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-md cursor-pointer group"
-             onClick={() => fileInputRef.current?.click()}
-            >
-              <Image
-                src={babyPhotoUrl}
-                alt="Foto do bebê"
-                fill
-                className="object-contain"
-                data-ai-hint="baby photo"
-              />
-              <div className='absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center'>
-                  <p className='text-white font-semibold'>Trocar foto</p>
-              </div>
-               <Button 
-                variant="destructive" 
-                size="icon" 
-                className="absolute top-2 right-2 h-8 w-8 z-10 opacity-50 group-hover:opacity-100 transition-opacity"
-                onClick={handleRemovePhoto}
-                >
-                <X className="h-4 w-4" />
-              </Button>
-          </div>
-        ) : (
-          <div 
-            className="w-full aspect-[4/3] rounded-2xl shadow-md border-2 border-dashed border-muted-foreground/50 bg-card flex flex-col items-center justify-center text-center p-4 cursor-pointer hover:bg-accent transition-colors"
-            onClick={() => fileInputRef.current?.click()}
-          >
-            <UploadCloud className="h-10 w-10 text-primary mb-2" />
-            <p className="font-semibold text-foreground">Clique para enviar uma foto do seu bebê</p>
-            <p className="text-sm text-muted-foreground">E deixe o app com a sua cara!</p>
-          </div>
-        )}
+        <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-md">
+            <Image
+            src="https://i.imgur.com/xafwwBA.png"
+            alt="Área para foto do bebê"
+            fill
+            className="object-cover"
+            />
+        </div>
         
         <div className="space-y-3">
             {highlightedCards.map((card) => (
