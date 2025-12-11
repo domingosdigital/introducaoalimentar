@@ -61,7 +61,7 @@ export default function LoginPage() {
   return (
     <div 
         className="relative flex min-h-dvh items-center justify-center bg-cover bg-center p-4"
-        style={{ backgroundImage: "url('https://i.imgur.com/0gBXTo7.jpeg')" }}
+        style={{ backgroundImage: "url('https://i.imgur.com/puNctJd.jpeg')" }}
     >
         <div className="absolute inset-0 bg-black/50" />
       <div className="relative w-full max-w-sm animate-in fade-in zoom-in-95">
