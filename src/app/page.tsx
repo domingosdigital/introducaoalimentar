@@ -66,8 +66,8 @@ export default function LoginPage() {
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary">
               <Baby className="h-10 w-10" />
             </div>
-            <CardTitle className="font-headline text-4xl font-bold text-foreground">
-              Primeiras Mordidas
+            <CardTitle className="font-headline text-4xl font-bold text-primary">
+              BabyFood®
             </CardTitle>
             <CardDescription className="text-base text-muted-foreground pt-1">
               Seu guia para a introdução alimentar.
