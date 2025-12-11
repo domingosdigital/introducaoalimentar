@@ -196,6 +196,9 @@ export default function WelcomePage() {
               <LogOut className="h-6 w-6" />
             </Button>
           </div>
+           <p className="text-muted-foreground mt-2">
+            Vamos deixar a alimentação do seu bebê muito mais simples hoje? 👶🏻
+          </p>
         </header>
 
         <input
@@ -245,7 +248,7 @@ export default function WelcomePage() {
             {highlightedCards.map((card) => (
                 <Link href={card.href} key={card.href} className="group block">
                     <Card className="shadow-md hover:shadow-lg transition-shadow">
-                        <CardHeader className="flex flex-row items-center gap-4 py-4">
+                        <CardHeader className="flex flex-row items-center gap-4 py-4 min-h-[100px]">
                             <div className={cn('flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20')}>
                                 <card.icon className={cn('h-6 w-6 text-primary transition-colors group-hover:text-primary')} />
                             </div>
