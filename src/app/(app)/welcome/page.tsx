@@ -265,7 +265,7 @@ export default function WelcomePage() {
         </div>
 
         <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center justify-center gap-3 mb-4">
               <Trophy className="h-6 w-6 text-amber-500" />
               <h2 className="font-headline text-2xl font-semibold">Top 5 da Semana</h2>
             </div>
