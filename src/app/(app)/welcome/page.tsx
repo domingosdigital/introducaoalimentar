@@ -269,7 +269,11 @@ export default function WelcomePage() {
               <Trophy className="h-6 w-6 text-amber-500" />
               <h2 className="font-headline text-2xl font-semibold">Top 5 da Semana</h2>
             </div>
-            <p className="text-center text-sm text-muted-foreground mb-4">Essas são as receitas mais usadas pelas famílias durante a semana.</p>
+            <p className="text-center text-sm text-muted-foreground mb-4">
+              Essas são as receitas mais usadas
+              <br />
+              pelas famílias durante a semana.
+            </p>
             <div className="space-y-3">
               {topRecipes.map((recipe, index) => {
                 const placeholder = PlaceHolderImages.find(p => p.id === recipe.image);
