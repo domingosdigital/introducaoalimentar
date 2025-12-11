@@ -85,7 +85,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['11', '17', '71', '28', '22', '84', '53', '75', '30', '95'];
+const popularRecipeIds = ['11', '17', '22', '28', '84', '53', '75', '30', '95'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
@@ -175,7 +175,7 @@ export default function WelcomePage() {
   return (
     <div className="animate-in fade-in flex h-full flex-col bg-muted/50 p-6 sm:p-8 space-y-6">
 
-      <div className="space-y-6">
+      <div className="space-y-2">
         
         <header className="text-left">
           <div className="flex justify-between items-center">
