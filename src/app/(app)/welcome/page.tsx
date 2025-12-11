@@ -39,7 +39,7 @@ const mainCards = [
     icon: Apple,
     highlight: true,
   },
-  {
+    {
     href: '/plan',
     label: 'Plano de 14 Dias',
     description: 'Um guia prático para começar a introdução alimentar com tranquilidade.',
@@ -85,7 +85,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['11', '17', '71', '28', '22', '84', '53', '75', '36', '95'];
+const popularRecipeIds = ['11', '17', '71', '28', '22', '84', '53', '75', '30', '95'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
