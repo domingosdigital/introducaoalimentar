@@ -49,7 +49,7 @@ const mainCards = [
 ];
 
 const featureCards = [
-    {
+  {
     href: '/guide',
     label: 'Dicas Úteis',
     description: 'Respostas para suas dúvidas.',
@@ -61,21 +61,21 @@ const featureCards = [
     icon: Baby,
   },
   {
-    href: '/exams',
-    label: 'Exames',
-    icon: Stethoscope,
-    wip: true,
-    wipLabel: "Novo",
-  },
-  {
     href: '/safety',
     label: 'Guia de Segurança',
     icon: ShieldCheck,
   },
-   {
+  {
     href: '/favorites',
     label: 'Favoritos',
     icon: Star,
+    wip: true,
+    wipLabel: "Novo",
+  },
+  {
+    href: '/exams',
+    label: 'Exames',
+    icon: Stethoscope,
     wip: true,
     wipLabel: "Novo",
   },
@@ -96,7 +96,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['65', '48', '79', '88', '10'];
+const popularRecipeIds = ['65', '48', '79', '10', '5'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
