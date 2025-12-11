@@ -59,8 +59,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-muted p-4">
-      <div className="w-full max-w-sm animate-in fade-in zoom-in-95">
+    <div 
+        className="flex min-h-dvh items-center justify-center p-4 bg-cover bg-center"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1543353071-873f6b6a20ab?q=80&w=2070&auto=format&fit=crop')" }}
+    >
+      <div className="absolute inset-0 bg-black/50 z-0" />
+      <div className="w-full max-w-sm animate-in fade-in zoom-in-95 z-10">
         <Card className="shadow-2xl">
           <CardHeader className="text-center p-8">
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary">
