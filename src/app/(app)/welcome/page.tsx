@@ -85,7 +85,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['11', '17', '22', '28', '84', '53', '75', '30', '95'];
+const popularRecipeIds = ['11', '17', '22', '28', '84', '37', '75', '30', '95'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
