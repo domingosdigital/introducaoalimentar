@@ -1,10 +1,10 @@
 'use client';
 
-import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut, UploadCloud, X, Apple, Stethoscope } from 'lucide-react';
+import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut, UploadCloud, X, Apple, Stethoscope, Trophy } from 'lucide-react';
 import Link from 'next/link';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { quickTips } from '@/lib/data';
-import { useState, useEffect, useRef } from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { quickTips, recipes as allRecipes } from '@/lib/data';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import { useUser } from '@/firebase';
 import { Button } from '@/components/ui/button';
@@ -12,6 +12,10 @@ import { useRouter } from 'next/navigation';
 import { signOut } from 'firebase/auth';
 import { useAuth } from '@/firebase';
 import { cn } from '@/lib/utils';
+import type { Recipe } from '@/lib/types';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Badge } from '@/components/ui/badge';
+
 
 const mainCards = [
   {
@@ -81,6 +85,18 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
+const popularRecipeIds = ['11', '17', '71', '28', '22', '84', '53', '75', '36', '95'];
+
+// Function to shuffle an array
+const shuffle = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+
 export default function WelcomePage() {
   const [quickTip, setQuickTip] = useState('');
   const { user } = useUser();
@@ -90,6 +106,11 @@ export default function WelcomePage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const userName = user?.displayName || 'Mamãe';
+  
+  const topRecipes = useMemo(() => {
+    const popularRecipes = allRecipes.filter(r => popularRecipeIds.includes(r.id));
+    return shuffle([...popularRecipes]).slice(0, 5);
+  }, []);
 
   useEffect(() => {
     setQuickTip(getDailyTip());
@@ -227,6 +248,56 @@ export default function WelcomePage() {
                 </Link>
             ))}
         </div>
+
+        <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
+          <CardHeader className="flex flex-row items-center gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
+                  <Lightbulb className="h-6 w-6 text-yellow-600" />
+              </div>
+              <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
+          </CardHeader>
+        </Card>
+
+        <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Trophy className="h-6 w-6 text-amber-500" />
+              <h2 className="font-headline text-2xl font-semibold">Top 5 da Semana</h2>
+            </div>
+            <div className="space-y-3">
+              {topRecipes.map((recipe, index) => {
+                const placeholder = PlaceHolderImages.find(p => p.id === recipe.image);
+                return (
+                  <Link href={`/recipes/${recipe.id}`} key={recipe.id} className="group block">
+                    <Card className="overflow-hidden transition-all group-hover:shadow-lg group-hover:bg-accent/50">
+                      <div className="flex items-center">
+                        <div className="flex h-full w-14 shrink-0 items-center justify-center bg-muted/60">
+                           <span className="font-headline text-2xl font-bold text-amber-600">{index + 1}º</span>
+                        </div>
+                        <div className="relative h-20 w-20 shrink-0">
+                          {placeholder && (
+                            <Image
+                              src={placeholder.imageUrl}
+                              alt={recipe.name}
+                              fill
+                              className="object-cover"
+                              data-ai-hint={placeholder.imageHint}
+                            />
+                          )}
+                        </div>
+                        <div className="flex-1 p-3">
+                          <CardTitle className="font-headline text-base leading-snug mb-1">{recipe.name}</CardTitle>
+                          <div className="flex flex-wrap gap-1.5">
+                            <Badge variant="secondary" className="text-xs">{recipe.ageGroup}</Badge>
+                            <Badge variant="outline" className="text-xs">{recipe.mealType}</Badge>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Link>
+                );
+              })}
+            </div>
+        </div>
         
         <div className="grid grid-cols-2 gap-4">
           {featureCards.map((item) => (
@@ -242,15 +313,6 @@ export default function WelcomePage() {
             </Link>
           ))}
         </div>
-        
-         <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
-            <CardHeader className="flex flex-row items-center gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
-                    <Lightbulb className="h-6 w-6 text-yellow-600" />
-                </div>
-                <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
-            </CardHeader>
-        </Card>
         
         <div className="text-center py-4">
             <p className="text-muted-foreground flex items-center justify-center gap-2">Respira, você está indo muito bem <Heart className="h-4 w-4 text-primary fill-primary" /></p>
