@@ -61,7 +61,7 @@ export default function LoginPage() {
   return (
     <div 
         className="flex min-h-dvh items-center justify-center p-4 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=2070&auto=format&fit=crop')" }}
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1516633630673-67bbad744d24?q=80&w=2070&auto=format&fit=crop')" }}
     >
       <div className="absolute inset-0 bg-black/50 z-0" />
       <div className="w-full max-w-sm animate-in fade-in zoom-in-95 z-10">
