@@ -85,7 +85,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['11', '22', '37', '84', '28'];
+const popularRecipeIds = ['22', '84', '37', '28', '11'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
@@ -252,7 +252,7 @@ export default function WelcomePage() {
         <div className="grid grid-cols-2 gap-4">
           {featureCards.map((item) => (
             <Link href={item.href} key={item.href} className="group">
-              <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+              <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
                 <div
                   className={cn('mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
                 >
@@ -265,10 +265,11 @@ export default function WelcomePage() {
         </div>
 
         <div>
-            <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="flex items-center justify-center gap-3 mb-2">
               <Trophy className="h-6 w-6 text-amber-500" />
               <h2 className="font-headline text-2xl font-semibold">Top 5 da Semana</h2>
             </div>
+            <p className="text-center text-sm text-muted-foreground mb-4">Essas são as receitas mais usadas pelas famílias durante a semana.</p>
             <div className="space-y-3">
               {topRecipes.map((recipe, index) => {
                 const placeholder = PlaceHolderImages.find(p => p.id === recipe.image);
