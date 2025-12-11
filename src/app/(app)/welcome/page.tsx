@@ -85,7 +85,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['11', '17', '22', '28', '84', '37', '75', '30', '95'];
+const popularRecipeIds = ['11', '17', '22', '37', '84', '30', '95', '28'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
@@ -175,7 +175,7 @@ export default function WelcomePage() {
   return (
     <div className="animate-in fade-in flex h-full flex-col bg-muted/50 p-6 sm:p-8 space-y-6">
 
-      <div className="space-y-2">
+      <div className="space-y-6">
         
         <header className="text-left">
           <div className="flex justify-between items-center">
@@ -249,15 +249,6 @@ export default function WelcomePage() {
             ))}
         </div>
 
-        <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
-          <CardHeader className="flex flex-row items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
-                  <Lightbulb className="h-6 w-6 text-yellow-600" />
-              </div>
-              <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
-          </CardHeader>
-        </Card>
-
         <div>
             <div className="flex items-center gap-3 mb-4">
               <Trophy className="h-6 w-6 text-amber-500" />
@@ -298,6 +289,15 @@ export default function WelcomePage() {
               })}
             </div>
         </div>
+
+        <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
+          <CardHeader className="flex flex-row items-center gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
+                  <Lightbulb className="h-6 w-6 text-yellow-600" />
+              </div>
+              <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
+          </CardHeader>
+        </Card>
         
         <div className="grid grid-cols-2 gap-4">
           {featureCards.map((item) => (
