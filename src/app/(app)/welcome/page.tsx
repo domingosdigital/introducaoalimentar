@@ -65,7 +65,7 @@ const featureCards = [
     label: 'Exames',
     icon: Stethoscope,
     wip: true,
-    wipLabel: "Ferramenta Nova",
+    wipLabel: "Novo",
   },
   {
     href: '/safety',
@@ -77,7 +77,7 @@ const featureCards = [
     label: 'Favoritos',
     icon: Star,
     wip: true,
-    wipLabel: "Ferramenta Nova",
+    wipLabel: "Novo",
   },
   {
     href: '#',
