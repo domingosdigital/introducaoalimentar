@@ -1,6 +1,6 @@
 'use client';
 
-import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut, UploadCloud, X, Apple, Stethoscope, Trophy } from 'lucide-react';
+import { Baby, Heart, NotebookText, Star, CalendarDays, ShieldCheck, CalendarHeart, BookHeart, Lightbulb, LogOut, UploadCloud, X, Apple, Stethoscope, Trophy, Brain } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { quickTips, recipes as allRecipes } from '@/lib/data';
@@ -75,6 +75,12 @@ const featureCards = [
     label: 'Favoritos',
     icon: Star,
   },
+  {
+    href: '#',
+    label: 'Nutri IA',
+    icon: Brain,
+    wip: true,
+  }
 ];
 
 const getDailyTip = () => {
@@ -85,7 +91,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['22', '84', '37', '28', '11'];
+const popularRecipeIds = ['22', '84', '37', '28', '30'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
@@ -250,9 +256,15 @@ export default function WelcomePage() {
 
       <div className="space-y-6 bg-background p-6 sm:p-8">
         <div className="grid grid-cols-2 gap-4">
-          {featureCards.map((item) => (
-            <Link href={item.href} key={item.href} className="group">
-              <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
+          {featureCards.map((item) => {
+            const isWip = 'wip' in item && item.wip;
+            const Wrapper = isWip ? 'div' : Link;
+            const props = isWip ? {} : { href: item.href };
+
+            return (
+              <Wrapper key={item.label} {...props} className={cn("group", isWip && "cursor-not-allowed")}>
+              <div className="relative flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
+                {isWip && <Badge variant="secondary" className='absolute top-2 right-2 text-xs'>Em construção</Badge>}
                 <div
                   className={cn('mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
                 >
@@ -260,8 +272,9 @@ export default function WelcomePage() {
                 </div>
                 <span className="font-semibold text-foreground text-base leading-tight">{item.label}</span>
               </div>
-            </Link>
-          ))}
+            </Wrapper>
+            )
+          })}
         </div>
       </div>
       
