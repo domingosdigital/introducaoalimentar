@@ -248,15 +248,6 @@ export default function WelcomePage() {
                 </Link>
             ))}
         </div>
-
-        <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
-          <CardHeader className="flex flex-row items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
-                  <Lightbulb className="h-6 w-6 text-yellow-600" />
-              </div>
-              <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
-          </CardHeader>
-        </Card>
         
         <div className="grid grid-cols-2 gap-4">
           {featureCards.map((item) => (
@@ -313,6 +304,15 @@ export default function WelcomePage() {
               })}
             </div>
         </div>
+
+        <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
+          <CardHeader className="flex flex-row items-center gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
+                  <Lightbulb className="h-6 w-6 text-yellow-600" />
+              </div>
+              <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
+          </CardHeader>
+        </Card>
         
         <div className="text-center py-4">
             <p className="text-muted-foreground flex items-center justify-center gap-2">Respira, você está indo muito bem <Heart className="h-4 w-4 text-primary fill-primary" /></p>
