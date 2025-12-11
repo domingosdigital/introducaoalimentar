@@ -85,7 +85,7 @@ const getDailyTip = () => {
 
 const PHOTO_STORAGE_KEY = 'primeiras-mordidas-baby-photo';
 
-const popularRecipeIds = ['11', '17', '22', '37', '84', '30', '95', '28'];
+const popularRecipeIds = ['11', '22', '37', '84', '28'];
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
@@ -249,6 +249,30 @@ export default function WelcomePage() {
             ))}
         </div>
 
+        <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
+          <CardHeader className="flex flex-row items-center gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
+                  <Lightbulb className="h-6 w-6 text-yellow-600" />
+              </div>
+              <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
+          </CardHeader>
+        </Card>
+        
+        <div className="grid grid-cols-2 gap-4">
+          {featureCards.map((item) => (
+            <Link href={item.href} key={item.href} className="group">
+              <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                <div
+                  className={cn('mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
+                >
+                  <item.icon className={cn('h-8 w-8 text-primary transition-colors group-hover:text-primary')} />
+                </div>
+                <span className="font-semibold text-foreground text-base leading-tight">{item.label}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
         <div>
             <div className="flex items-center gap-3 mb-4">
               <Trophy className="h-6 w-6 text-amber-500" />
@@ -288,30 +312,6 @@ export default function WelcomePage() {
                 );
               })}
             </div>
-        </div>
-
-        <Card className="bg-yellow-50 border-yellow-200 shadow-sm">
-          <CardHeader className="flex flex-row items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400/30">
-                  <Lightbulb className="h-6 w-6 text-yellow-600" />
-              </div>
-              <p className="text-sm text-yellow-800 font-medium">Dica do dia: bagunça faz parte! Deixar o bebê explorar a comida melhora autonomia, textura e aceitação.</p>
-          </CardHeader>
-        </Card>
-        
-        <div className="grid grid-cols-2 gap-4">
-          {featureCards.map((item) => (
-            <Link href={item.href} key={item.href} className="group">
-              <div className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-card p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-                <div
-                  className={cn('mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
-                >
-                  <item.icon className={cn('h-8 w-8 text-primary transition-colors group-hover:text-primary')} />
-                </div>
-                <span className="font-semibold text-foreground text-base leading-tight">{item.label}</span>
-              </div>
-            </Link>
-          ))}
         </div>
         
         <div className="text-center py-4">
