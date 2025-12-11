@@ -36,7 +36,7 @@ export default function AppLayout({
   return (
     <div className="mobile-container">
       <header className="sticky top-0 z-20 flex h-16 items-center justify-center bg-primary">
-        <h1 className="font-headline text-3xl font-bold text-primary-foreground">
+        <h1 className="font-headline text-3xl font-bold text-primary-foreground [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
           Baby<span className="font-normal">Food®</span>
         </h1>
       </header>
