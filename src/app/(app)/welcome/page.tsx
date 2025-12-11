@@ -256,7 +256,7 @@ export default function WelcomePage() {
       </div>
 
       <div className="space-y-6 bg-background p-6 sm:p-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           {featureCards.map((item) => {
             const isWip = 'wip' in item && item.wip;
             const Wrapper = isWip ? 'div' : Link;
@@ -264,14 +264,14 @@ export default function WelcomePage() {
 
             return (
               <Wrapper key={item.label} {...props} className={cn("group", isWip && "cursor-not-allowed")}>
-              <Card className="relative flex aspect-square flex-col items-center justify-center rounded-2xl p-4 text-center shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
-                {isWip && <Badge variant="secondary" className='absolute top-2 right-2 text-xs'>Em construção</Badge>}
+              <Card className="relative flex aspect-square flex-col items-center justify-center rounded-2xl p-2 text-center shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
+                {isWip && <Badge variant="secondary" className='absolute top-2 right-2 text-xs'>Em breve</Badge>}
                 <div
-                  className={cn('mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
+                  className={cn('mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20')}
                 >
-                  <item.icon className={cn('h-8 w-8 text-primary transition-colors group-hover:text-primary')} />
+                  <item.icon className={cn('h-7 w-7 text-primary transition-colors group-hover:text-primary')} />
                 </div>
-                <span className="font-semibold text-foreground text-base leading-tight">{item.label}</span>
+                <span className="font-semibold text-foreground text-sm leading-tight">{item.label}</span>
               </Card>
             </Wrapper>
             )

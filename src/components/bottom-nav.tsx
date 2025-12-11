@@ -2,15 +2,15 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, NotebookText, Sparkles, Star, Apple } from 'lucide-react';
+import { Home, NotebookText, Sparkles, CalendarDays, Apple } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/welcome', label: 'Início', icon: Home },
   { href: '/recipes', label: 'Receitas', icon: NotebookText },
-  { href: '/today', label: 'Cardápio do dia', icon: Sparkles },
+  { href: '/today', label: 'Cardápio', icon: Sparkles },
   { href: '/checklist', label: 'Checklist', icon: Apple },
-  { href: '/favorites', label: 'Favoritos', icon: Star },
+  { href: '/plan', label: 'Plano', icon: CalendarDays },
 ];
 
 export default function BottomNav() {
@@ -26,7 +26,7 @@ export default function BottomNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                'flex flex-col items-center gap-1 rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground',
+                'flex flex-col items-center gap-1 rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground w-1/5 text-center',
                 isActive ? 'text-primary' : 'text-muted-foreground'
               )}
             >
