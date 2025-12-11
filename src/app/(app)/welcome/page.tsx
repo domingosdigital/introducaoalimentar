@@ -320,7 +320,7 @@ export default function WelcomePage() {
         </Card>
         
         <div className="text-center py-4">
-            <p className="text-muted-foreground flex items-center justify-center gap-2">Respira, você está indo muito bem <Heart className="h-4 w-4 text-primary fill-primary" /></p>
+            <p className="text-muted-foreground flex items-center justify-center gap-2">Você está criando ótimos hábitos para o seu bebê. Continue assim ❤️</p>
         </div>
 
       </div>
